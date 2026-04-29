@@ -1,0 +1,16 @@
+{
+  "train_mode": "base",
+  "train_size": 1200.0,
+  "train_accuracy": 1.0,
+  "test_accuracy": 1.0,
+  "ood_accuracy": 1.0,
+  "spurious_attack_accuracy": 1.0,
+  "relation_probe_accuracy": 1.0,
+  "random_label_probe_accuracy": 0.21083333333333334,
+  "probe_selectivity": 0.7891666666666667,
+  "relation_dimension_zero_drop": 0.01666666666666672,
+  "random_dimension_zero_drop": 0.0,
+  "relation_subspace_drop": 0.4833333333333333,
+  "nuisance_subspace_drop": 0.0,
+  "gated_neural_relation_score": 0.818125
+}

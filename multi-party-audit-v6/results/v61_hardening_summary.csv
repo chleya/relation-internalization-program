@@ -1,0 +1,12 @@
+resolver,base_gated_v6_score,fake_evidence_rejection,human_route_responsibility_consistency,hidden_auto_resolution_rejection,minority_risk_log_integrity,resolution_hash_integrity,hardening_v61_gated_score
+compliant_audit_resolver,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+majority_vote_resolver,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+confidence_only_resolver,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+auto_compromise_resolver,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+ignore_minority_risk_resolver,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+no_audit_trail_resolver,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+fake_evidence_comparison_resolver,0.0,0.0,1.0,1.0,0.0,1.0,0.0
+human_route_label_only_resolver,0.0,1.0,0.0,1.0,1.0,1.0,0.0
+hidden_auto_resolution_resolver,1.0,1.0,1.0,0.0,1.0,1.0,0.0
+disagreement_logged_no_minority_resolver,0.0,1.0,1.0,1.0,0.0,1.0,0.0
+tampered_resolution_hash_resolver,0.0,1.0,0.0,0.0,1.0,0.0,0.0

@@ -1,0 +1,38 @@
+[
+  {
+    "texture": "A",
+    "wet": "dry",
+    "outcome": "poison",
+    "confidence": 0.8401236534118652
+  },
+  {
+    "texture": "A",
+    "wet": "wet",
+    "outcome": "poison",
+    "confidence": 0.9581764936447144
+  },
+  {
+    "texture": "B",
+    "wet": "dry",
+    "outcome": "poison",
+    "confidence": 0.8997137248516083
+  },
+  {
+    "texture": "B",
+    "wet": "wet",
+    "outcome": "poison",
+    "confidence": 0.9730790704488754
+  },
+  {
+    "texture": "C",
+    "wet": "dry",
+    "outcome": "neutral",
+    "confidence": 0.955524355173111
+  },
+  {
+    "texture": "C",
+    "wet": "wet",
+    "outcome": "neutral",
+    "confidence": 0.9553657025098801
+  }
+]

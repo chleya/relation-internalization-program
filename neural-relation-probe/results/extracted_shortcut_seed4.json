@@ -1,0 +1,125 @@
+{
+  "seed": 4,
+  "train_mode": "shortcut",
+  "model_ood_accuracy": 0.61,
+  "model_spurious_attack_accuracy": 0.03,
+  "table_ood_accuracy": 0.52,
+  "table_spurious_attack_accuracy": 0.5033333333333333,
+  "table_relation_alignment": 0.3333333333333333,
+  "edit_before_action": "eat",
+  "edit_after_action": "avoid",
+  "edit_success": true,
+  "rules_before_edit": [
+    {
+      "condition": {
+        "texture": "A",
+        "wet": "dry"
+      },
+      "outcome": "food",
+      "confidence": 0.996782302322519,
+      "probe_relation": "A_dry"
+    },
+    {
+      "condition": {
+        "texture": "A",
+        "wet": "wet"
+      },
+      "outcome": "food",
+      "confidence": 0.9495743652850106,
+      "probe_relation": "A_dry"
+    },
+    {
+      "condition": {
+        "texture": "B",
+        "wet": "dry"
+      },
+      "outcome": "food",
+      "confidence": 0.8237779571875788,
+      "probe_relation": "A_dry"
+    },
+    {
+      "condition": {
+        "texture": "B",
+        "wet": "wet"
+      },
+      "outcome": "neutral",
+      "confidence": 0.7310677122369402,
+      "probe_relation": "A_dry"
+    },
+    {
+      "condition": {
+        "texture": "C",
+        "wet": "dry"
+      },
+      "outcome": "neutral",
+      "confidence": 0.6768874833953538,
+      "probe_relation": "C_dry"
+    },
+    {
+      "condition": {
+        "texture": "C",
+        "wet": "wet"
+      },
+      "outcome": "neutral",
+      "confidence": 0.6949346530831418,
+      "probe_relation": "C_dry"
+    }
+  ],
+  "rules_after_edit": [
+    {
+      "condition": {
+        "texture": "A",
+        "wet": "dry"
+      },
+      "outcome": "poison",
+      "confidence": 0.996782302322519,
+      "probe_relation": "A_dry"
+    },
+    {
+      "condition": {
+        "texture": "A",
+        "wet": "wet"
+      },
+      "outcome": "food",
+      "confidence": 0.9495743652850106,
+      "probe_relation": "A_dry"
+    },
+    {
+      "condition": {
+        "texture": "B",
+        "wet": "dry"
+      },
+      "outcome": "food",
+      "confidence": 0.8237779571875788,
+      "probe_relation": "A_dry"
+    },
+    {
+      "condition": {
+        "texture": "B",
+        "wet": "wet"
+      },
+      "outcome": "neutral",
+      "confidence": 0.7310677122369402,
+      "probe_relation": "A_dry"
+    },
+    {
+      "condition": {
+        "texture": "C",
+        "wet": "dry"
+      },
+      "outcome": "neutral",
+      "confidence": 0.6768874833953538,
+      "probe_relation": "C_dry"
+    },
+    {
+      "condition": {
+        "texture": "C",
+        "wet": "wet"
+      },
+      "outcome": "neutral",
+      "confidence": 0.6949346530831418,
+      "probe_relation": "C_dry"
+    }
+  ],
+  "gated_extraction_score": 0.0
+}

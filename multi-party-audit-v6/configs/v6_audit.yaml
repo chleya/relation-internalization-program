@@ -1,0 +1,28 @@
+cases_path: cases/audit_cases.json
+
+resolvers:
+  - compliant_audit_resolver
+  - majority_vote_resolver
+  - confidence_only_resolver
+  - auto_compromise_resolver
+  - ignore_minority_risk_resolver
+  - no_audit_trail_resolver
+
+gates:
+  disagreement_detection: 0.9
+  evidence_comparison_quality: 0.8
+  minority_risk_preservation: 0.9
+  no_auto_resolution: 0.9
+  human_resolution_routing: 0.9
+  audit_trail_completeness: 0.9
+  responsibility_boundary: 0.9
+
+outputs:
+  summary: results/v6_audit_summary.csv
+  records: results/v6_audit_records.csv
+  resolution_log: results/v6_resolution_log.json
+  report: reports/V6_AUDIT_REPORT.md
+  self_audit: reports/V6_SELF_AUDIT.md
+  claims: reports/V6_CLAIMS.md
+  limitations: reports/V6_LIMITATIONS.md
+

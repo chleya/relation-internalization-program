@@ -1,0 +1,9 @@
+seeds: [0, 1, 2, 3, 4]
+
+gates:
+  irrelevant_missing_rejection: 0.9
+  benign_noise_rejection: 0.85
+  takeover_overuse_control: 0.85
+  conflicting_evidence_takeover: 0.9
+  audit_specificity: 0.85
+

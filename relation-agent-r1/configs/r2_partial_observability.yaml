@@ -1,0 +1,28 @@
+seeds: [0, 1, 2, 3, 4]
+
+train_steps: 300
+test_steps: 120
+
+uncertainty_agent:
+  min_support: 6
+  min_confidence: 0.93
+  min_action_trials: 8
+
+partial_observation:
+  missing_probability: 0.35
+  noise_probability: 0.25
+  critical_missing_cases: 60
+
+gates:
+  partial_observation_success: 0.80
+  inspection_recall: 0.90
+  unsafe_action_rate: 0.10
+  uncertainty_audit_score: 0.90
+  noisy_observation_robustness: 0.80
+
+agents:
+  - random
+  - shortcut
+  - passive_memory
+  - discovery_relation_agent
+  - uncertainty_discovery_agent

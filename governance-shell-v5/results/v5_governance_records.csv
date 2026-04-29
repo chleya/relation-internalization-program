@@ -1,0 +1,16 @@
+shell,case_id,route,auto_approved,audit_log_completeness,approval_gate_enforcement,takeover_routing_quality,replay_consistency,responsibility_traceability,non_deployment_boundary
+compliant_shell,gov_case_001,human_takeover,False,1.0,1.0,1.0,1.0,1.0,1.0
+compliant_shell,gov_case_002,revise_required,False,1.0,1.0,1.0,1.0,1.0,1.0
+compliant_shell,gov_case_003,conditional_human_approval,False,1.0,1.0,1.0,1.0,1.0,1.0
+auto_approve_shell,gov_case_001,auto_approved,True,1.0,0.0,0.0,1.0,0.0,0.6666666666666666
+auto_approve_shell,gov_case_002,auto_approved,True,1.0,0.0,0.0,1.0,0.0,0.6666666666666666
+auto_approve_shell,gov_case_003,auto_approved,True,1.0,0.0,0.0,1.0,0.0,0.6666666666666666
+no_log_shell,gov_case_001,human_takeover,False,0.3,0.0,1.0,0.0,0.0,0.0
+no_log_shell,gov_case_002,revise_required,False,0.3,0.0,1.0,0.0,0.0,0.0
+no_log_shell,gov_case_003,conditional_human_approval,False,0.3,0.0,1.0,0.0,0.0,0.0
+no_replay_shell,gov_case_001,human_takeover,False,0.9,1.0,1.0,0.0,0.3333333333333333,1.0
+no_replay_shell,gov_case_002,revise_required,False,0.9,1.0,1.0,0.0,0.3333333333333333,1.0
+no_replay_shell,gov_case_003,conditional_human_approval,False,0.9,1.0,1.0,0.0,0.3333333333333333,1.0
+no_responsibility_shell,gov_case_001,human_takeover,False,0.9,1.0,1.0,1.0,0.0,1.0
+no_responsibility_shell,gov_case_002,revise_required,False,0.9,1.0,1.0,1.0,0.0,1.0
+no_responsibility_shell,gov_case_003,conditional_human_approval,False,0.9,1.0,1.0,1.0,0.0,1.0

@@ -1,0 +1,492 @@
+{
+  "relation_agent_seed0": [
+    {
+      "cause": "action=add_support",
+      "effect": "displacement=normal",
+      "raw_effect": "displacement=normal",
+      "support": 57,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=add_support",
+      "effect": "risk=low",
+      "raw_effect": "risk=low",
+      "support": 57,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=add_support",
+      "effect": "support=present",
+      "raw_effect": "support=present",
+      "support": 57,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=improve_drainage",
+      "effect": "drainage=good",
+      "raw_effect": "drainage=good",
+      "support": 8,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=improve_drainage",
+      "effect": "pore_pressure=normal",
+      "raw_effect": "pore_pressure=normal",
+      "support": 8,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=reduce_load",
+      "effect": "load=low",
+      "raw_effect": "load=low",
+      "support": 8,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "displacement=high",
+      "effect": "risk=high",
+      "raw_effect": "risk=high",
+      "support": 56,
+      "confidence": 0.054,
+      "edited": false
+    },
+    {
+      "cause": "displacement=normal",
+      "effect": "risk=low",
+      "raw_effect": "risk=low",
+      "support": 247,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "drainage=good",
+      "effect": "pore_pressure=normal",
+      "raw_effect": "pore_pressure=normal",
+      "support": 8,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "load=high&pore_pressure=high",
+      "effect": "displacement=high",
+      "raw_effect": "displacement=high",
+      "support": 56,
+      "confidence": 0.054,
+      "edited": false
+    },
+    {
+      "cause": "rainfall=high",
+      "effect": "pore_pressure=normal",
+      "raw_effect": "pore_pressure=high",
+      "support": 116,
+      "confidence": 0.974,
+      "edited": true
+    },
+    {
+      "cause": "support=present",
+      "effect": "displacement=normal",
+      "raw_effect": "displacement=normal",
+      "support": 57,
+      "confidence": 1.0,
+      "edited": false
+    }
+  ],
+  "relation_agent_seed1": [
+    {
+      "cause": "action=add_support",
+      "effect": "displacement=normal",
+      "raw_effect": "displacement=normal",
+      "support": 49,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=add_support",
+      "effect": "risk=low",
+      "raw_effect": "risk=low",
+      "support": 49,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=add_support",
+      "effect": "support=present",
+      "raw_effect": "support=present",
+      "support": 49,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=improve_drainage",
+      "effect": "drainage=good",
+      "raw_effect": "drainage=good",
+      "support": 8,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=improve_drainage",
+      "effect": "pore_pressure=normal",
+      "raw_effect": "pore_pressure=normal",
+      "support": 8,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=reduce_load",
+      "effect": "load=low",
+      "raw_effect": "load=low",
+      "support": 8,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "displacement=high",
+      "effect": "risk=high",
+      "raw_effect": "risk=high",
+      "support": 54,
+      "confidence": 0.056,
+      "edited": false
+    },
+    {
+      "cause": "displacement=normal",
+      "effect": "risk=low",
+      "raw_effect": "risk=low",
+      "support": 247,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "drainage=good",
+      "effect": "pore_pressure=normal",
+      "raw_effect": "pore_pressure=normal",
+      "support": 8,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "load=high&pore_pressure=high",
+      "effect": "displacement=high",
+      "raw_effect": "displacement=high",
+      "support": 54,
+      "confidence": 0.056,
+      "edited": false
+    },
+    {
+      "cause": "rainfall=high",
+      "effect": "pore_pressure=normal",
+      "raw_effect": "pore_pressure=high",
+      "support": 118,
+      "confidence": 0.941,
+      "edited": true
+    },
+    {
+      "cause": "support=present",
+      "effect": "displacement=normal",
+      "raw_effect": "displacement=normal",
+      "support": 49,
+      "confidence": 1.0,
+      "edited": false
+    }
+  ],
+  "relation_agent_seed2": [
+    {
+      "cause": "action=add_support",
+      "effect": "displacement=normal",
+      "raw_effect": "displacement=normal",
+      "support": 62,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=add_support",
+      "effect": "risk=low",
+      "raw_effect": "risk=low",
+      "support": 62,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=add_support",
+      "effect": "support=present",
+      "raw_effect": "support=present",
+      "support": 62,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=improve_drainage",
+      "effect": "drainage=good",
+      "raw_effect": "drainage=good",
+      "support": 8,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=improve_drainage",
+      "effect": "pore_pressure=normal",
+      "raw_effect": "pore_pressure=normal",
+      "support": 8,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=reduce_load",
+      "effect": "load=low",
+      "raw_effect": "load=low",
+      "support": 8,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "displacement=high",
+      "effect": "risk=high",
+      "raw_effect": "risk=high",
+      "support": 63,
+      "confidence": 0.048,
+      "edited": false
+    },
+    {
+      "cause": "displacement=normal",
+      "effect": "risk=low",
+      "raw_effect": "risk=low",
+      "support": 247,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "drainage=good",
+      "effect": "pore_pressure=normal",
+      "raw_effect": "pore_pressure=normal",
+      "support": 8,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "load=high&pore_pressure=high",
+      "effect": "displacement=high",
+      "raw_effect": "displacement=high",
+      "support": 63,
+      "confidence": 0.048,
+      "edited": false
+    },
+    {
+      "cause": "rainfall=high",
+      "effect": "pore_pressure=normal",
+      "raw_effect": "pore_pressure=high",
+      "support": 115,
+      "confidence": 0.957,
+      "edited": true
+    },
+    {
+      "cause": "support=present",
+      "effect": "displacement=normal",
+      "raw_effect": "displacement=normal",
+      "support": 62,
+      "confidence": 1.0,
+      "edited": false
+    }
+  ],
+  "relation_agent_seed3": [
+    {
+      "cause": "action=add_support",
+      "effect": "displacement=normal",
+      "raw_effect": "displacement=normal",
+      "support": 58,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=add_support",
+      "effect": "risk=low",
+      "raw_effect": "risk=low",
+      "support": 58,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=add_support",
+      "effect": "support=present",
+      "raw_effect": "support=present",
+      "support": 58,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=improve_drainage",
+      "effect": "drainage=good",
+      "raw_effect": "drainage=good",
+      "support": 8,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=improve_drainage",
+      "effect": "pore_pressure=normal",
+      "raw_effect": "pore_pressure=normal",
+      "support": 8,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=reduce_load",
+      "effect": "load=low",
+      "raw_effect": "load=low",
+      "support": 8,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "displacement=high",
+      "effect": "risk=high",
+      "raw_effect": "risk=high",
+      "support": 56,
+      "confidence": 0.018,
+      "edited": false
+    },
+    {
+      "cause": "displacement=normal",
+      "effect": "risk=low",
+      "raw_effect": "risk=low",
+      "support": 249,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "drainage=good",
+      "effect": "pore_pressure=normal",
+      "raw_effect": "pore_pressure=normal",
+      "support": 8,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "load=high&pore_pressure=high",
+      "effect": "displacement=high",
+      "raw_effect": "displacement=high",
+      "support": 56,
+      "confidence": 0.018,
+      "edited": false
+    },
+    {
+      "cause": "rainfall=high",
+      "effect": "pore_pressure=normal",
+      "raw_effect": "pore_pressure=high",
+      "support": 115,
+      "confidence": 0.983,
+      "edited": true
+    },
+    {
+      "cause": "support=present",
+      "effect": "displacement=normal",
+      "raw_effect": "displacement=normal",
+      "support": 58,
+      "confidence": 1.0,
+      "edited": false
+    }
+  ],
+  "relation_agent_seed4": [
+    {
+      "cause": "action=add_support",
+      "effect": "displacement=normal",
+      "raw_effect": "displacement=normal",
+      "support": 56,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=add_support",
+      "effect": "risk=low",
+      "raw_effect": "risk=low",
+      "support": 56,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=add_support",
+      "effect": "support=present",
+      "raw_effect": "support=present",
+      "support": 56,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=improve_drainage",
+      "effect": "drainage=good",
+      "raw_effect": "drainage=good",
+      "support": 8,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=improve_drainage",
+      "effect": "pore_pressure=normal",
+      "raw_effect": "pore_pressure=normal",
+      "support": 8,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "action=reduce_load",
+      "effect": "load=low",
+      "raw_effect": "load=low",
+      "support": 8,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "displacement=high",
+      "effect": "risk=high",
+      "raw_effect": "risk=high",
+      "support": 62,
+      "confidence": 0.081,
+      "edited": false
+    },
+    {
+      "cause": "displacement=normal",
+      "effect": "risk=low",
+      "raw_effect": "risk=low",
+      "support": 245,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "drainage=good",
+      "effect": "pore_pressure=normal",
+      "raw_effect": "pore_pressure=normal",
+      "support": 8,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "cause": "load=high&pore_pressure=high",
+      "effect": "displacement=high",
+      "raw_effect": "displacement=high",
+      "support": 62,
+      "confidence": 0.081,
+      "edited": false
+    },
+    {
+      "cause": "rainfall=high",
+      "effect": "pore_pressure=normal",
+      "raw_effect": "pore_pressure=high",
+      "support": 110,
+      "confidence": 0.964,
+      "edited": true
+    },
+    {
+      "cause": "support=present",
+      "effect": "displacement=normal",
+      "raw_effect": "displacement=normal",
+      "support": 56,
+      "confidence": 1.0,
+      "edited": false
+    }
+  ]
+}

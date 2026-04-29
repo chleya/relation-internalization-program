@@ -1,0 +1,7 @@
+{
+  "relations": [
+    {
+      "tree": "|--- odor=odor_01 <= 0.50\n|   |--- odor=odor_00 <= 0.50\n|   |   |--- class: neutral\n|   |--- odor=odor_00 >  0.50\n|   |   |--- class: food\n|--- odor=odor_01 >  0.50\n|   |--- class: poison\n"
+    }
+  ]
+}

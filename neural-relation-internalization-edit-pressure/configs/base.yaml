@@ -1,0 +1,26 @@
+seed: 0
+n_train: 1200
+n_test: 500
+hidden_dim: 32
+bottleneck_dim: 4
+epochs: 40
+batch_size: 64
+lr: 0.001
+
+loss:
+  beta_bottleneck: 0.01
+  lambda_inv: 1.0
+  lambda_cf: 1.0
+  lambda_local: 1.0
+  lambda_cons: 0.5
+
+gates:
+  ood_accuracy: 0.85
+  shortcut_rejection_accuracy: 0.85
+  reversal_adaptation_accuracy: 0.80
+  counterfactual_consistency: 0.85
+  table_alignment: 0.85
+  table_edit_success: 0.90
+  edit_locality: 0.85
+  relation_subspace_drop: 0.20
+  nuisance_subspace_drop_max: 0.10

@@ -1,0 +1,419 @@
+[
+  {
+    "case_id": "audit_case_001",
+    "resolver": "compliant_audit_resolver",
+    "review_ids": [
+      "R1",
+      "R2"
+    ],
+    "review_statuses": [
+      "takeover_required",
+      "revise"
+    ],
+    "expected_route": "human_resolution_required",
+    "expected_material_disagreement": true,
+    "minority_risk_review_id": "R1",
+    "material_disagreement_detected": true,
+    "evidence_comparison": [
+      "R1: status=takeover_required; links=3; uncertain=1; risk=missing pore pressure blocks validation of downstream displacement",
+      "R2: status=revise; links=2; uncertain=1; risk=revise with drainage and anchoring verification"
+    ],
+    "preserved_minority_risk": [
+      "missing pore pressure blocks validation of downstream displacement"
+    ],
+    "route": "human_resolution_required",
+    "auto_resolved": false,
+    "responsibility_boundary": [
+      "human engineer resolves material disagreement",
+      "audit resolver preserves disagreement evidence",
+      "no autonomous engineering approval"
+    ],
+    "resolution_hash": "28b064a2f54c5947"
+  },
+  {
+    "case_id": "audit_case_002",
+    "resolver": "compliant_audit_resolver",
+    "review_ids": [
+      "R1",
+      "R2"
+    ],
+    "review_statuses": [
+      "takeover_required",
+      "revise"
+    ],
+    "expected_route": "human_resolution_required",
+    "expected_material_disagreement": true,
+    "minority_risk_review_id": "R2",
+    "material_disagreement_detected": true,
+    "evidence_comparison": [
+      "R1: status=takeover_required; links=1; uncertain=0; risk=surface warning indicates danger",
+      "R2: status=revise; links=3; uncertain=1; risk=do not route only by surface warning"
+    ],
+    "preserved_minority_risk": [
+      "do not route only by surface warning"
+    ],
+    "route": "human_resolution_required",
+    "auto_resolved": false,
+    "responsibility_boundary": [
+      "human engineer resolves material disagreement",
+      "audit resolver preserves disagreement evidence",
+      "no autonomous engineering approval"
+    ],
+    "resolution_hash": "9a4e685f2c857809"
+  },
+  {
+    "case_id": "audit_case_003",
+    "resolver": "compliant_audit_resolver",
+    "review_ids": [
+      "R1",
+      "R2"
+    ],
+    "review_statuses": [
+      "revise",
+      "revise"
+    ],
+    "expected_route": "human_resolution_required",
+    "expected_material_disagreement": true,
+    "minority_risk_review_id": "R1",
+    "material_disagreement_detected": true,
+    "evidence_comparison": [
+      "R1: status=revise; links=2; uncertain=1; risk=revision must include pore pressure verification",
+      "R2: status=revise; links=1; uncertain=0; risk=drainage revision is enough"
+    ],
+    "preserved_minority_risk": [
+      "revision must include pore pressure verification"
+    ],
+    "route": "human_resolution_required",
+    "auto_resolved": false,
+    "responsibility_boundary": [
+      "human engineer resolves material disagreement",
+      "audit resolver preserves disagreement evidence",
+      "no autonomous engineering approval"
+    ],
+    "resolution_hash": "83e143e3d0e4bb63"
+  },
+  {
+    "case_id": "audit_case_001",
+    "resolver": "majority_vote_resolver",
+    "review_ids": [
+      "R1",
+      "R2"
+    ],
+    "review_statuses": [
+      "takeover_required",
+      "revise"
+    ],
+    "expected_route": "human_resolution_required",
+    "expected_material_disagreement": true,
+    "minority_risk_review_id": "R1",
+    "material_disagreement_detected": true,
+    "evidence_comparison": [],
+    "preserved_minority_risk": [],
+    "route": "auto_takeover_required",
+    "auto_resolved": true,
+    "responsibility_boundary": [
+      "majority vote selected outcome"
+    ],
+    "resolution_hash": "2c424ca6989f6f71"
+  },
+  {
+    "case_id": "audit_case_002",
+    "resolver": "majority_vote_resolver",
+    "review_ids": [
+      "R1",
+      "R2"
+    ],
+    "review_statuses": [
+      "takeover_required",
+      "revise"
+    ],
+    "expected_route": "human_resolution_required",
+    "expected_material_disagreement": true,
+    "minority_risk_review_id": "R2",
+    "material_disagreement_detected": true,
+    "evidence_comparison": [],
+    "preserved_minority_risk": [],
+    "route": "auto_takeover_required",
+    "auto_resolved": true,
+    "responsibility_boundary": [
+      "majority vote selected outcome"
+    ],
+    "resolution_hash": "421c519f4b31322b"
+  },
+  {
+    "case_id": "audit_case_003",
+    "resolver": "majority_vote_resolver",
+    "review_ids": [
+      "R1",
+      "R2"
+    ],
+    "review_statuses": [
+      "revise",
+      "revise"
+    ],
+    "expected_route": "human_resolution_required",
+    "expected_material_disagreement": true,
+    "minority_risk_review_id": "R1",
+    "material_disagreement_detected": false,
+    "evidence_comparison": [],
+    "preserved_minority_risk": [],
+    "route": "auto_revise",
+    "auto_resolved": true,
+    "responsibility_boundary": [
+      "majority vote selected outcome"
+    ],
+    "resolution_hash": "74d7ca5db7f80f01"
+  },
+  {
+    "case_id": "audit_case_001",
+    "resolver": "confidence_only_resolver",
+    "review_ids": [
+      "R1",
+      "R2"
+    ],
+    "review_statuses": [
+      "takeover_required",
+      "revise"
+    ],
+    "expected_route": "human_resolution_required",
+    "expected_material_disagreement": true,
+    "minority_risk_review_id": "R1",
+    "material_disagreement_detected": false,
+    "evidence_comparison": [
+      "selected R2 by confidence"
+    ],
+    "preserved_minority_risk": [],
+    "route": "auto_revise",
+    "auto_resolved": true,
+    "responsibility_boundary": [
+      "confidence score selected outcome"
+    ],
+    "resolution_hash": "c0bc8404ad883832"
+  },
+  {
+    "case_id": "audit_case_002",
+    "resolver": "confidence_only_resolver",
+    "review_ids": [
+      "R1",
+      "R2"
+    ],
+    "review_statuses": [
+      "takeover_required",
+      "revise"
+    ],
+    "expected_route": "human_resolution_required",
+    "expected_material_disagreement": true,
+    "minority_risk_review_id": "R2",
+    "material_disagreement_detected": false,
+    "evidence_comparison": [
+      "selected R1 by confidence"
+    ],
+    "preserved_minority_risk": [],
+    "route": "auto_takeover_required",
+    "auto_resolved": true,
+    "responsibility_boundary": [
+      "confidence score selected outcome"
+    ],
+    "resolution_hash": "f4bc62e5098dde45"
+  },
+  {
+    "case_id": "audit_case_003",
+    "resolver": "confidence_only_resolver",
+    "review_ids": [
+      "R1",
+      "R2"
+    ],
+    "review_statuses": [
+      "revise",
+      "revise"
+    ],
+    "expected_route": "human_resolution_required",
+    "expected_material_disagreement": true,
+    "minority_risk_review_id": "R1",
+    "material_disagreement_detected": false,
+    "evidence_comparison": [
+      "selected R2 by confidence"
+    ],
+    "preserved_minority_risk": [],
+    "route": "auto_revise",
+    "auto_resolved": true,
+    "responsibility_boundary": [
+      "confidence score selected outcome"
+    ],
+    "resolution_hash": "7c20508cc1a8f020"
+  },
+  {
+    "case_id": "audit_case_001",
+    "resolver": "auto_compromise_resolver",
+    "review_ids": [
+      "R1",
+      "R2"
+    ],
+    "review_statuses": [
+      "takeover_required",
+      "revise"
+    ],
+    "expected_route": "human_resolution_required",
+    "expected_material_disagreement": true,
+    "minority_risk_review_id": "R1",
+    "material_disagreement_detected": true,
+    "evidence_comparison": [
+      "merged competing views into compromise"
+    ],
+    "preserved_minority_risk": [],
+    "route": "auto_compromise",
+    "auto_resolved": true,
+    "responsibility_boundary": [
+      "compromise selected automatically"
+    ],
+    "resolution_hash": "dde46ed50d39f640"
+  },
+  {
+    "case_id": "audit_case_002",
+    "resolver": "auto_compromise_resolver",
+    "review_ids": [
+      "R1",
+      "R2"
+    ],
+    "review_statuses": [
+      "takeover_required",
+      "revise"
+    ],
+    "expected_route": "human_resolution_required",
+    "expected_material_disagreement": true,
+    "minority_risk_review_id": "R2",
+    "material_disagreement_detected": true,
+    "evidence_comparison": [
+      "merged competing views into compromise"
+    ],
+    "preserved_minority_risk": [],
+    "route": "auto_compromise",
+    "auto_resolved": true,
+    "responsibility_boundary": [
+      "compromise selected automatically"
+    ],
+    "resolution_hash": "e66efb687535f012"
+  },
+  {
+    "case_id": "audit_case_003",
+    "resolver": "auto_compromise_resolver",
+    "review_ids": [
+      "R1",
+      "R2"
+    ],
+    "review_statuses": [
+      "revise",
+      "revise"
+    ],
+    "expected_route": "human_resolution_required",
+    "expected_material_disagreement": true,
+    "minority_risk_review_id": "R1",
+    "material_disagreement_detected": true,
+    "evidence_comparison": [
+      "merged competing views into compromise"
+    ],
+    "preserved_minority_risk": [],
+    "route": "auto_compromise",
+    "auto_resolved": true,
+    "responsibility_boundary": [
+      "compromise selected automatically"
+    ],
+    "resolution_hash": "b69f159be21eb277"
+  },
+  {
+    "case_id": "audit_case_001",
+    "resolver": "ignore_minority_risk_resolver",
+    "review_ids": [
+      "R1",
+      "R2"
+    ],
+    "review_statuses": [
+      "takeover_required",
+      "revise"
+    ],
+    "expected_route": "human_resolution_required",
+    "expected_material_disagreement": true,
+    "minority_risk_review_id": "R1",
+    "material_disagreement_detected": true,
+    "evidence_comparison": [
+      "R1: status=takeover_required; links=3; uncertain=1; risk=missing pore pressure blocks validation of downstream displacement"
+    ],
+    "preserved_minority_risk": [],
+    "route": "human_resolution_required",
+    "auto_resolved": false,
+    "responsibility_boundary": [
+      "human engineer remains responsible"
+    ],
+    "resolution_hash": "b78b96fcaa851cc8"
+  },
+  {
+    "case_id": "audit_case_002",
+    "resolver": "ignore_minority_risk_resolver",
+    "review_ids": [
+      "R1",
+      "R2"
+    ],
+    "review_statuses": [
+      "takeover_required",
+      "revise"
+    ],
+    "expected_route": "human_resolution_required",
+    "expected_material_disagreement": true,
+    "minority_risk_review_id": "R2",
+    "material_disagreement_detected": true,
+    "evidence_comparison": [
+      "R1: status=takeover_required; links=1; uncertain=0; risk=surface warning indicates danger"
+    ],
+    "preserved_minority_risk": [],
+    "route": "human_resolution_required",
+    "auto_resolved": false,
+    "responsibility_boundary": [
+      "human engineer remains responsible"
+    ],
+    "resolution_hash": "bfd07ca320daa905"
+  },
+  {
+    "case_id": "audit_case_003",
+    "resolver": "ignore_minority_risk_resolver",
+    "review_ids": [
+      "R1",
+      "R2"
+    ],
+    "review_statuses": [
+      "revise",
+      "revise"
+    ],
+    "expected_route": "human_resolution_required",
+    "expected_material_disagreement": true,
+    "minority_risk_review_id": "R1",
+    "material_disagreement_detected": true,
+    "evidence_comparison": [
+      "R1: status=revise; links=2; uncertain=1; risk=revision must include pore pressure verification"
+    ],
+    "preserved_minority_risk": [],
+    "route": "human_resolution_required",
+    "auto_resolved": false,
+    "responsibility_boundary": [
+      "human engineer remains responsible"
+    ],
+    "resolution_hash": "48874103d9417554"
+  },
+  {
+    "case_id": "audit_case_001",
+    "resolver": "no_audit_trail_resolver",
+    "route": "human_resolution_required",
+    "auto_resolved": false
+  },
+  {
+    "case_id": "audit_case_002",
+    "resolver": "no_audit_trail_resolver",
+    "route": "human_resolution_required",
+    "auto_resolved": false
+  },
+  {
+    "case_id": "audit_case_003",
+    "resolver": "no_audit_trail_resolver",
+    "route": "human_resolution_required",
+    "auto_resolved": false
+  }
+]

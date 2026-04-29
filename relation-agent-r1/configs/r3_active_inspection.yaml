@@ -1,0 +1,24 @@
+seeds: [0, 1, 2, 3, 4]
+
+max_inspections_per_case: 2
+inspection_cost: 0.15
+inspection_noise: 0.05
+unsafe_automation_penalty: 1.00
+overinspection_penalty: 0.50
+
+gates:
+  inspection_target_accuracy: 0.75
+  information_gain_efficiency: 0.70
+  budgeted_safe_action_rate: 0.80
+  unsafe_automation_rate: 0.10
+  overinspection_rate: 0.25
+  sequential_update_accuracy: 0.75
+  first_missing_margin: 0.10
+  random_inspect_margin: 0.15
+
+agents:
+  - random_inspect_field
+  - first_missing_inspect
+  - missing_always_inspect
+  - risk_first_inspect
+  - active_inspection_agent

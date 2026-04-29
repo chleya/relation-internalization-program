@@ -1,0 +1,39 @@
+cases_path: cases/audit_cases.json
+
+resolvers:
+  - compliant_audit_resolver
+  - majority_vote_resolver
+  - confidence_only_resolver
+  - auto_compromise_resolver
+  - ignore_minority_risk_resolver
+  - no_audit_trail_resolver
+  - fake_evidence_comparison_resolver
+  - human_route_label_only_resolver
+  - hidden_auto_resolution_resolver
+  - disagreement_logged_no_minority_resolver
+  - tampered_resolution_hash_resolver
+
+v6_gates:
+  disagreement_detection: 0.9
+  evidence_comparison_quality: 0.8
+  minority_risk_preservation: 0.9
+  no_auto_resolution: 0.9
+  human_resolution_routing: 0.9
+  audit_trail_completeness: 0.9
+  responsibility_boundary: 0.9
+
+hardening_gates:
+  fake_evidence_rejection: 0.9
+  human_route_responsibility_consistency: 0.9
+  hidden_auto_resolution_rejection: 0.9
+  minority_risk_log_integrity: 0.9
+  resolution_hash_integrity: 0.9
+
+outputs:
+  summary: results/v61_hardening_summary.csv
+  records: results/v61_hardening_records.csv
+  report: reports/V6_1_HARDENING_REPORT.md
+  self_audit: reports/V6_1_SELF_AUDIT.md
+  claims: reports/V6_1_CLAIMS.md
+  limitations: reports/V6_1_LIMITATIONS.md
+

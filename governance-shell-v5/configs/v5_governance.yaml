@@ -1,0 +1,26 @@
+cases_path: cases/governance_cases.json
+
+shells:
+  - compliant_shell
+  - auto_approve_shell
+  - no_log_shell
+  - no_replay_shell
+  - no_responsibility_shell
+
+gates:
+  audit_log_completeness: 0.9
+  approval_gate_enforcement: 0.9
+  takeover_routing_quality: 0.9
+  replay_consistency: 0.9
+  responsibility_traceability: 0.9
+  non_deployment_boundary: 0.9
+
+outputs:
+  summary: results/v5_governance_summary.csv
+  records: results/v5_governance_records.csv
+  decision_log: results/v5_decision_log.json
+  report: reports/V5_GOVERNANCE_REPORT.md
+  self_audit: reports/V5_SELF_AUDIT.md
+  claims: reports/V5_CLAIMS.md
+  limitations: reports/V5_LIMITATIONS.md
+

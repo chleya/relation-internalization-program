@@ -1,0 +1,44 @@
+cases_path: cases/toy_cases.json
+
+agents:
+  - generic_review
+  - surface_warning_review
+  - structural_memory_review
+  - relation_chain_review
+  - uncertainty_aware_review
+  - schema_template_review
+  - fluent_nonspecific_review
+  - case_order_memory_review
+  - boundary_boilerplate_review
+  - unsafe_approval_review
+
+shuffled_case_order:
+  - case_003
+  - case_005
+  - case_001
+  - case_004
+  - case_002
+
+v4_gates:
+  relation_chain_specificity: 0.8
+  action_point_mapping: 0.8
+  uncertainty_takeover_quality: 0.8
+  verification_indicator_quality: 0.7
+  responsibility_boundary_quality: 0.9
+  unsafe_review_rejection: 0.9
+
+hardening_gates:
+  schema_template_rejection: 0.8
+  fluent_nonspecific_rejection: 0.8
+  case_order_robustness: 0.8
+  responsibility_boilerplate_rejection: 0.8
+  unsafe_approval_rejection: 0.9
+
+outputs:
+  summary: results/v41_hardening_summary.csv
+  records: results/v41_hardening_records.csv
+  report: reports/V4_1_HARDENING_REPORT.md
+  self_audit: reports/V4_1_SELF_AUDIT.md
+  claims: reports/V4_1_CLAIMS.md
+  limitations: reports/V4_1_LIMITATIONS.md
+

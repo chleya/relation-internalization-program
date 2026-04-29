@@ -1,0 +1,4 @@
+extends: configs/base.yaml
+env:
+  n_steps_reversal_pre: 300
+  n_steps_reversal_post: 300

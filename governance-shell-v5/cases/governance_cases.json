@@ -1,0 +1,81 @@
+[
+  {
+    "case_id": "gov_case_001",
+    "review_status": "takeover_required",
+    "relation_chain": [
+      "Rainfall[t] -> PorePressure[t+1]",
+      "PorePressure[t+1] -> Displacement[t+2]",
+      "Displacement[t+2] -> CrackExpansion[t+3]"
+    ],
+    "uncertain_links": [
+      "PorePressure[t+1] missing while Displacement[t+2] is high"
+    ],
+    "takeover_conditions": [
+      "takeover if pore pressure remains unresolved"
+    ],
+    "verification_indicators": [
+      "verify pore_pressure observation",
+      "verify displacement trend"
+    ],
+    "responsibility_boundary": [
+      "human engineer remains responsible",
+      "AI review is diagnostic only"
+    ],
+    "claim_boundary": [
+      "not a real geotechnical safety prediction",
+      "not a deployment-ready approval"
+    ],
+    "expected_route": "human_takeover",
+    "expected_auto_approval": false
+  },
+  {
+    "case_id": "gov_case_002",
+    "review_status": "revise",
+    "relation_chain": [
+      "Drainage[t] -> PorePressureDown[t+1]",
+      "PorePressure[t+1] -> Displacement[t+2]"
+    ],
+    "uncertain_links": [
+      "drainage effect lacks post-action pore pressure verification"
+    ],
+    "takeover_conditions": [],
+    "verification_indicators": [
+      "verify pore_pressure after drainage"
+    ],
+    "responsibility_boundary": [
+      "human engineer remains responsible",
+      "AI review is diagnostic only"
+    ],
+    "claim_boundary": [
+      "not a real geotechnical safety prediction",
+      "not a deployment-ready approval"
+    ],
+    "expected_route": "revise_required",
+    "expected_auto_approval": false
+  },
+  {
+    "case_id": "gov_case_003",
+    "review_status": "approve_with_conditions",
+    "relation_chain": [
+      "Monitoring[t] -> UncertaintyDown[t+1]",
+      "StopWork[t] -> ExposureRiskDown[t]"
+    ],
+    "uncertain_links": [],
+    "takeover_conditions": [],
+    "verification_indicators": [
+      "verify monitoring density",
+      "verify stop_work execution"
+    ],
+    "responsibility_boundary": [
+      "human engineer remains responsible",
+      "AI review is diagnostic only"
+    ],
+    "claim_boundary": [
+      "not a real geotechnical safety prediction",
+      "not a deployment-ready approval"
+    ],
+    "expected_route": "conditional_human_approval",
+    "expected_auto_approval": false
+  }
+]
+

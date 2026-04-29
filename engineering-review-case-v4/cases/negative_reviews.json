@@ -1,0 +1,19 @@
+[
+  {
+    "name": "generic_review",
+    "failure_mode": "uses plausible drainage and support language without relation-chain mapping"
+  },
+  {
+    "name": "surface_warning_review",
+    "failure_mode": "uses surface_warning as the dominant signal even when the physical chain is weak"
+  },
+  {
+    "name": "structural_memory_review",
+    "failure_mode": "copies fields from the case but does not expose uncertain links or takeover boundary"
+  },
+  {
+    "name": "overconfident_review",
+    "failure_mode": "treats a toy review as if it could approve safety"
+  }
+]
+

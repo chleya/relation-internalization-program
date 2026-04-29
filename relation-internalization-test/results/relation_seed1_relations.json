@@ -1,0 +1,164 @@
+{
+  "relations": [
+    {
+      "condition": {
+        "texture": "A",
+        "wet": "dry"
+      },
+      "outcome": "poison",
+      "counts": {
+        "food": 0,
+        "poison": 192,
+        "neutral": 0
+      },
+      "support": 192,
+      "confidence": 1.0,
+      "edited": true
+    },
+    {
+      "condition": {
+        "texture": "A",
+        "wet": "wet"
+      },
+      "outcome": "food",
+      "counts": {
+        "food": 84,
+        "poison": 0,
+        "neutral": 0
+      },
+      "support": 84,
+      "confidence": 1.0,
+      "edited": true
+    },
+    {
+      "condition": {
+        "texture": "B",
+        "wet": "dry"
+      },
+      "outcome": "poison",
+      "counts": {
+        "food": 0,
+        "poison": 96,
+        "neutral": 0
+      },
+      "support": 96,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "texture": "B",
+        "wet": "wet"
+      },
+      "outcome": "poison",
+      "counts": {
+        "food": 0,
+        "poison": 53,
+        "neutral": 0
+      },
+      "support": 53,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "texture": "C",
+        "wet": "dry"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 53
+      },
+      "support": 53,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "texture": "C",
+        "wet": "wet"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 22
+      },
+      "support": 22,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "texture": "A"
+      },
+      "outcome": "food",
+      "counts": {
+        "food": 4,
+        "poison": 0,
+        "neutral": 0
+      },
+      "support": 4,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "texture": "B"
+      },
+      "outcome": "food",
+      "counts": {
+        "food": 149,
+        "poison": 0,
+        "neutral": 0
+      },
+      "support": 149,
+      "confidence": 1.0,
+      "edited": true
+    },
+    {
+      "condition": {
+        "texture": "C"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 75
+      },
+      "support": 75,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "wet": "wet"
+      },
+      "outcome": "poison",
+      "counts": {
+        "food": 0,
+        "poison": 4,
+        "neutral": 0
+      },
+      "support": 4,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "wet": "dry"
+      },
+      "outcome": "food",
+      "counts": {
+        "food": 7,
+        "poison": 3,
+        "neutral": 1
+      },
+      "support": 11,
+      "confidence": 0.6363636363636364,
+      "edited": false
+    }
+  ]
+}

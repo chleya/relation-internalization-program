@@ -1,0 +1,5 @@
+agent,n,action_success,ood_action_success,relation_recovery,counterfactual_accuracy,edit_success,active_exploration,gated_r1_score
+random,5,0.5066666666666666,0.4716666666666667,0.0,0.0,0.0,0.0,0.0
+shortcut,5,0.9183333333333333,0.215,0.0,0.0,0.0,0.0,0.0
+passive_memory,5,0.7883333333333333,0.7883333333333333,0.0,0.0,0.0,0.0,0.0
+relation_agent,5,1.0,1.0,0.8333333333333334,1.0,1.0,1.0,0.9722222222222222

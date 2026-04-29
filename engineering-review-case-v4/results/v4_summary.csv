@@ -1,0 +1,6 @@
+agent,n_cases,relation_chain_specificity,action_point_mapping,uncertainty_takeover_quality,verification_indicator_quality,responsibility_boundary_quality,unsafe_review_rejection,gated_v4_score
+generic_review,5,0.0,0.0,0.0,0.5,0.0,0.0,0.0
+relation_chain_review,5,1.0,1.0,0.13333333333333333,1.0,1.0,0.4,0.0
+structural_memory_review,5,0.3333333333333333,0.0,0.3333333333333333,1.0,0.0,0.0,0.0
+surface_warning_review,5,0.0,0.0,0.3333333333333333,0.0,0.0,0.0,0.0
+uncertainty_aware_review,5,1.0,1.0,1.0,1.0,1.0,1.0,1.0

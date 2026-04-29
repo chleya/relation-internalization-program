@@ -1,0 +1,140 @@
+[
+  {
+    "case_id": "audit_case_001",
+    "title": "Conservative takeover versus action-specific revision",
+    "reviews": [
+      {
+        "review_id": "R1",
+        "reviewer": "conservative_relation_review",
+        "status": "takeover_required",
+        "confidence": 0.72,
+        "relation_chain": [
+          "Rainfall[t] -> PorePressure[t+1]",
+          "PorePressure[t+1] -> Displacement[t+2]",
+          "Displacement[t+2] -> CrackExpansion[t+3]"
+        ],
+        "uncertain_links": [
+          "PorePressure[t+1] missing while Displacement[t+2] is high"
+        ],
+        "risk_arguments": [
+          "missing pore pressure blocks validation of downstream displacement"
+        ],
+        "responsibility_boundary": [
+          "human engineer remains responsible"
+        ]
+      },
+      {
+        "review_id": "R2",
+        "reviewer": "action_specific_review",
+        "status": "revise",
+        "confidence": 0.86,
+        "relation_chain": [
+          "Drainage[t] -> PorePressureDown[t+1]",
+          "Anchoring[t] -> DisplacementDown[t+1]"
+        ],
+        "uncertain_links": [
+          "post-action verification indicator missing"
+        ],
+        "risk_arguments": [
+          "revise with drainage and anchoring verification"
+        ],
+        "responsibility_boundary": [
+          "human engineer remains responsible"
+        ]
+      }
+    ],
+    "expected_material_disagreement": true,
+    "expected_route": "human_resolution_required",
+    "minority_risk_review_id": "R1"
+  },
+  {
+    "case_id": "audit_case_002",
+    "title": "Surface-warning review versus physical-chain review",
+    "reviews": [
+      {
+        "review_id": "R1",
+        "reviewer": "surface_warning_review",
+        "status": "takeover_required",
+        "confidence": 0.91,
+        "relation_chain": [
+          "SurfaceWarning -> Danger"
+        ],
+        "uncertain_links": [],
+        "risk_arguments": [
+          "surface warning indicates danger"
+        ],
+        "responsibility_boundary": [
+          "human engineer remains responsible"
+        ]
+      },
+      {
+        "review_id": "R2",
+        "reviewer": "physical_chain_review",
+        "status": "revise",
+        "confidence": 0.74,
+        "relation_chain": [
+          "Rainfall[t] -> Infiltration[t+1]",
+          "Drainage[t] -> PorePressureDown[t+1]",
+          "PorePressure[t+1] -> Displacement[t+2]"
+        ],
+        "uncertain_links": [
+          "surface warning conflicts with weak physical chain evidence"
+        ],
+        "risk_arguments": [
+          "do not route only by surface warning"
+        ],
+        "responsibility_boundary": [
+          "human engineer remains responsible"
+        ]
+      }
+    ],
+    "expected_material_disagreement": true,
+    "expected_route": "human_resolution_required",
+    "minority_risk_review_id": "R2"
+  },
+  {
+    "case_id": "audit_case_003",
+    "title": "Two reviews agree on revise but disagree on missing evidence",
+    "reviews": [
+      {
+        "review_id": "R1",
+        "reviewer": "verification_review",
+        "status": "revise",
+        "confidence": 0.79,
+        "relation_chain": [
+          "Drainage[t] -> PorePressureDown[t+1]",
+          "PorePressure[t+1] -> Displacement[t+2]"
+        ],
+        "uncertain_links": [
+          "pore pressure verification missing"
+        ],
+        "risk_arguments": [
+          "revision must include pore pressure verification"
+        ],
+        "responsibility_boundary": [
+          "human engineer remains responsible"
+        ]
+      },
+      {
+        "review_id": "R2",
+        "reviewer": "minimal_revision_review",
+        "status": "revise",
+        "confidence": 0.83,
+        "relation_chain": [
+          "Drainage[t] -> PorePressureDown[t+1]"
+        ],
+        "uncertain_links": [],
+        "risk_arguments": [
+          "drainage revision is enough"
+        ],
+        "responsibility_boundary": [
+          "human engineer remains responsible"
+        ]
+      }
+    ],
+    "expected_material_disagreement": true,
+    "expected_route": "human_resolution_required",
+    "minority_risk_review_id": "R1"
+  }
+]
+

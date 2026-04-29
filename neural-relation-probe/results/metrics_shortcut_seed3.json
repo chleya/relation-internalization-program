@@ -1,0 +1,16 @@
+{
+  "train_mode": "shortcut",
+  "train_size": 1200.0,
+  "train_accuracy": 1.0,
+  "test_accuracy": 0.94,
+  "ood_accuracy": 0.5366666666666666,
+  "spurious_attack_accuracy": 0.02666666666666667,
+  "relation_probe_accuracy": 0.95,
+  "random_label_probe_accuracy": 0.20666666666666667,
+  "probe_selectivity": 0.7433333333333333,
+  "relation_dimension_zero_drop": 0.0,
+  "random_dimension_zero_drop": -0.00666666666666671,
+  "relation_subspace_drop": 0.42666666666666664,
+  "nuisance_subspace_drop": 0.42666666666666664,
+  "gated_neural_relation_score": 0.0
+}

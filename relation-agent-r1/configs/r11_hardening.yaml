@@ -1,0 +1,34 @@
+seeds: [0, 1, 2, 3, 4]
+
+train_steps: 250
+test_steps: 120
+reversal_adapt_steps: 300
+
+relation_agent:
+  min_support: 4
+  min_confidence: 0.65
+  decay: 0.98
+  ignored_features:
+    - warning
+    - season
+    - contractor
+  physical_action_cost: 0.25
+  inspect_cost: 0.05
+
+confounder:
+  train_correlation: 0.9
+  test_correlation: 0.1
+
+gates:
+  hidden_confounder_rejection: 0.80
+  reversal_adaptation: 0.80
+  cost_tradeoff_success: 0.80
+  candidate_expansion_precision: 0.80
+  active_discovery_score: 0.90
+
+agents:
+  - random
+  - shortcut
+  - passive_memory
+  - relation_no_explore
+  - relation_agent

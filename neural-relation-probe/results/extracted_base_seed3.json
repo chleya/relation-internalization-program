@@ -1,0 +1,125 @@
+{
+  "seed": 3,
+  "train_mode": "base",
+  "model_ood_accuracy": 1.0,
+  "model_spurious_attack_accuracy": 1.0,
+  "table_ood_accuracy": 1.0,
+  "table_spurious_attack_accuracy": 1.0,
+  "table_relation_alignment": 1.0,
+  "edit_before_action": "eat",
+  "edit_after_action": "avoid",
+  "edit_success": true,
+  "rules_before_edit": [
+    {
+      "condition": {
+        "texture": "A",
+        "wet": "dry"
+      },
+      "outcome": "food",
+      "confidence": 0.9968492341017802,
+      "probe_relation": "A_dry"
+    },
+    {
+      "condition": {
+        "texture": "A",
+        "wet": "wet"
+      },
+      "outcome": "poison",
+      "confidence": 0.9762654318533383,
+      "probe_relation": "A_wet"
+    },
+    {
+      "condition": {
+        "texture": "B",
+        "wet": "dry"
+      },
+      "outcome": "poison",
+      "confidence": 0.9723522740415198,
+      "probe_relation": "B_dry"
+    },
+    {
+      "condition": {
+        "texture": "B",
+        "wet": "wet"
+      },
+      "outcome": "poison",
+      "confidence": 0.9795221966774995,
+      "probe_relation": "B_wet"
+    },
+    {
+      "condition": {
+        "texture": "C",
+        "wet": "dry"
+      },
+      "outcome": "neutral",
+      "confidence": 0.9851573712205204,
+      "probe_relation": "C_dry"
+    },
+    {
+      "condition": {
+        "texture": "C",
+        "wet": "wet"
+      },
+      "outcome": "neutral",
+      "confidence": 0.9909321888296447,
+      "probe_relation": "C_wet"
+    }
+  ],
+  "rules_after_edit": [
+    {
+      "condition": {
+        "texture": "A",
+        "wet": "dry"
+      },
+      "outcome": "poison",
+      "confidence": 0.9968492341017802,
+      "probe_relation": "A_dry"
+    },
+    {
+      "condition": {
+        "texture": "A",
+        "wet": "wet"
+      },
+      "outcome": "poison",
+      "confidence": 0.9762654318533383,
+      "probe_relation": "A_wet"
+    },
+    {
+      "condition": {
+        "texture": "B",
+        "wet": "dry"
+      },
+      "outcome": "poison",
+      "confidence": 0.9723522740415198,
+      "probe_relation": "B_dry"
+    },
+    {
+      "condition": {
+        "texture": "B",
+        "wet": "wet"
+      },
+      "outcome": "poison",
+      "confidence": 0.9795221966774995,
+      "probe_relation": "B_wet"
+    },
+    {
+      "condition": {
+        "texture": "C",
+        "wet": "dry"
+      },
+      "outcome": "neutral",
+      "confidence": 0.9851573712205204,
+      "probe_relation": "C_dry"
+    },
+    {
+      "condition": {
+        "texture": "C",
+        "wet": "wet"
+      },
+      "outcome": "neutral",
+      "confidence": 0.9909321888296447,
+      "probe_relation": "C_wet"
+    }
+  ],
+  "gated_extraction_score": 0.9999999999999999
+}

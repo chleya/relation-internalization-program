@@ -1,0 +1,18 @@
+seed: 0
+
+env:
+  n_steps_base: 500
+  n_steps_reversal_pre: 300
+  n_steps_reversal_post: 300
+  n_steps_ood_train: 500
+  n_steps_ood_test: 200
+
+relation_model:
+  max_order: 2
+  min_support: 3
+  specificity_weight: 1.0
+  confidence_weight: 1.0
+
+evaluation:
+  adaptation_threshold: 0.5
+  adaptation_window: 20

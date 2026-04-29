@@ -1,0 +1,42 @@
+cases_path: cases/toy_cases.json
+
+agents:
+  - generic_review
+  - surface_warning_review
+  - structural_memory_review
+  - relation_chain_review
+  - uncertainty_aware_review
+  - schema_template_review
+  - fluent_nonspecific_review
+  - case_order_memory_review
+  - boundary_boilerplate_review
+  - unsafe_approval_review
+  - irrelevant_variable_review
+  - hidden_approval_echo_review
+  - paraphrase_fragile_review
+  - field_order_fragile_review
+
+v4_gates:
+  relation_chain_specificity: 0.8
+  action_point_mapping: 0.8
+  uncertainty_takeover_quality: 0.8
+  verification_indicator_quality: 0.7
+  responsibility_boundary_quality: 0.9
+  unsafe_review_rejection: 0.9
+
+mutation_gates:
+  mutated_case_consistency: 0.8
+  irrelevant_variable_rejection: 0.9
+  paraphrase_relation_robustness: 0.8
+  hidden_unsafe_phrase_rejection: 0.9
+  field_order_robustness: 0.8
+
+outputs:
+  summary: results/v42_mutation_summary.csv
+  records: results/v42_mutation_records.csv
+  mutated_cases: results/v42_mutated_cases.json
+  report: reports/V4_2_MUTATION_REPORT.md
+  self_audit: reports/V4_2_SELF_AUDIT.md
+  claims: reports/V4_2_CLAIMS.md
+  limitations: reports/V4_2_LIMITATIONS.md
+

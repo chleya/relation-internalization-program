@@ -1,0 +1,8 @@
+seeds: [0, 1, 2, 3, 4]
+models:
+  - pure_prediction
+  - prediction_bottleneck
+  - counterfactual_training
+  - edit_pressure_training
+  - explicit_table_oracle
+base_config: configs/base.yaml

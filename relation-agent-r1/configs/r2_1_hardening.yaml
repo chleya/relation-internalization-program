@@ -1,0 +1,23 @@
+seeds: [0, 1, 2, 3, 4]
+
+inspection_cost: 0.20
+inspection_budget: 18
+budget_exhaustion_penalty: 0.50
+unsafe_automation_penalty: 1.00
+inspection_noise: 0.10
+cost_trials: 90
+non_oracle_trials: 80
+
+gates:
+  critical_missing_inspection_recall: 0.85
+  noncritical_missing_no_inspect_rate: 0.80
+  inspection_precision: 0.75
+  unsafe_automation_rate: 0.10
+  unnecessary_inspection_rate: 0.25
+  conflict_localization_accuracy: 0.75
+  non_oracle_inspection_update_accuracy: 0.70
+  cost_adjusted_success_margin: 0.10
+
+agents:
+  - missing_always_inspect
+  - relation_specific_uncertainty_agent

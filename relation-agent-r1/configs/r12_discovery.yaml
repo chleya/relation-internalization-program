@@ -1,0 +1,28 @@
+seeds: [0, 1, 2, 3, 4]
+
+train_steps: 300
+test_steps: 120
+new_link_train_steps: 350
+
+discovery_agent:
+  min_support: 6
+  min_confidence: 0.93
+  min_action_trials: 8
+
+nuisance:
+  train_correlation: 0.9
+  test_correlation: 0.1
+
+gates:
+  unmarked_nuisance_rejection: 0.80
+  new_link_discovery: 0.90
+  adaptive_exploration: 0.90
+  discovered_relation_precision: 0.80
+  discovery_action_success: 0.75
+
+agents:
+  - random
+  - shortcut
+  - passive_memory
+  - relation_agent
+  - discovery_relation_agent

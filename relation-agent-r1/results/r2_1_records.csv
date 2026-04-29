@@ -1,0 +1,11 @@
+agent,seed,critical_missing_inspection_recall,noncritical_missing_no_inspect_rate,inspection_precision,unnecessary_inspection_rate,unsafe_automation_rate,conflict_localization_accuracy,cost_adjusted_success,non_oracle_inspection_update_accuracy
+missing_always_inspect,0,1.0,0.0,0.3333333333333333,1.0,0.375,0.0,-0.5444444444444444,0.95
+missing_always_inspect,1,1.0,0.0,0.3333333333333333,1.0,0.375,0.0,-0.5222222222222221,0.8625
+missing_always_inspect,2,1.0,0.0,0.3333333333333333,1.0,0.375,0.0,-0.5333333333333333,0.9
+missing_always_inspect,3,1.0,0.0,0.3333333333333333,1.0,0.375,0.0,-0.5111111111111111,0.9375
+missing_always_inspect,4,1.0,0.0,0.3333333333333333,1.0,0.375,0.0,-0.49999999999999994,0.925
+relation_specific_uncertainty_agent,0,1.0,1.0,1.0,0.0,0.0,1.0,0.4288888888888889,0.95
+relation_specific_uncertainty_agent,1,1.0,1.0,1.0,0.0,0.0,1.0,0.7111111111111111,0.8625
+relation_specific_uncertainty_agent,2,1.0,1.0,1.0,0.0,0.0,1.0,0.5722222222222222,0.9
+relation_specific_uncertainty_agent,3,1.0,1.0,1.0,0.0,0.0,1.0,0.4955555555555556,0.9375
+relation_specific_uncertainty_agent,4,1.0,1.0,1.0,0.0,0.0,1.0,0.5311111111111111,0.925

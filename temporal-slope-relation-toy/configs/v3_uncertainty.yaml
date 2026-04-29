@@ -1,0 +1,38 @@
+seeds: [0, 1, 2, 3, 4]
+
+sequence:
+  length: 8
+  n_train_sequences: 250
+  n_test_sequences: 200
+
+delay_map:
+  rainfall_delay: 1
+
+observation:
+  missing_rate: 0.18
+  noise_rate: 0.12
+  delayed_report_rate: 0.15
+  missing_fields:
+    - rainfall
+    - pore_pressure
+    - displacement
+    - crack
+    - monitoring
+  noisy_fields:
+    - rainfall
+    - pore_pressure
+    - displacement
+    - crack
+    - monitoring
+  delayed_fields:
+    - pore_pressure
+    - displacement
+    - crack
+
+gates:
+  noisy_action_success: 0.75
+  takeover_precision: 0.70
+  takeover_recall: 0.80
+  unsafe_automation_rate_max: 0.10
+  uncertain_relation_audit_score: 0.80
+

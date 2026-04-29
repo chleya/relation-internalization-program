@@ -1,0 +1,105 @@
+{
+  "context": {
+    "rainfall": "high",
+    "drainage": "poor",
+    "anchoring": "none",
+    "toe_excavation": "no",
+    "monitoring": "sparse",
+    "weather_label": "calm",
+    "contractor_report": "normal"
+  },
+  "relation_chain": {
+    "plan": {
+      "variables": [
+        "rainfall",
+        "infiltration",
+        "pore_pressure",
+        "displacement",
+        "crack",
+        "risk"
+      ],
+      "relation_chain": [
+        "Rainfall -> Infiltration",
+        "Infiltration -> PorePressure",
+        "PorePressure -> Displacement",
+        "Displacement -> CrackExpansion",
+        "CrackExpansion -> RiskUp"
+      ],
+      "action": "stop_work",
+      "action_point": "StopWork -> ExposureRiskDown",
+      "verification_indicators": [
+        "exposure",
+        "displacement",
+        "crack"
+      ],
+      "failure_conditions": [
+        "pore_pressure does not decrease",
+        "displacement accelerates",
+        "crack expands"
+      ],
+      "human_takeover_conditions": [
+        "rapid displacement increase",
+        "new through-crack",
+        "monitoring uncertainty remains high"
+      ],
+      "responsibility_chain": [
+        "monitoring engineer",
+        "geotechnical reviewer",
+        "site commander"
+      ],
+      "risk": "high"
+    },
+    "review_score": {
+      "item_scores": {
+        "variables": 2,
+        "relation_chain": 2,
+        "action_point": 2,
+        "verification_indicators": 2,
+        "failure_conditions": 2,
+        "human_takeover_conditions": 2,
+        "responsibility_chain": 2
+      },
+      "total": 14,
+      "max_total": 14,
+      "passed": true
+    }
+  },
+  "generic_review": {
+    "plan": {
+      "variables": [
+        "rainfall",
+        "slope risk"
+      ],
+      "relation_chain": [
+        "rainfall affects slope safety",
+        "support improves stability"
+      ],
+      "action": "drain",
+      "action_point": "strengthen drainage and support",
+      "verification_indicators": [
+        "site condition"
+      ],
+      "failure_conditions": [
+        "risk remains high"
+      ],
+      "human_takeover_conditions": [],
+      "responsibility_chain": [
+        "project team"
+      ]
+    },
+    "review_score": {
+      "item_scores": {
+        "variables": 2,
+        "relation_chain": 0,
+        "action_point": 1,
+        "verification_indicators": 1,
+        "failure_conditions": 1,
+        "human_takeover_conditions": 0,
+        "responsibility_chain": 1
+      },
+      "total": 6,
+      "max_total": 14,
+      "passed": false
+    }
+  }
+}

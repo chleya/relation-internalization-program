@@ -1,0 +1,6 @@
+shell,n_cases,audit_log_completeness,approval_gate_enforcement,takeover_routing_quality,replay_consistency,responsibility_traceability,non_deployment_boundary,gated_v5_score
+auto_approve_shell,3,1.0,0.0,0.0,1.0,0.0,0.6666666666666666,0.0
+compliant_shell,3,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+no_log_shell,3,0.3,0.0,1.0,0.0,0.0,0.0,0.0
+no_replay_shell,3,0.9,1.0,1.0,0.0,0.3333333333333333,1.0,0.0
+no_responsibility_shell,3,0.9,1.0,1.0,1.0,0.0,1.0,0.0

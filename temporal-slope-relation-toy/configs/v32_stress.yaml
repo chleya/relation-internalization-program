@@ -1,0 +1,13 @@
+seeds: [0, 1, 2, 3, 4]
+
+sequence:
+  length: 10
+  n_test_sequences: 200
+
+gates:
+  long_missing_takeover_recall: 0.9
+  correlated_failure_recall: 0.9
+  drift_conflict_takeover: 0.85
+  multi_conflict_audit_score: 0.85
+  delayed_response_safety: 0.85
+

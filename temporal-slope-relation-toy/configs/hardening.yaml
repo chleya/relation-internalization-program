@@ -1,0 +1,40 @@
+seeds: [0, 1, 2, 3, 4]
+
+sequence:
+  length: 8
+  n_train_sequences: 300
+  n_test_sequences: 200
+
+variable_delay:
+  candidate_delays: [1, 2, 3]
+  train_delay_mode: "mixed"
+  test_delay_mode: "heldout"
+  heldout_delay: 3
+
+false_shortcut:
+  enabled: true
+  train_correlation: 0.9
+  test_correlation: 0.1
+  shortcut_features:
+    - surface_warning
+    - weather_label
+    - contractor_report
+
+delay_edit:
+  links:
+    - "Rainfall -> PorePressure"
+    - "PorePressure -> Displacement"
+    - "Displacement -> Crack"
+    - "Drainage -> PorePressureDown"
+    - "Anchoring -> DisplacementDown"
+  edit_targets:
+    - [1, 2]
+    - [2, 3]
+    - [3, 1]
+
+gates:
+  variable_delay_success: 0.8
+  false_delay_shortcut_rejection: 0.8
+  multi_link_delay_edit_success: 0.8
+  temporal_audit_consistency: 0.9
+  anti_template_generalization: 0.8

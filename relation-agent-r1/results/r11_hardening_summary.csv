@@ -1,0 +1,6 @@
+agent,n,hidden_confounder_rejection,reversal_adaptation,cost_tradeoff_success,candidate_expansion_precision,active_discovery_score,hardening_r11_gated_score
+random,5,0.44333333333333336,0.4583333333333333,0.4666666666666666,0.0,0.0,0.0
+shortcut,5,0.92,0.9033333333333333,0.0,0.0,0.0,0.0
+passive_memory,5,0.7766666666666666,0.7066666666666667,0.6666666666666666,0.0,0.0,0.0
+relation_no_explore,5,0.7766666666666666,0.7066666666666667,0.6666666666666666,1.0,0.0,0.0
+relation_agent,5,1.0,1.0,1.0,1.0,1.0,1.0

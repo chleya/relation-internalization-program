@@ -1,0 +1,136 @@
+{
+  "relations": [
+    {
+      "condition": {
+        "texture": "A",
+        "wet": "dry"
+      },
+      "outcome": "poison",
+      "counts": {
+        "food": 0,
+        "poison": 187,
+        "neutral": 0
+      },
+      "support": 187,
+      "confidence": 1.0,
+      "edited": true
+    },
+    {
+      "condition": {
+        "texture": "A",
+        "wet": "wet"
+      },
+      "outcome": "food",
+      "counts": {
+        "food": 77,
+        "poison": 0,
+        "neutral": 0
+      },
+      "support": 77,
+      "confidence": 1.0,
+      "edited": true
+    },
+    {
+      "condition": {
+        "texture": "B",
+        "wet": "dry"
+      },
+      "outcome": "poison",
+      "counts": {
+        "food": 0,
+        "poison": 108,
+        "neutral": 0
+      },
+      "support": 108,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "texture": "B",
+        "wet": "wet"
+      },
+      "outcome": "poison",
+      "counts": {
+        "food": 0,
+        "poison": 48,
+        "neutral": 0
+      },
+      "support": 48,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "texture": "C",
+        "wet": "dry"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 57
+      },
+      "support": 57,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "texture": "C",
+        "wet": "wet"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 23
+      },
+      "support": 23,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "texture": "B"
+      },
+      "outcome": "food",
+      "counts": {
+        "food": 156,
+        "poison": 0,
+        "neutral": 0
+      },
+      "support": 156,
+      "confidence": 1.0,
+      "edited": true
+    },
+    {
+      "condition": {
+        "texture": "C"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 80
+      },
+      "support": 80,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "wet": "dry"
+      },
+      "outcome": "food",
+      "counts": {
+        "food": 169,
+        "poison": 102,
+        "neutral": 53
+      },
+      "support": 324,
+      "confidence": 0.5216049382716049,
+      "edited": false
+    }
+  ]
+}

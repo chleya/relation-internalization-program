@@ -1,0 +1,6 @@
+agent,n,inspection_target_accuracy,information_gain_efficiency,budgeted_safe_action_rate,unsafe_automation_rate,overinspection_rate,sequential_update_accuracy,cost_adjusted_success,r3_gated_score
+random_inspect_field,5,0.0,0.14,0.0,0.0,1.0,0.92,-0.8,0.0
+first_missing_inspect,5,0.0,-0.15999999999999998,0.0,0.0,1.0,0.92,-0.8,0.0
+missing_always_inspect,5,0.0,-0.15999999999999998,0.0,0.0,1.0,0.92,-0.8,0.0
+risk_first_inspect,5,1.0,1.0,0.0,0.0,1.0,0.92,-0.8,0.0
+active_inspection_agent,5,1.0,1.0,1.0,0.0,0.0,0.8400000000000001,0.6900000000000001,0.9328571428571428

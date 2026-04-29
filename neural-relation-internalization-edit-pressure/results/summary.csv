@@ -1,0 +1,6 @@
+model,n,train_accuracy,ood_accuracy,spurious_attack_accuracy,shortcut_rejection_accuracy,reversal_adaptation_accuracy,counterfactual_consistency,probe_relation_accuracy,probe_nuisance_accuracy,probe_selectivity,relation_subspace_drop,nuisance_subspace_drop,table_alignment,table_ood_accuracy,table_spurious_attack_accuracy,table_edit_success,edit_locality,gated_internalization_score
+pure_prediction,5,0.9956000089645386,0.9131999969482422,0.6363999903202057,0.6363999903202057,1.0,0.833,1.0,1.0,0.75,0.0871999979019165,0.0,1.0,1.0,1.0,1.0,1.0,0.0
+prediction_bottleneck,5,1.0,1.0,1.0,1.0,1.0,1.0,0.7896000027656556,0.3471999943256378,0.5396000027656556,0.5068000018596649,0.5068000018596649,1.0,1.0,1.0,1.0,1.0,0.0
+counterfactual_training,5,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.75,0.40559998750686643,0.0,1.0,1.0,1.0,1.0,1.0,0.9811199975013732
+edit_pressure_training,5,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.75,0.23480000495910644,0.0,1.0,1.0,1.0,1.0,1.0,0.19999999999999998
+explicit_table_oracle,5,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,0.75,1.0,0.0,1.0,1.0,1.0,1.0,1.0,0.9999999999999999

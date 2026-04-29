@@ -1,0 +1,7 @@
+resolver,n_cases,disagreement_detection,evidence_comparison_quality,minority_risk_preservation,no_auto_resolution,human_resolution_routing,audit_trail_completeness,responsibility_boundary,gated_v6_score
+auto_compromise_resolver,3,1.0,0.0,0.0,0.0,0.0,0.9090909090909091,0.0,0.0
+compliant_audit_resolver,3,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+confidence_only_resolver,3,0.0,0.0,0.0,0.0,0.0,0.9090909090909091,0.0,0.0
+ignore_minority_risk_resolver,3,1.0,0.0,0.0,1.0,1.0,0.9090909090909091,0.3333333333333333,0.0
+majority_vote_resolver,3,0.6666666666666666,0.0,0.0,0.0,0.0,0.8181818181818182,0.0,0.0
+no_audit_trail_resolver,3,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0

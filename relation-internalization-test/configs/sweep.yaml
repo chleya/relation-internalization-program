@@ -1,0 +1,13 @@
+seeds: [0, 1, 2, 3, 4]
+
+agents:
+  - majority
+  - memory
+  - fitting
+  - predictive
+  - decision_tree
+  - relation
+  - wide_relation
+  - robust_wide_relation
+
+base_config: configs/base.yaml

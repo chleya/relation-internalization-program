@@ -1,0 +1,11 @@
+shell,base_gated_v5_score,fake_replay_rejection,gate_label_enforcement,responsibility_route_consistency,relation_evidence_preservation,route_tamper_rejection,hardening_v51_gated_score
+compliant_shell,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+auto_approve_shell,0.0,1.0,0.0,0.0,1.0,0.0,0.0
+no_log_shell,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+no_replay_shell,0.0,0.0,1.0,0.0,1.0,0.0,0.0
+no_responsibility_shell,0.0,1.0,1.0,0.0,1.0,1.0,0.0
+fake_replay_shell,0.0,0.0,1.0,1.0,1.0,0.0,0.0
+gate_label_only_shell,0.0,1.0,0.0,0.0,1.0,0.0,0.0
+responsibility_boilerplate_shell,0.0,1.0,0.0,0.0,1.0,0.0,0.0
+missing_relation_evidence_shell,0.9833333333333334,1.0,1.0,1.0,0.0,1.0,0.0
+route_tampering_shell,0.0,0.0,0.0,0.0,1.0,0.0,0.0

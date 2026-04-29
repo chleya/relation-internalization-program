@@ -1,0 +1,6 @@
+agent,n,unmarked_nuisance_rejection,new_link_discovery,adaptive_exploration,discovered_relation_precision,discovery_action_success,discovery_r12_gated_score
+random,5,0.4816666666666667,0.0,0.0,0.0,0.4666666666666667,0.0
+shortcut,5,0.915,0.0,0.0,0.0,0.9183333333333333,0.0
+passive_memory,5,0.7733333333333333,0.0,0.0,0.0,0.7883333333333333,0.0
+relation_agent,5,1.0,0.0,0.0,0.0,1.0,0.0
+discovery_relation_agent,5,1.0,1.0,1.0,1.0,1.0,1.0

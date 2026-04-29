@@ -1,0 +1,11 @@
+seed,train_mode,model_ood_accuracy,model_spurious_attack_accuracy,table_ood_accuracy,table_spurious_attack_accuracy,table_relation_alignment,edit_before_action,edit_after_action,edit_success,gated_extraction_score
+0,base,1.0,1.0,1.0,1.0,1.0,eat,avoid,True,0.9999999999999999
+1,base,1.0,1.0,1.0,1.0,1.0,eat,avoid,True,0.9999999999999999
+2,base,1.0,1.0,1.0,1.0,1.0,eat,avoid,True,0.9999999999999999
+3,base,1.0,1.0,1.0,1.0,1.0,eat,avoid,True,0.9999999999999999
+4,base,1.0,1.0,1.0,1.0,1.0,eat,avoid,True,0.9999999999999999
+0,shortcut,0.77,0.38333333333333336,0.45666666666666667,0.45666666666666667,0.3333333333333333,eat,avoid,True,0.0
+1,shortcut,0.5266666666666666,0.04666666666666667,0.4666666666666667,0.48333333333333334,0.16666666666666666,eat,avoid,True,0.0
+2,shortcut,0.4633333333333333,0.07,0.47,0.4866666666666667,0.3333333333333333,eat,avoid,True,0.0
+3,shortcut,0.5433333333333333,0.05333333333333334,0.36,0.35,0.5,eat,avoid,True,0.0
+4,shortcut,0.61,0.03,0.52,0.5033333333333333,0.3333333333333333,eat,avoid,True,0.0

@@ -1,0 +1,11 @@
+agent,base_gated_v4_score,schema_template_rejection,fluent_nonspecific_rejection,case_order_robustness,responsibility_boilerplate_rejection,unsafe_approval_rejection,hardening_v41_gated_score
+generic_review,0.0,0.0,0.0,0.1,0.0,0.4,0.0
+surface_warning_review,0.0,0.12000000000000001,0.05,0.06666666666666667,0.0,0.8,0.0
+structural_memory_review,0.0,0.26666666666666666,0.08333333333333333,0.3333333333333333,0.0,1.0,0.0
+relation_chain_review,0.0,0.68,0.75,0.7066666666666667,0.6666666666666666,0.4,0.0
+uncertainty_aware_review,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+schema_template_review,0.0,0.24000000000000002,0.3,0.5,0.06666666666666667,1.0,0.0
+fluent_nonspecific_review,0.0,0.17,0.05,0.33999999999999997,0.06666666666666667,0.4,0.0
+case_order_memory_review,1.0,1.0,1.0,0.44,1.0,1.0,0.0
+boundary_boilerplate_review,0.0,0.08,0.0,0.20666666666666667,0.0,0.4,0.0
+unsafe_approval_review,0.0,0.8,1.0,0.7333333333333333,1.0,0.0,0.0

@@ -1,0 +1,20 @@
+seed: 0
+seeds: [0, 1, 2, 3, 4]
+
+train_steps: 250
+test_steps: 120
+
+gates:
+  action_success: 0.75
+  ood_action_success: 0.70
+  relation_recovery: 0.70
+  counterfactual_accuracy: 0.80
+  edit_success: 0.90
+  active_exploration: 0.90
+
+agents:
+  - random
+  - shortcut
+  - passive_memory
+  - relation_agent
+

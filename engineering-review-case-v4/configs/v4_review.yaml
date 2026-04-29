@@ -1,0 +1,26 @@
+cases_path: cases/toy_cases.json
+negative_reviews_path: cases/negative_reviews.json
+
+agents:
+  - generic_review
+  - surface_warning_review
+  - structural_memory_review
+  - relation_chain_review
+  - uncertainty_aware_review
+
+gates:
+  relation_chain_specificity: 0.8
+  action_point_mapping: 0.8
+  uncertainty_takeover_quality: 0.8
+  verification_indicator_quality: 0.7
+  responsibility_boundary_quality: 0.9
+  unsafe_review_rejection: 0.9
+
+outputs:
+  summary: results/v4_summary.csv
+  records: results/v4_records.csv
+  report: reports/V4_ENGINEERING_REVIEW_REPORT.md
+  self_audit: reports/V4_SELF_AUDIT.md
+  claims: reports/V4_CLAIMS.md
+  limitations: reports/V4_LIMITATIONS.md
+

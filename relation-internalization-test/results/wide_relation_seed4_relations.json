@@ -1,0 +1,712 @@
+{
+  "relations": [
+    {
+      "condition": {
+        "color": "color_00",
+        "odor": "odor_00"
+      },
+      "outcome": "food",
+      "counts": {
+        "food": 178,
+        "poison": 0,
+        "neutral": 0
+      },
+      "support": 178,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "color": "color_01",
+        "odor": "odor_01"
+      },
+      "outcome": "poison",
+      "counts": {
+        "food": 0,
+        "poison": 252,
+        "neutral": 0
+      },
+      "support": 252,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "color": "color_02",
+        "odor": "odor_02"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 17
+      },
+      "support": 17,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "color": "color_02",
+        "odor": "odor_03"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 16
+      },
+      "support": 16,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "color": "color_03",
+        "odor": "odor_02"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 20
+      },
+      "support": 20,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "color": "color_03",
+        "odor": "odor_03"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 17
+      },
+      "support": 17,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "texture": "A",
+        "color": "color_00"
+      },
+      "outcome": "food",
+      "counts": {
+        "food": 178,
+        "poison": 0,
+        "neutral": 0
+      },
+      "support": 178,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "texture": "A",
+        "color": "color_01"
+      },
+      "outcome": "poison",
+      "counts": {
+        "food": 0,
+        "poison": 86,
+        "neutral": 0
+      },
+      "support": 86,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "texture": "A",
+        "odor": "odor_00"
+      },
+      "outcome": "food",
+      "counts": {
+        "food": 178,
+        "poison": 0,
+        "neutral": 0
+      },
+      "support": 178,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "texture": "A",
+        "odor": "odor_01"
+      },
+      "outcome": "poison",
+      "counts": {
+        "food": 0,
+        "poison": 86,
+        "neutral": 0
+      },
+      "support": 86,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "texture": "A",
+        "wet": "dry"
+      },
+      "outcome": "poison",
+      "counts": {
+        "food": 0,
+        "poison": 178,
+        "neutral": 0
+      },
+      "support": 178,
+      "confidence": 1.0,
+      "edited": true
+    },
+    {
+      "condition": {
+        "texture": "A",
+        "wet": "wet"
+      },
+      "outcome": "food",
+      "counts": {
+        "food": 86,
+        "poison": 0,
+        "neutral": 0
+      },
+      "support": 86,
+      "confidence": 1.0,
+      "edited": true
+    },
+    {
+      "condition": {
+        "texture": "B",
+        "color": "color_01"
+      },
+      "outcome": "poison",
+      "counts": {
+        "food": 0,
+        "poison": 166,
+        "neutral": 0
+      },
+      "support": 166,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "texture": "B",
+        "odor": "odor_01"
+      },
+      "outcome": "poison",
+      "counts": {
+        "food": 0,
+        "poison": 166,
+        "neutral": 0
+      },
+      "support": 166,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "texture": "B",
+        "wet": "dry"
+      },
+      "outcome": "poison",
+      "counts": {
+        "food": 0,
+        "poison": 119,
+        "neutral": 0
+      },
+      "support": 119,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "texture": "B",
+        "wet": "wet"
+      },
+      "outcome": "poison",
+      "counts": {
+        "food": 0,
+        "poison": 47,
+        "neutral": 0
+      },
+      "support": 47,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "texture": "C",
+        "color": "color_02"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 33
+      },
+      "support": 33,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "texture": "C",
+        "color": "color_03"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 37
+      },
+      "support": 37,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "texture": "C",
+        "odor": "odor_02"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 37
+      },
+      "support": 37,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "texture": "C",
+        "odor": "odor_03"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 33
+      },
+      "support": 33,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "texture": "C",
+        "wet": "dry"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 51
+      },
+      "support": 51,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "texture": "C",
+        "wet": "wet"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 19
+      },
+      "support": 19,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "wet": "dry",
+        "color": "color_00"
+      },
+      "outcome": "food",
+      "counts": {
+        "food": 178,
+        "poison": 0,
+        "neutral": 0
+      },
+      "support": 178,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "wet": "dry",
+        "color": "color_01"
+      },
+      "outcome": "poison",
+      "counts": {
+        "food": 0,
+        "poison": 119,
+        "neutral": 0
+      },
+      "support": 119,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "wet": "dry",
+        "color": "color_02"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 25
+      },
+      "support": 25,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "wet": "dry",
+        "color": "color_03"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 26
+      },
+      "support": 26,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "wet": "dry",
+        "odor": "odor_00"
+      },
+      "outcome": "food",
+      "counts": {
+        "food": 178,
+        "poison": 0,
+        "neutral": 0
+      },
+      "support": 178,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "wet": "dry",
+        "odor": "odor_01"
+      },
+      "outcome": "poison",
+      "counts": {
+        "food": 0,
+        "poison": 119,
+        "neutral": 0
+      },
+      "support": 119,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "wet": "dry",
+        "odor": "odor_02"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 29
+      },
+      "support": 29,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "wet": "dry",
+        "odor": "odor_03"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 22
+      },
+      "support": 22,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "wet": "wet",
+        "color": "color_01"
+      },
+      "outcome": "poison",
+      "counts": {
+        "food": 0,
+        "poison": 133,
+        "neutral": 0
+      },
+      "support": 133,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "wet": "wet",
+        "color": "color_02"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 8
+      },
+      "support": 8,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "wet": "wet",
+        "color": "color_03"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 11
+      },
+      "support": 11,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "wet": "wet",
+        "odor": "odor_01"
+      },
+      "outcome": "poison",
+      "counts": {
+        "food": 0,
+        "poison": 133,
+        "neutral": 0
+      },
+      "support": 133,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "wet": "wet",
+        "odor": "odor_02"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 8
+      },
+      "support": 8,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "wet": "wet",
+        "odor": "odor_03"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 11
+      },
+      "support": 11,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "color": "color_00"
+      },
+      "outcome": "food",
+      "counts": {
+        "food": 178,
+        "poison": 0,
+        "neutral": 0
+      },
+      "support": 178,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "color": "color_01"
+      },
+      "outcome": "poison",
+      "counts": {
+        "food": 0,
+        "poison": 252,
+        "neutral": 0
+      },
+      "support": 252,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "color": "color_02"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 33
+      },
+      "support": 33,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "color": "color_03"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 37
+      },
+      "support": 37,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "odor": "odor_00"
+      },
+      "outcome": "food",
+      "counts": {
+        "food": 178,
+        "poison": 0,
+        "neutral": 0
+      },
+      "support": 178,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "odor": "odor_01"
+      },
+      "outcome": "poison",
+      "counts": {
+        "food": 0,
+        "poison": 252,
+        "neutral": 0
+      },
+      "support": 252,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "odor": "odor_02"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 37
+      },
+      "support": 37,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "odor": "odor_03"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 33
+      },
+      "support": 33,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "texture": "B"
+      },
+      "outcome": "food",
+      "counts": {
+        "food": 166,
+        "poison": 0,
+        "neutral": 0
+      },
+      "support": 166,
+      "confidence": 1.0,
+      "edited": true
+    },
+    {
+      "condition": {
+        "texture": "C"
+      },
+      "outcome": "neutral",
+      "counts": {
+        "food": 0,
+        "poison": 0,
+        "neutral": 70
+      },
+      "support": 70,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "wet": "dry"
+      },
+      "outcome": "food",
+      "counts": {
+        "food": 5,
+        "poison": 0,
+        "neutral": 0
+      },
+      "support": 5,
+      "confidence": 1.0,
+      "edited": false
+    },
+    {
+      "condition": {
+        "wet": "wet"
+      },
+      "outcome": "poison",
+      "counts": {
+        "food": 0,
+        "poison": 15,
+        "neutral": 1
+      },
+      "support": 16,
+      "confidence": 0.9375,
+      "edited": false
+    }
+  ]
+}

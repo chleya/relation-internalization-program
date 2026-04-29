@@ -1,0 +1,3 @@
+agent,n,critical_missing_inspection_recall,noncritical_missing_no_inspect_rate,inspection_precision,unnecessary_inspection_rate,unsafe_automation_rate,conflict_localization_accuracy,cost_adjusted_success,non_oracle_inspection_update_accuracy,r2_1_gated_score
+missing_always_inspect,5,1.0,0.0,0.3333333333333333,1.0,0.375,0.0,-0.5222222222222221,0.915,0.0
+relation_specific_uncertainty_agent,5,1.0,1.0,1.0,0.0,0.0,1.0,0.5477777777777778,0.915,0.9328472222222223
