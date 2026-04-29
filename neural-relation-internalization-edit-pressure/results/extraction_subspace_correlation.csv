@@ -1,0 +1,6 @@
+model,metric,relation_subspace_drop_correlation
+edit_pressure_training,table_alignment,0.0
+edit_pressure_training,table_ood_accuracy,0.0
+edit_pressure_training,table_spurious_attack_accuracy,0.0
+edit_pressure_training,table_edit_success,0.0
+edit_pressure_training,edit_locality,0.0

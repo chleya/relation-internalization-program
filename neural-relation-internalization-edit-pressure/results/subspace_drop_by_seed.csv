@@ -1,0 +1,6 @@
+model,seed,relation_subspace_drop,nuisance_subspace_drop,gated_internalization_score
+edit_pressure_training,0,0.18800002336502075,0.0,0.0
+edit_pressure_training,1,0.1380000114440918,0.0,0.0
+edit_pressure_training,2,0.527999997138977,0.0,0.9999999999999999
+edit_pressure_training,3,0.14399999380111694,0.0,0.0
+edit_pressure_training,4,0.17599999904632568,0.0,0.0

@@ -1,0 +1,6 @@
+model,seed,ood_pass,shortcut_rejection_pass,reversal_pass,counterfactual_pass,table_alignment_pass,table_edit_pass,edit_locality_pass,relation_subspace_drop_pass,nuisance_subspace_drop_pass,all_gates_pass
+edit_pressure_training,0,True,True,True,True,True,True,True,False,True,False
+edit_pressure_training,1,True,True,True,True,True,True,True,False,True,False
+edit_pressure_training,2,True,True,True,True,True,True,True,True,True,True
+edit_pressure_training,3,True,True,True,True,True,True,True,False,True,False
+edit_pressure_training,4,True,True,True,True,True,True,True,False,True,False

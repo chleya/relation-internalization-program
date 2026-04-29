@@ -19,6 +19,7 @@ pip install -r requirements.txt
 pytest -q
 python -m src.run_sweep --config configs/sweep.yaml
 python -m src.visualize --summary results/summary.csv
+python -m src.run_failure_localization --config configs/sweep.yaml
 ```
 
 Single model:
@@ -40,6 +41,11 @@ figures/table_extraction.png
 figures/subspace_drops.png
 reports/AUTO_REPORT.md
 reports/SELF_AUDIT.md
+reports/EDIT_PRESSURE_FAILURE_ANALYSIS.md
+results/gate_failure_matrix.csv
+results/subspace_drop_by_seed.csv
+results/intervention_site_analysis.csv
+results/extraction_subspace_correlation.csv
 ```
 
 ## Claim Boundary
