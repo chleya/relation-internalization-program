@@ -35,6 +35,7 @@ This lets the paper make a clean contribution: not a new large model, but a stag
 | Stage | Positive Result | Alternative Explanation Ruled Out |
 | --- | --- | --- |
 | Neural probe | Base neural model has readable, behaviorally relevant relation subspace; extracted table works under OOD/spurious attack. | Probe readability alone; hidden shortcut features; editable but wrong extracted table. |
+| Neural counterfactual/edit pressure | Counterfactual training passes the neural internalization gate; edit-pressure is mixed. | Pure prediction; bottleneck compression; editable extracted tables without stable causal linear subspaces. |
 | Slope toy | Relation-chain agents pass OOD, spurious attack, counterfactual, edit, audit, review consistency gates. | Majority behavior; surface feature policy; structural memory without editable/auditable relations; generic review text. |
 | Temporal V2 | Delayed relation chains pass temporal OOD, delayed counterfactual, delay edit, temporal audit. | Same-step relation logic; surface temporal shortcut; temporal state memory without delay edits/audits. |
 | Temporal V2.1 | Variable delay, false shortcut rejection, multi-link delay edit, audit consistency, anti-template generalization pass for delayed-link agents. | Fixed delay template; single hard-coded delay; single-link edit trick; audit string without temporal structure. |
@@ -54,6 +55,14 @@ Neural probe:
 - Base mode: OOD `1.000`, spurious attack `1.000`, probe selectivity about `0.793`, relation-subspace drop about `0.483`, gated neural relation score about `0.819`.
 - Shortcut mode: readable relation probe remains high, but OOD/spurious robustness collapses and gated score is `0.000`.
 - Extracted table: base gated extraction `1.000`; shortcut gated extraction `0.000`.
+
+Neural counterfactual/edit-pressure:
+
+- `pure_prediction`: gated score `0.000`; high train accuracy but shortcut rejection and relation-subspace gates fail.
+- `prediction_bottleneck`: gated score `0.000`; behavior and table metrics are high, but relation and nuisance subspace drops are both high.
+- `counterfactual_training`: gated score `0.981`; strongest non-handwritten neural positive result in the current toy setting.
+- `edit_pressure_training`: gated score `0.200`; transfer/table/edit/locality are high, but relation-subspace intervention is unstable across seeds.
+- V1.1 failure localization: `edit_pressure_training` fails the relation-subspace gate in 4/5 seeds.
 
 Slope toy:
 
@@ -347,9 +356,10 @@ The discussion should be organized around false positives.
 
 1. **Probe false positive:** A relation can be linearly readable but not behaviorally specific.
 2. **Prediction false positive:** An agent can predict well without editability or auditability.
-3. **Temporal memory false positive:** An agent can remember temporal patterns without internal delayed links.
-4. **Discovery false positive:** An agent can discover relations but still act unsafely when the current relation chain is unverifiable.
-5. **Inspection false positive:** An agent can look safe by inspecting everything, but fail under cost and limited budget.
+3. **Editable-table false positive:** A model can produce an editable extracted table without a stable causal linear relation subspace.
+4. **Temporal memory false positive:** An agent can remember temporal patterns without internal delayed links.
+5. **Discovery false positive:** An agent can discover relations but still act unsafely when the current relation chain is unverifiable.
+6. **Inspection false positive:** An agent can look safe by inspecting everything, but fail under cost and limited budget.
 
 The paper’s strongest sentence:
 

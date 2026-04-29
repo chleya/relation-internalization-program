@@ -67,15 +67,18 @@ Purpose:
 
 ## Experiment 2: Neural Readability vs Causal Use
 
-This experiment includes the neural hidden-state relation probe, causal subspace intervention, and neural-to-table extraction.
+This experiment includes the neural hidden-state relation probe, causal subspace intervention, neural-to-table extraction, and the newer counterfactual/edit-pressure neural stage.
 
 The neural probe asks whether a small classifier encodes the true `texture/wet -> resource` relation. It then tests whether the relation subspace is behaviorally relevant by removing relation and nuisance subspaces. The extraction bridge asks whether hidden-state relation information can be converted into an explicit editable table.
+
+The counterfactual/edit-pressure stage addresses a weakness of the earlier hand-written agents: positive evidence should not come only from systems where relation tables and edit interfaces were directly built in. In the current toy result, `counterfactual_training` is the strongest non-handwritten positive result, while `edit_pressure_training` is mixed: it supports transfer, table extraction, table edit, and edit locality, but relation-subspace intervention is unstable across seeds.
 
 Purpose:
 
 - Rule out probe readability alone.
 - Rule out shortcut-readable but behaviorally non-specific relation representations.
 - Rule out extracted tables that are editable but wrong.
+- Rule out the assumption that extracted-table editability automatically implies a stable causal linear relation subspace.
 
 ## Experiment 3: Engineering-Style Relation Chains
 
@@ -143,6 +146,19 @@ Existing reports show:
 Interpretation:
 The shortcut model remains probe-readable, but the gate rejects it because the relation representation is not behaviorally specific under transfer and intervention tests.
 
+## Neural counterfactual/edit-pressure stage
+
+Existing reports show:
+
+- `pure_prediction`: gated score `0.000`; train accuracy `0.996`, OOD `0.913`, shortcut rejection `0.636`, relation-subspace drop `0.087`.
+- `prediction_bottleneck`: gated score `0.000`; OOD/shortcut/reversal all `1.000`, but relation and nuisance subspace drops are both `0.507`.
+- `counterfactual_training`: gated score `0.981`; OOD, shortcut, reversal, counterfactual, table, edit, and locality metrics all `1.000`; relation-subspace drop `0.406`; nuisance-subspace drop `0.000`.
+- `edit_pressure_training`: gated score `0.200`; OOD, shortcut, reversal, table, edit, and locality metrics all `1.000`; relation-subspace drop `0.235`; nuisance-subspace drop `0.000`.
+- V1.1 failure localization shows `edit_pressure_training` fails the relation-subspace gate in 4 of 5 seeds.
+
+Interpretation:
+Counterfactual training is the strongest current non-handwritten neural positive result. Edit-pressure training is mixed: it produces editable extracted-table behavior, but does not reliably produce a stable causal linear relation subspace. This adds a new false-positive category: editable extracted tables are not automatically stable causal subspaces.
+
 ## Slope toy
 
 Existing reports show:
@@ -187,6 +203,9 @@ The R1-R3 line separates active relation learning, relation discovery, uncertain
 | Stage | Positive agent/result | Negative control | Ordinary metric that could look good | Gate that fails | Alternative explanation ruled out |
 | --- | --- | --- | --- | --- | --- |
 | Neural probe | Base neural model, gated score about `0.819`; extracted table gated `1.000` | Neural shortcut | Probe readability remains high | Gated neural relation score `0.000`; extraction gate `0.000` | Readable relation information alone is not behaviorally specific relation internalization. |
+| Neural counterfactual/edit-pressure | `counterfactual_training`, gated `0.981` | `pure_prediction` | Train/OOD accuracy can be high | Shortcut and relation-subspace gates | Prediction alone is not relation internalization. |
+| Neural counterfactual/edit-pressure | `counterfactual_training`, gated `0.981` | `prediction_bottleneck` | OOD, shortcut, reversal, table, edit metrics can be high | Nuisance-subspace gate | Compression can entangle relation and nuisance factors. |
+| Neural counterfactual/edit-pressure | `counterfactual_training`, gated `0.981` | `edit_pressure_training` | Transfer, table extraction, table edit, and locality all look good | Relation-subspace gate unstable across seeds | Editable extracted tables are not automatically stable causal linear subspaces. |
 | Food-world static | `relation` / `robust_wide_relation` pass gated internalization | Memory, fitting, predictive, decision tree | Base task success and some OOD success | Edit, counterfactual, relation alignment, shuffle-drop gates | Prediction or context memory is not editable relation structure. |
 | Slope toy | `relation_chain` / `learned_links`, gated about `0.98` | `structural_memory` | OOD and spurious performance can be high | Edit/audit/review gates, gated `0.000` | Structural memory is not auditable/editable relation internalization. |
 | Slope toy | `relation_chain` / `learned_links` | `generic_review` | Plausible review score language | Relation behavior and consistency gates, gated `0.000` | Review-like text is not relation use. |
@@ -204,6 +223,8 @@ The R1-R3 line separates active relation learning, relation discovery, uncertain
 ## 1. Probe false positive
 
 A relation can be linearly readable but not behaviorally specific. The shortcut neural model retains readable relation information, but fails transfer, spurious attack, and causal specificity gates. The neural-to-table extraction result makes the same point: an extracted table can be editable while still being wrong or misaligned.
+
+The newer neural stage adds a sharper distinction. `edit_pressure_training` can produce correct extracted tables and local table edits while failing to produce a stable causal linear relation subspace across seeds. Therefore, extracted-table editability and causal linear subspace structure should be treated as distinct diagnostics.
 
 ## 2. Prediction false positive
 
