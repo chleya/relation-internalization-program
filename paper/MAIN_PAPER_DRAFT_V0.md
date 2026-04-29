@@ -3,9 +3,9 @@
 
 # Abstract
 
-When should an agent be credited with relation internalization rather than merely predicting outcomes, memorizing contexts, following shortcuts, producing plausible review text, or responding to explicit edit signals? We study this question with a staged chain of controlled toy diagnostics. Each stage introduces false-positive baselines that can look strong under ordinary metrics but fail relation-internalization gates.
+When should an agent be credited with relation internalization rather than merely predicting outcomes, memorizing contexts, following shortcuts, producing plausible review text, or responding to explicit edit signals? We study this question as a staged diagnostic methodology in controlled toy environments. Each stage introduces false-positive baselines that can look strong under ordinary metrics but fail relation-internalization gates.
 
-The central thesis is conservative: task success, prediction accuracy, probe readability, memory, surface shortcuts, plausible review text, temporal prediction, blanket inspection, and edit-signal responsiveness are insufficient evidence of relation internalization. The supported claim is narrower: in controlled toy diagnostic environments, relation internalization can be operationalized as relation structures that are usable for transfer, counterfactual action, edits, audits, uncertainty recognition, and cost-aware inspection.
+The central thesis is conservative: task success, prediction accuracy, probe readability, memory, surface shortcuts, plausible review text, temporal prediction, blanket inspection, and edit-signal responsiveness are insufficient evidence of relation internalization. The supported claim is narrower: in controlled toy diagnostic environments, relation internalization can be operationalized as relation structures that are usable for transfer, counterfactual action, edits, audits, uncertainty recognition, and cost-aware inspection. The gates are explicit diagnostic requirements for making this claim in the toy settings; they are not proposed as a general theory of intelligence.
 
 # 1. Introduction
 
@@ -14,6 +14,8 @@ Ordinary task accuracy is too weak for claims about relation internalization. A 
 This paper treats relation internalization as an operational diagnostic standard, not as a theory of intelligence. The question is not whether a model "understands" relations. The question is whether relation structure is usable in ways relation claims require: transfer, counterfactual action, intervention/edit, audit, temporal indexing, uncertainty handling, and cost-aware inspection.
 
 Every stage was designed around a baseline that should pass if ordinary performance were enough, but fails once relation internalization is required.
+
+Several positive agents are intentionally hand-designed. They should be read as methodological controls that define what usable relation structure would need to support, not as evidence that arbitrary agents naturally acquire such structure. The neural stage is included to reduce this weakness: it shows that prediction and bottleneck compression fail, counterfactual training is the strongest current non-handwritten positive condition, and edit-pressure remains mixed.
 
 # 2. Operational Definition
 
@@ -46,6 +48,8 @@ This standard distinguishes relation internalization from:
 - blanket inspection;
 - edit-signal responsiveness without support-conditioned binding.
 
+The gates therefore encode claim requirements. A model that fails one gate may still be useful or accurate, but it should not be credited with the stronger relation-internalization claim under this diagnostic.
+
 # 3. False-Positive Ladder
 
 The diagnostic ladder is organized around false positives:
@@ -72,6 +76,8 @@ The static line includes the food-world explicit relation table and the R1/R1.1/
 
 Purpose: rule out memory, fitting, shortcut policies, no-exploration relation tables, and predefined `TRUE_LINK` dependence.
 
+These positive agents are not presented as spontaneous neural emergence. They are explicit controls used to define and stress-test relation-usable behavior.
+
 ## 4.2 Neural Relation Diagnostics
 
 The neural line includes the hidden-state relation probe, causal subspace intervention, neural-to-table extraction, and the newer counterfactual/edit-pressure stage.
@@ -85,6 +91,8 @@ The current neural stage compares:
 - `explicit_table_oracle`.
 
 The main update is that `counterfactual_training` is the strongest current non-handwritten neural positive result. `edit_pressure_training` is mixed: it shows table-level editability and edit-state responsiveness, but not strong support-conditioned relation binding or stable causal relation subspaces. Therefore, editable behavior itself must be treated as a potential false positive.
+
+This result is deliberately not framed as "edit pressure succeeds." The stronger conclusion is that counterfactual pressure passes the current neural diagnostic more reliably, while edit pressure exposes another way a model can look relation-like without satisfying the full relation-internalization claim.
 
 ## 4.3 Engineering-Style Relation Chains
 
@@ -150,6 +158,8 @@ The neural stage adds a final caution: editable behavior is not necessarily rela
 - Data generators are synthetic.
 - The neural setting is small and controlled.
 - Counterfactual training may be viewed as supervised shortcut control, not evidence of broad emergence.
+- The gates are author-defined diagnostic criteria; future work should test pre-registered or externally generated variants.
+- Several positive agents are hand-designed relation-structure controls rather than evidence of natural emergence.
 - No real slope mechanics are modeled.
 - No real sensor reliability calibration is performed.
 - No adversarial missingness robustness is claimed beyond tested toy cases.
