@@ -1,0 +1,16 @@
+model,seed,normal_edit_accuracy,swapped_edit_effect_rate,swapped_edit_locality,edit_state_swap_success,not_applicable
+pure_prediction,0,0.0,0.0,0.0,0.0,True
+pure_prediction,1,0.0,0.0,0.0,0.0,True
+pure_prediction,2,0.0,0.0,0.0,0.0,True
+pure_prediction,3,0.0,0.0,0.0,0.0,True
+pure_prediction,4,0.0,0.0,0.0,0.0,True
+counterfactual_training,0,0.0,0.0,0.0,0.0,True
+counterfactual_training,1,0.0,0.0,0.0,0.0,True
+counterfactual_training,2,0.0,0.0,0.0,0.0,True
+counterfactual_training,3,0.0,0.0,0.0,0.0,True
+counterfactual_training,4,0.0,0.0,0.0,0.0,True
+edit_pressure_training,0,1.0,1.0,1.0,1.0,False
+edit_pressure_training,1,1.0,1.0,1.0,1.0,False
+edit_pressure_training,2,1.0,1.0,1.0,1.0,False
+edit_pressure_training,3,1.0,1.0,1.0,1.0,False
+edit_pressure_training,4,1.0,1.0,1.0,1.0,False
