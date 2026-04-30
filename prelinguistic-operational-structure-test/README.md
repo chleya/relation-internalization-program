@@ -94,7 +94,9 @@ pip install -r requirements.txt
 pytest -q
 python -m src.run_sweep --config configs/sweep.yaml
 python -m src.run_hardening --config configs/sweep.yaml --seed 0
+python -m src.run_b11_flow_hardening --config configs/b11_flow_hardening.yaml --seed 0
 python -m src.visualize --summary results/overall_summary.csv
+python -m src.visualize_b11 --summary results/b11_flow_checkpoint_hardening_summary.csv
 ```
 
 Run one model:
@@ -121,7 +123,32 @@ reports/B_LINE_SUBSTRATE_AUDIT.md
 reports/B_LINE_SUBSTRATE_SEARCH.md
 reports/B_LINE_FLOW_CHECKPOINT_HARDENING.md
 results/substrate_audit.csv
+results/b11_flow_checkpoint_hardening_summary.csv
+results/b11_flow_checkpoint_records.csv
+figures/b11_flow_checkpoint_hardening.png
+figures/b11_attack_breakdown.png
+reports/B1_1_FLOW_CHECKPOINT_HARDENING.md
+reports/B1_1_FLOW_CHECKPOINT_SELF_AUDIT.md
 ```
+
+## B1.1 Reviewer Hardening
+
+B1.1 targets only `flow_checkpoint_model`, the current PLOS v1 candidate. It
+does not change PLOS v1 scoring. It adds six reviewer attacks:
+
+- dynamic decoy checkpoint
+- delayed checkpoint
+- competing checkpoints
+- checkpoint relocation OOD
+- causal deletion vs visual deletion
+- anti-prior world
+
+If B1.1 passes, the flow-checkpoint substrate remains a high-prior but stronger
+PLOS foothold. If it fails, the prior PLOS pass is likely checkpoint-prior,
+saliency, or weak causal-intervention dependent.
+
+Passing B1.1 does not prove blank-slate emergence, general physical reasoning,
+real-world cognition, or language-free intelligence.
 
 ## Boundary
 

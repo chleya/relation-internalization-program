@@ -1,0 +1,32 @@
+base_config: configs/sweep.yaml
+
+target_model: flow_checkpoint_model
+seeds: [0, 1, 2]
+
+b11:
+  n_attack_episodes: 300
+  frame_size: 64
+  grid_size: 8
+  past_frames: 8
+  future_frames: 12
+
+  attacks:
+    dynamic_decoy_checkpoint: true
+    delayed_checkpoint: true
+    competing_checkpoints: true
+    checkpoint_relocation_ood: true
+    causal_deletion_vs_visual_deletion: true
+    anti_prior_world: true
+
+  gates:
+    dynamic_decoy_rejection: 0.80
+    delayed_checkpoint_accuracy: 0.75
+    competing_checkpoint_choice: 0.75
+    relocation_ood_stability: 0.75
+    causal_over_visual_deletion_ratio: 1.50
+    anti_prior_survival: 0.70
+    causal_endpoint_shift: 0.25
+
+  scoring:
+    require_candidate_preserved: true
+    hardening_gate_zero_if_any_fail: true
