@@ -1,0 +1,5 @@
+model,seed,delayed_checkpoint_accuracy,multi_delay_stability,early_saliency_rejection,delay_ood_generalization,causal_trace_intervention_drop,non_trace_stability,delayed_endpoint_shift,trace_over_control_ratio,b2_delayed_score
+flow_checkpoint_model,0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0
+recurrent_flow_checkpoint_model,0,1.0,1.0,1.0,1.0,0.95410940477252,1.0,0.95410940477252,954109.4047725201,0.9999999999999999
+field_memory_model,0,1.0,1.0,1.0,1.0,0.95410940477252,1.0,0.95410940477252,954109.4047725201,0.9999999999999999
+schema_memory_model,0,1.0,1.0,1.0,1.0,0.95410940477252,1.0,0.95410940477252,954109.4047725201,0.9999999999999999

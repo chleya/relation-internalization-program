@@ -95,8 +95,10 @@ pytest -q
 python -m src.run_sweep --config configs/sweep.yaml
 python -m src.run_hardening --config configs/sweep.yaml --seed 0
 python -m src.run_b11_flow_hardening --config configs/b11_flow_hardening.yaml --seed 0
+python -m src.run_b2_delayed_checkpoint --config configs/b2_delayed_checkpoint.yaml --seed 0
 python -m src.visualize --summary results/overall_summary.csv
 python -m src.visualize_b11 --summary results/b11_flow_checkpoint_hardening_summary.csv
+python -m src.visualize_b2 --summary results/b2_delayed_checkpoint_summary.csv
 ```
 
 Run one model:
@@ -129,6 +131,13 @@ figures/b11_flow_checkpoint_hardening.png
 figures/b11_attack_breakdown.png
 reports/B1_1_FLOW_CHECKPOINT_HARDENING.md
 reports/B1_1_FLOW_CHECKPOINT_SELF_AUDIT.md
+results/b2_delayed_checkpoint_summary.csv
+results/b2_delayed_checkpoint_records.csv
+figures/b2_delayed_checkpoint_scores.png
+figures/b2_delay_gate_breakdown.png
+figures/b2_trace_intervention_effects.png
+reports/B2_DELAYED_CHECKPOINT_REPORT.md
+reports/B2_DELAYED_CHECKPOINT_SELF_AUDIT.md
 ```
 
 ## B1.1 Reviewer Hardening
@@ -149,6 +158,24 @@ saliency, or weak causal-intervention dependent.
 
 Passing B1.1 does not prove blank-slate emergence, general physical reasoning,
 real-world cognition, or language-free intelligence.
+
+## B2 Delayed Checkpoints
+
+B2 does not repair B1.1. It targets the gap B1.1 exposed:
+`flow_checkpoint_model` is useful but short-horizon, and fails delayed
+checkpoint selection. B2 compares that baseline with:
+
+- `recurrent_flow_checkpoint_model`
+- `field_memory_model`
+- `schema_memory_model`
+
+The test asks whether delayed operational checkpoints can be carried by
+temporal memory, field trace, or sparse schema memory under behavior, causal
+trace intervention, and heldout-delay OOD gates.
+
+A passing B2 model is a delayed PLOS candidate in this 64x64 toy world. It is
+not proof of blank-slate emergence, physics understanding, or general
+pre-linguistic intelligence.
 
 ## Boundary
 

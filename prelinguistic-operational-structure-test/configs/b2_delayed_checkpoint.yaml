@@ -1,0 +1,41 @@
+base_config: configs/sweep.yaml
+
+target_models:
+  - flow_checkpoint_model
+  - recurrent_flow_checkpoint_model
+  - field_memory_model
+  - schema_memory_model
+
+seeds: [0, 1, 2]
+
+b2:
+  n_train: 2000
+  n_test: 500
+  n_ood: 500
+
+  frame_size: 64
+  grid_size: 8
+  past_frames: 8
+  future_frames: 12
+
+  delays: [2, 4, 6]
+  heldout_delays: [3, 5, 7]
+
+  attacks:
+    delayed_checkpoint: true
+    multi_delay_checkpoint: true
+    early_saliency_rejection: true
+    causal_trace_intervention: true
+    delay_ood: true
+
+  gates:
+    delayed_checkpoint_accuracy: 0.75
+    multi_delay_stability: 0.70
+    early_saliency_rejection: 0.75
+    delay_ood_generalization: 0.70
+    causal_trace_intervention_drop: 0.20
+    non_trace_stability: 0.70
+    delayed_endpoint_shift: 0.25
+
+  scoring:
+    zero_if_any_core_gate_fails: true
