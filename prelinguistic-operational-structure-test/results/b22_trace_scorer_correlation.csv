@@ -1,0 +1,4 @@
+field_schema_score_correlation,mean_trace_scorer_correlation,model,recurrent_field_score_correlation,recurrent_schema_score_correlation,seed,trace_family_specificity
+0.0,0.0,recurrent_flow_checkpoint_model,0.0,0.0,0,1.0
+0.0,0.0,field_memory_model,0.0,0.0,0,1.0
+0.0,0.0,schema_memory_model,0.0,0.0,0,1.0

@@ -1,0 +1,4 @@
+b21_trace_hardening_score,false_trace_rejection,model,multi_source_conflict_resolution,noisy_trace_robustness,seed,trace_compression_survival,trace_deletion_specificity_ratio,trace_length_extrapolation,trace_swap_sensitivity
+0.9591666666666666,1.0,recurrent_flow_checkpoint_model,1.0,1.0,0,0.6666666666666666,938847.3816215992,0.95,1.0
+0.9591666666666666,1.0,field_memory_model,1.0,1.0,0,0.6666666666666666,938847.3816215992,0.95,1.0
+0.9591666666666666,1.0,schema_memory_model,1.0,1.0,0,0.6666666666666666,938847.3816215992,0.95,1.0

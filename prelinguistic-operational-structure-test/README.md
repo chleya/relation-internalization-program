@@ -97,10 +97,14 @@ python -m src.run_hardening --config configs/sweep.yaml --seed 0
 python -m src.run_b11_flow_hardening --config configs/b11_flow_hardening.yaml --seed 0
 python -m src.run_b2_delayed_checkpoint --config configs/b2_delayed_checkpoint.yaml --seed 0
 python -m src.run_b21_trace_hardening --config configs/b21_trace_hardening.yaml --seed 0
+python -m src.run_b21a_degeneracy_audit --config configs/b21a_degeneracy_audit.yaml --seed 0
+python -m src.run_b22_selector_disentanglement --config configs/b22_selector_disentanglement.yaml --seed 0
 python -m src.visualize --summary results/overall_summary.csv
 python -m src.visualize_b11 --summary results/b11_flow_checkpoint_hardening_summary.csv
 python -m src.visualize_b2 --summary results/b2_delayed_checkpoint_summary.csv
 python -m src.visualize_b21 --summary results/b21_trace_hardening_summary.csv
+python -m src.visualize_b21a --summary results/b21a_degeneracy_audit_summary.csv
+python -m src.visualize_b22 --summary results/b22_selector_disentanglement_summary.csv
 ```
 
 Run one model:
@@ -149,6 +153,36 @@ figures/b21_trace_deletion_specificity.png
 figures/b21_trace_compression_curve.png
 reports/B2_1_TRACE_HARDENING_REPORT.md
 reports/B2_1_TRACE_HARDENING_SELF_AUDIT.md
+results/b21a_degeneracy_audit_summary.csv
+results/b21a_degeneracy_audit_records.csv
+results/b21a_per_attack_breakdown.csv
+results/b21a_per_seed_breakdown.csv
+results/b21a_predicted_region_distribution.csv
+results/b21a_leakage_audit.csv
+results/b21a_intervention_applicability.csv
+results/b21a_baseline_comparison.csv
+figures/b21a_score_degeneracy.png
+figures/b21a_per_attack_breakdown.png
+figures/b21a_predicted_region_distribution.png
+figures/b21a_baseline_comparison.png
+figures/b21a_ablation_effects.png
+reports/B2_1A_TRACE_DEGENERACY_AUDIT.md
+reports/B2_1A_TRACE_DEGENERACY_SELF_AUDIT.md
+results/b22_selector_disentanglement_summary.csv
+results/b22_selector_disentanglement_records.csv
+results/b22_trace_provenance.csv
+results/b22_selector_free_comparison.csv
+results/b22_disagreement_episodes.csv
+results/b22_source_specific_ablation.csv
+results/b22_trace_scorer_correlation.csv
+results/b22_shared_selector_ablation.csv
+figures/b22_selector_usage.png
+figures/b22_prediction_overlap.png
+figures/b22_disagreement_divergence.png
+figures/b22_ablation_effects.png
+figures/b22_trace_scorer_correlation.png
+reports/B2_2_TRACE_SELECTOR_DISENTANGLEMENT.md
+reports/B2_2_TRACE_SELECTOR_SELF_AUDIT.md
 ```
 
 ## B1.1 Reviewer Hardening
@@ -189,7 +223,7 @@ not proof of blank-slate emergence, physics understanding, or general
 pre-linguistic intelligence.
 
 See `reports/B_LINE_EVIDENCE_LADDER.md` for the current B-line evidence ladder
-from PLOS v1 through B1.1 and B2.
+from PLOS v1 through B1.1, B2, B2.1, B2.1a, and B2.2.
 
 ## B2.1 Trace Hardening
 
@@ -203,6 +237,32 @@ compression pressure.
 
 Passing B2.1 means only that a model remains a hardened trace-bearing substrate
 candidate in the toy PLOS environment.
+
+## B2.1a Degeneracy Audit
+
+B2.1a audits why all three trace-bearing models received the same B2.1 score.
+It checks per-attack and per-seed breakdowns, predicted-region distributions,
+ground-truth leakage, intervention applicability, random/oracle baselines, and
+trace/no-trace ablations.
+
+The current B2.1a result flags exact cross-model prediction matching and
+identical per-attack metrics. This means B2.1 is not yet reliable evidence for
+independent trace mechanisms, even though leakage, random passability,
+unsupported intervention, and missing trace-dependency risks are reduced.
+
+## B2.2 Trace Selector Disentanglement
+
+B2.2 asks whether B2/B2.1 success comes from independent recurrent, field, and
+schema trace mechanisms, or from a shared trace selector path.
+
+The current B2.2 result is deliberately conservative: all three base
+trace-bearing models report `shared_selector_usage_rate=1.000` and
+`cross_model_exact_prediction_match_rate=1.000`, so
+`b22_disentanglement_score=0.000`.
+
+Interpretation: B2/B2.1 should currently be treated as evidence that a
+trace-bearing path is useful, but not as evidence that recurrent, field, and
+schema trace mechanisms are independently separated.
 
 ## Boundary
 

@@ -1,0 +1,4 @@
+model,seed,selector_free_b21_score,selector_free_delayed_accuracy,selector_free_retention,selector_free_trace_intervention_drop
+recurrent_flow_checkpoint_model,0,1.0,1.0,0.9999990000010001,1.0
+field_memory_model,0,1.0,1.0,0.9999990000010001,1.0
+schema_memory_model,0,1.0,1.0,0.9999990000010001,1.0

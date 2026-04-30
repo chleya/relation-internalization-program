@@ -1,0 +1,4 @@
+field_trace_ablation_drop,model,model_private_trace_drop,recurrent_trace_ablation_drop,schema_trace_ablation_drop,seed,shared_selector_ablation_advantage,shared_selector_ablation_drop
+0.0,recurrent_flow_checkpoint_model,1.0,1.0,0.0,0,-1.0,0.0
+1.0,field_memory_model,1.0,0.0,0.0,0,-1.0,0.0
+0.0,schema_memory_model,1.0,0.0,1.0,0,-1.0,0.0

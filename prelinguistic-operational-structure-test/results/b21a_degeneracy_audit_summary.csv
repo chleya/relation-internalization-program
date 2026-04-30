@@ -1,0 +1,2 @@
+score_degeneracy_detected,all_attacks_identical_flag,exact_same_score_all_models_all_seeds,cross_model_exact_prediction_match_rate,gt_region_match_rate,saliency_region_match_rate,leakage_count,intervention_applicability_rate,fallback_rate,structure_changed_rate,output_changed_rate,random_b21_score,oracle_b21_score,trace_family_ablation_drop,no_trace_ablation_drop,b21a_degeneracy_audit_score
+1.0,1.0,1.0,1.0,0.695,0.0,0.0,1.0,0.0,1.0,0.96875,0.0,1.0,1.0,1.0,0.0

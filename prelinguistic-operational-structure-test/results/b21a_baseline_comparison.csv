@@ -1,0 +1,8 @@
+baseline,metric_name,metric_value
+random_trace_baseline,random_b21_score,0.0
+random_trace_baseline,random_false_trace_rejection,0.016666666666666666
+random_trace_baseline,random_trace_swap_sensitivity,0.0
+random_trace_baseline,random_deletion_specificity,0.0
+random_trace_baseline,random_length_extrapolation,0.016666666666666666
+oracle_trace_baseline,oracle_b21_score,1.0
+oracle_trace_baseline,oracle_trace_accuracy,1.0

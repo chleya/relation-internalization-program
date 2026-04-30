@@ -39,6 +39,14 @@ def make_model(name: str) -> BasePLOSModel:
         return FieldMemoryModel()
     if name == "schema_memory_model":
         return SchemaMemoryModel()
+    if name in {
+        "recurrent_flow_checkpoint_no_shared_selector",
+        "field_memory_no_shared_selector",
+        "schema_memory_no_shared_selector",
+    }:
+        from ..b22_selector_free_models import make_selector_free_model
+
+        return make_selector_free_model(name)
     if name == "schema_model":
         return SchemaModel()
     raise ValueError(f"unknown model: {name}")

@@ -1,0 +1,45 @@
+base_config: configs/b21a_degeneracy_audit.yaml
+
+target_models:
+  - recurrent_flow_checkpoint_model
+  - field_memory_model
+  - schema_memory_model
+
+selector_free_variants:
+  - recurrent_flow_checkpoint_no_shared_selector
+  - field_memory_no_shared_selector
+  - schema_memory_no_shared_selector
+
+reference_models:
+  - flow_checkpoint_model
+
+seeds: [0, 1, 2]
+
+b22:
+  n_episodes: 300
+  frame_size: 64
+  grid_size: 8
+  past_frames: 8
+  future_frames: 12
+
+  audits:
+    trace_provenance: true
+    selector_free_variants: true
+    trace_disagreement_episodes: true
+    source_specific_ablation: true
+    independent_trace_scorers: true
+    shared_selector_ablation: true
+
+  gates:
+    shared_selector_usage_rate: 0.05
+    max_cross_model_exact_prediction_match_rate: 0.80
+    min_trace_family_specificity: 0.70
+    min_model_private_trace_drop: 0.20
+    max_shared_selector_ablation_advantage: 0.00
+    min_disagreement_episode_divergence: 0.50
+    max_trace_scorer_correlation: 0.90
+    min_selector_free_retention: 0.60
+
+  scoring:
+    zero_if_shared_selector_dominates: true
+    zero_if_selector_free_variants_fail_all: true

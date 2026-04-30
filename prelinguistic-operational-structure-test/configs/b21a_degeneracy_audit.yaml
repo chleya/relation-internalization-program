@@ -1,0 +1,48 @@
+base_config: configs/b21_trace_hardening.yaml
+
+target_models:
+  - recurrent_flow_checkpoint_model
+  - field_memory_model
+  - schema_memory_model
+
+reference_models:
+  - flow_checkpoint_model
+
+audit_baselines:
+  - random_trace_baseline
+  - oracle_trace_baseline
+  - heuristic_saliency_trace_baseline
+
+seeds: [0, 1, 2]
+
+b21a:
+  n_audit_episodes: 300
+  frame_size: 64
+  grid_size: 8
+  past_frames: 8
+  future_frames: 12
+
+  audits:
+    per_attack_breakdown: true
+    per_seed_breakdown: true
+    predicted_region_distribution: true
+    ground_truth_leakage: true
+    intervention_applicability: true
+    random_trace_baseline: true
+    oracle_baseline: true
+    trace_family_ablation: true
+    no_trace_ablation: true
+
+  gates:
+    max_model_score_std_for_warning: 0.005
+    min_per_attack_variance: 0.001
+    max_random_baseline_score: 0.20
+    min_oracle_score: 0.95
+    max_leakage_score: 0.00
+    min_intervention_applicability_rate: 0.95
+    min_trace_family_ablation_drop: 0.20
+    min_no_trace_ablation_drop: 0.30
+    max_predicted_region_gt_correlation_without_model: 0.20
+
+  scoring:
+    degeneracy_audit_pass_requires_all: true

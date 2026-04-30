@@ -1,6 +1,6 @@
 # B-Line Evidence Ladder
 
-## From PLOS v1 to B1.1 and B2
+## From PLOS v1 to B2.2
 
 This document summarizes the current evidence chain for the B-line:
 
@@ -21,7 +21,7 @@ It tests whether operational structure can be supported by non-linguistic contin
 
 ## 0. Executive Summary
 
-The B-line has now produced a three-stage evidence ladder:
+The B-line has now produced an evidence ladder with delayed-trace hardening and selector-provenance audit:
 
 ```text
 PLOS v1:
@@ -32,17 +32,24 @@ B1.1:
 
 B2:
   Tests whether delayed operational checkpoints require trace-bearing substrates.
+
+B2.1/B2.1a:
+  Hardens trace use, then detects identical prediction degeneracy.
+
+B2.2:
+  Tests whether the trace selector is independently separated across substrates.
 ```
 
 Current best interpretation:
 
 > PLOS v1 found a high-prior short-horizon checkpoint candidate.  
 > B1.1 showed that this candidate is not merely visual saliency, but it fails delayed causal checkpoint selection.  
-> B2 supports the diagnosis that delayed operational checkpoints require trace-bearing substrates such as temporal memory, field trace, or sparse schema memory.
+> B2 supports the diagnosis that delayed operational checkpoints require trace-bearing paths.
+> B2.1a and B2.2 show that the current recurrent/field/schema models should not yet be treated as independent trace mechanisms because they share effectively identical selector behavior.
 
 Current strongest claim:
 
-> In the toy PLOS world, short-horizon checkpoint structure is insufficient for delayed operational relevance. Delayed operational structure appears to require a trace-bearing substrate.
+> In the toy PLOS world, short-horizon checkpoint structure is insufficient for delayed operational relevance. Delayed operational structure appears to require a trace-bearing path, but current trace-bearing models still need selector-provenance separation before they can count as independent substrate mechanisms.
 
 Current unsupported claims:
 
@@ -493,71 +500,88 @@ universal object/event/checkpoint theory
 
 ---
 
-## 7. Why B2.1 Is Necessary
+## 7. B2.1 Trace Hardening
 
 B2 introduces trace-bearing substrates.  
 But this creates a new false-positive risk:
 
 > A trace-bearing model may pass because trace structure is injected as architecture, not because it learns to use delayed operational relevance robustly.
 
-Therefore, B2.1 should harden the trace-bearing result.
+B2.1 hardens the trace-bearing result with false-trace, swap, deletion-specificity, conflict, noise, extrapolation, and compression attacks.
 
 ---
 
-## 8. B2.1 Trace Hardening: Required Next Step
+## 8. B2.1a Degeneracy Audit
 
-### 8.1 Core Question
-
-B2.1 should ask:
-
-> Is the trace actually used as a delayed operational structure, or is it just another architectural prior / shortcut?
-
----
-
-### 8.2 Proposed Attacks
-
-| Attack | Purpose |
-|---|---|
-| False delayed trace | Add a trace-like signal that does not affect future outcome |
-| Trace swap | Swap traces between episodes and test whether behavior follows the trace |
-| Trace deletion specificity | Delete true trace vs non-trace of similar size |
-| Multi-source trace conflict | Temporal memory, field trace, and schema slot disagree |
-| Noisy delayed observation | Add noise to delayed evidence and test robust trace preservation |
-| Trace length extrapolation | Train on short delays and test longer unseen delays |
-| Trace compression pressure | Reduce trace capacity and test whether causal trace survives |
-| Trace audit by intervention | Perturb only the claimed delayed trace and require local behavioral change |
-
----
-
-### 8.3 B2.1 Required Gates
-
-Suggested gates:
+B2.1 produced identical scores for all three trace-bearing models:
 
 ```text
-false_trace_rejection >= 0.75
-trace_swap_sensitivity >= 0.70
-trace_deletion_specificity >= 1.50 ratio
-multi_source_conflict_resolution >= 0.70
-noisy_trace_robustness >= 0.70
-trace_length_extrapolation >= 0.65
-trace_compression_survival >= 0.65
+recurrent_flow_checkpoint_model = 0.959
+field_memory_model = 0.959
+schema_memory_model = 0.959
+```
+
+B2.1a audits this score degeneracy.
+
+Key result:
+
+```text
+score_degeneracy_detected = 1.000
+all_attacks_identical_flag = 1.000
+cross_model_exact_prediction_match_rate = 1.000
+leakage_count = 0.000
+random_b21_score = 0.000
+oracle_b21_score = 1.000
+trace_family_ablation_drop = 1.000
+no_trace_ablation_drop = 1.000
+b21a_degeneracy_audit_score = 0.000
+```
+
+Interpretation:
+
+> B2.1a does not find ground-truth key leakage, random baseline passability, unsupported interventions, or missing trace dependency. However, it does find exact cross-model prediction matching and identical per-attack metrics. Therefore B2.1 is not yet reliable evidence for independent trace-bearing mechanisms.
+
+This does not erase B2's diagnostic value. It narrows the next problem:
+
+```text
+trace-bearing behavior exists
+but independent substrate mechanisms are not yet separated
 ```
 
 ---
 
-### 8.4 Expected Interpretations
+## 9. B2.2 Trace Selector Disentanglement
 
-If B2.1 passes:
+B2.2 directly tests the next narrowed question:
 
-> Trace-bearing substrates remain credible delayed operational-structure candidates under stronger false-trace and trace-specificity attacks.
+```text
+Are recurrent, field, and schema trace-bearing models using independent trace
+selection mechanisms, or are they all routing through the same selector?
+```
 
-If B2.1 fails:
+Key result:
 
-> B2 likely introduced another architectural shortcut: delayed trace structure is present, but not robustly operational.
+```text
+shared_selector_usage_rate = 1.000
+cross_model_exact_prediction_match_rate = 1.000
+disagreement_episode_divergence = 0.023
+b22_disentanglement_score = 0.000
+```
+
+Interpretation:
+
+> B2.2 shows that B2/B2.1 success should currently be interpreted as shared trace-selector success, not as independent recurrent/field/schema trace mechanism validation.
+
+This is not a failure of the whole B-line. It sharpens the next design target:
+
+```text
+trace-bearing path is useful
+but trace selector provenance is not yet disentangled
+```
 
 ---
 
-## 9. Recommended Repository Placement
+## 10. Recommended Repository Placement
 
 Save this document as:
 
@@ -568,11 +592,11 @@ prelinguistic-operational-structure-test/reports/B_LINE_EVIDENCE_LADDER.md
 Also update README with a short pointer:
 
 ```text
-See reports/B_LINE_EVIDENCE_LADDER.md for the current B-line evidence ladder from PLOS v1 through B1.1 and B2.
+See reports/B_LINE_EVIDENCE_LADDER.md for the current B-line evidence ladder from PLOS v1 through B1.1, B2, B2.1, B2.1a, and B2.2.
 ```
 
 ---
 
-## 10. One-Sentence Project Status
+## 11. One-Sentence Project Status
 
-> B-line has progressed from diagnosing short-horizon operational checkpoints to identifying delayed causal trace as the next core substrate requirement.
+> B-line has progressed from diagnosing short-horizon operational checkpoints to identifying delayed causal trace, then to showing that current trace-bearing models still share a selector path rather than demonstrating separated trace mechanisms.

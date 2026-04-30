@@ -1,0 +1,4 @@
+model,seed,shared_selector_usage_rate,model_private_score_usage_rate,fallback_usage_rate,cross_model_exact_prediction_match_rate,selector_free_b21_score,selector_free_retention,disagreement_episode_divergence,family_aligned_selection_rate,trace_family_specificity,mean_trace_scorer_correlation,model_private_trace_drop,shared_selector_ablation_drop,shared_selector_ablation_advantage,private_trace_retention_after_shared_ablation,b22_disentanglement_score
+recurrent_flow_checkpoint_model,0,1.0,0.0,0.0,1.0,1.0,0.9999990000010001,0.023333333333333334,0.32555555555555554,1.0,0.0,1.0,0.0,-1.0,0.9999990000010001,0.0
+field_memory_model,0,1.0,0.0,0.0,1.0,1.0,0.9999990000010001,0.023333333333333334,0.32555555555555554,1.0,0.0,1.0,0.0,-1.0,0.9999990000010001,0.0
+schema_memory_model,0,1.0,0.0,0.0,1.0,1.0,0.9999990000010001,0.023333333333333334,0.32555555555555554,1.0,0.0,1.0,0.0,-1.0,0.9999990000010001,0.0
