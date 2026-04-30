@@ -19,9 +19,10 @@ def test_provenance_record_has_required_fields():
     assert isinstance(rows[0]["fallback_used"], bool)
 
 
-def test_provenance_summary_detects_shared_selector():
+def test_provenance_summary_respects_private_selector_after_b23():
     config = small_config()
     episode = make_delayed_checkpoint_episode(config, 1, delay=4)
     rows = collect_trace_provenance(make_model("field_memory_model"), [episode], config)
     summary = summarize_trace_provenance(rows, config)
-    assert summary["shared_selector_usage_rate"] == 1.0
+    assert summary["shared_selector_usage_rate"] == 0.0
+    assert summary["model_private_score_usage_rate"] == 1.0

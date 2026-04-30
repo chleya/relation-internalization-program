@@ -1,0 +1,56 @@
+base_config: configs/b22_selector_disentanglement.yaml
+
+target_models:
+  - recurrent_flow_checkpoint_model
+  - field_memory_model
+  - schema_memory_model
+
+private_selector_required: true
+
+seeds: [0, 1, 2]
+
+b23:
+  n_episodes: 300
+  max_validation_episodes: 96
+  frame_size: 64
+  grid_size: 8
+  past_frames: 8
+  future_frames: 12
+
+  rerun_stages:
+    b2: true
+    b21: true
+    b21a: true
+    b22: true
+
+  validations:
+    selector_provenance: true
+    private_scorer: true
+    disagreement_episodes: true
+    source_specific_ablation: true
+    shared_selector_forbidden: true
+    regression_matrix: true
+
+  gates:
+    shared_selector_usage_rate: 0.00
+    fallback_usage_rate: 0.05
+    model_private_score_usage_rate: 0.95
+
+    b2_delayed_score_min: 0.70
+    b21_trace_hardening_score_min: 0.70
+
+    b21a_leakage_count: 0
+    b21a_random_b21_score_max: 0.20
+    b21a_oracle_b21_score_min: 0.95
+
+    cross_model_exact_prediction_match_rate_max: 0.70
+    disagreement_episode_divergence_min: 0.50
+    trace_family_specificity_min: 0.70
+    model_private_trace_drop_min: 0.20
+    shared_selector_ablation_drop_max: 0.05
+    selector_free_retention_min: 0.60
+
+  scoring:
+    zero_if_shared_selector_used: true
+    zero_if_private_trace_ablation_fails: true
+    zero_if_regression_b2_or_b21_fails: true

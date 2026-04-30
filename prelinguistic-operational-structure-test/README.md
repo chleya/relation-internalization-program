@@ -99,12 +99,16 @@ python -m src.run_b2_delayed_checkpoint --config configs/b2_delayed_checkpoint.y
 python -m src.run_b21_trace_hardening --config configs/b21_trace_hardening.yaml --seed 0
 python -m src.run_b21a_degeneracy_audit --config configs/b21a_degeneracy_audit.yaml --seed 0
 python -m src.run_b22_selector_disentanglement --config configs/b22_selector_disentanglement.yaml --seed 0
+python -m src.run_b23_private_selector --config configs/b23_private_selector.yaml --seed 0
+python -m src.run_b3_active_inspection --config configs/b3_active_inspection.yaml --seed 0
 python -m src.visualize --summary results/overall_summary.csv
 python -m src.visualize_b11 --summary results/b11_flow_checkpoint_hardening_summary.csv
 python -m src.visualize_b2 --summary results/b2_delayed_checkpoint_summary.csv
 python -m src.visualize_b21 --summary results/b21_trace_hardening_summary.csv
 python -m src.visualize_b21a --summary results/b21a_degeneracy_audit_summary.csv
 python -m src.visualize_b22 --summary results/b22_selector_disentanglement_summary.csv
+python -m src.visualize_b23 --summary results/b23_private_selector_summary.csv
+python -m src.visualize_b3 --summary results/b3_active_inspection_summary.csv
 ```
 
 Run one model:
@@ -183,6 +187,33 @@ figures/b22_ablation_effects.png
 figures/b22_trace_scorer_correlation.png
 reports/B2_2_TRACE_SELECTOR_DISENTANGLEMENT.md
 reports/B2_2_TRACE_SELECTOR_SELF_AUDIT.md
+results/b23_private_selector_summary.csv
+results/b23_private_selector_records.csv
+results/b23_selector_provenance.csv
+results/b23_private_scorer_outputs.csv
+results/b23_disagreement_results.csv
+results/b23_source_ablation.csv
+results/b23_regression_matrix.csv
+figures/b23_private_selector_scores.png
+figures/b23_provenance_breakdown.png
+figures/b23_prediction_overlap.png
+figures/b23_disagreement_divergence.png
+figures/b23_source_ablation.png
+figures/b23_regression_matrix.png
+reports/B2_3_PRIVATE_TRACE_SELECTOR_REPORT.md
+reports/B2_3_PRIVATE_TRACE_SELECTOR_SELF_AUDIT.md
+results/b3_active_inspection_summary.csv
+results/b3_active_inspection_records.csv
+results/b3_baseline_comparison.csv
+results/b3_trace_ablation_results.csv
+results/b3_information_gain_records.csv
+figures/b3_active_inspection_scores.png
+figures/b3_information_gain.png
+figures/b3_trace_vs_saliency_conflict.png
+figures/b3_trace_ablation_effects.png
+figures/b3_baseline_comparison.png
+reports/B3_DELAYED_TRACE_GUIDED_ACTIVE_INSPECTION.md
+reports/B3_ACTIVE_INSPECTION_SELF_AUDIT.md
 ```
 
 ## B1.1 Reviewer Hardening
@@ -223,7 +254,7 @@ not proof of blank-slate emergence, physics understanding, or general
 pre-linguistic intelligence.
 
 See `reports/B_LINE_EVIDENCE_LADDER.md` for the current B-line evidence ladder
-from PLOS v1 through B1.1, B2, B2.1, B2.1a, and B2.2.
+from PLOS v1 through B1.1, B2, B2.1, B2.1a, B2.2, B2.3, and B3.
 
 ## B2.1 Trace Hardening
 
@@ -263,6 +294,49 @@ trace-bearing models report `shared_selector_usage_rate=1.000` and
 Interpretation: B2/B2.1 should currently be treated as evidence that a
 trace-bearing path is useful, but not as evidence that recurrent, field, and
 schema trace mechanisms are independently separated.
+
+## B2.3 Private Trace Selector Construction
+
+B2.3 reconstructs `recurrent_flow_checkpoint_model`, `field_memory_model`, and
+`schema_memory_model` so their delayed checkpoint selection comes from
+model-private trace scorers rather than `delayed_common.select_delayed_region`.
+
+The current B2.3 result reports:
+
+```text
+shared_selector_usage_rate = 0.000
+cross_model_exact_prediction_match_rate = 0.000
+disagreement_episode_divergence = 1.000
+b23_private_selector_score = 0.972
+```
+
+Interpretation: B2.3 reduces the shared-selector explanation and supports
+partial mechanism separation under the current toy diagnostics. It still does
+not prove blank-slate emergence, complete mechanism independence, or general
+delayed causality.
+
+## B3 Active Inspection
+
+B3 keeps the B2.3 private trace selectors fixed and asks whether delayed trace
+can guide budgeted active inspection. The model gets one 8x8 region inspect
+action and must prefer delayed information value over visual saliency or
+short-horizon checkpoint cues.
+
+The current B3 result reports:
+
+```text
+trace_guided_inspection_accuracy = 1.000
+trace_vs_saliency_rejection = 1.000
+delayed_information_gain = 1.000
+trace_ablation_inspection_drop = 1.000
+delay_ood_inspection_accuracy = 0.975
+b3_active_inspection_score = 0.985
+```
+
+Interpretation: in the toy PLOS environment, B2.3 private delayed traces can
+guide budgeted active inspection under the current gates. This does not prove
+general active intelligence, real-world inspection ability, human-like
+attention, or language-free cognition.
 
 ## Boundary
 

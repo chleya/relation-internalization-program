@@ -1,0 +1,56 @@
+base_config: configs/b23_private_selector.yaml
+
+target_models:
+  - recurrent_flow_checkpoint_model
+  - field_memory_model
+  - schema_memory_model
+
+baselines:
+  - random_inspection_baseline
+  - saliency_inspection_baseline
+  - short_horizon_checkpoint_baseline
+  - oracle_inspection_baseline
+
+seeds: [0, 1, 2]
+
+b3:
+  n_train: 2000
+  n_test: 500
+  n_ood: 500
+  max_eval_episodes: 160
+
+  frame_size: 64
+  grid_size: 8
+  past_frames: 8
+  future_frames: 12
+
+  inspect_budget: 1
+  candidate_regions: 64
+
+  tasks:
+    trace_guided_inspection: true
+    trace_vs_saliency_conflict: true
+    delayed_information_gain: true
+    inspection_after_trace_ablation: true
+    delay_ood_inspection: true
+
+  ood:
+    heldout_delays: [3, 5, 7]
+    extrapolation_delays: [8, 10]
+    relocated_trace_regions: true
+
+  gates:
+    trace_guided_inspection_accuracy: 0.75
+    trace_vs_saliency_rejection: 0.75
+    delayed_information_gain: 0.20
+    inspection_value_gain_over_random: 0.20
+    inspection_value_gain_over_saliency: 0.15
+    inspection_value_gain_over_short_horizon: 0.15
+    trace_ablation_inspection_drop: 0.20
+    delay_ood_inspection_accuracy: 0.65
+    non_trace_inspection_stability: 0.70
+    oracle_inspection_score: 0.95
+    random_inspection_score: 0.25
+
+  scoring:
+    zero_if_any_core_gate_fails: true

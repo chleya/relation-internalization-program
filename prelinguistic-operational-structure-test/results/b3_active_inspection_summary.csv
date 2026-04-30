@@ -1,0 +1,4 @@
+model,seed,trace_guided_inspection_accuracy,trace_vs_saliency_rejection,delayed_information_gain,relative_information_gain,inspection_value_gain_over_random,inspection_value_gain_over_saliency,inspection_value_gain_over_short_horizon,base_trace_guided_inspection_accuracy,trace_ablated_inspection_accuracy,trace_ablation_inspection_drop,delay_ood_inspection_accuracy,oracle_inspection_score,random_inspection_score,saliency_inspection_score,short_horizon_inspection_score,b3_active_inspection_score
+recurrent_flow_checkpoint_model,0,1.0,1.0,1.0,0.9999990000010002,0.9359375,0.95,0.95,1.0,0.0,1.0,0.975,1.0,0.00625,0.0,0.0,0.985
+field_memory_model,0,1.0,1.0,1.0,0.9999990000010002,0.9359375,0.95,0.95,1.0,0.0,1.0,0.975,1.0,0.00625,0.0,0.0,0.985
+schema_memory_model,0,1.0,1.0,1.0,0.9999990000010002,0.9359375,0.95,0.95,1.0,0.0,1.0,0.975,1.0,0.00625,0.0,0.0,0.985

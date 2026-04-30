@@ -1,6 +1,6 @@
 # B-Line Evidence Ladder
 
-## From PLOS v1 to B2.2
+## From PLOS v1 to B3
 
 This document summarizes the current evidence chain for the B-line:
 
@@ -38,6 +38,12 @@ B2.1/B2.1a:
 
 B2.2:
   Tests whether the trace selector is independently separated across substrates.
+
+B2.3:
+  Reconstructs the trace-bearing models with private trace selectors.
+
+B3:
+  Tests whether private delayed trace guides budgeted active inspection.
 ```
 
 Current best interpretation:
@@ -46,10 +52,12 @@ Current best interpretation:
 > B1.1 showed that this candidate is not merely visual saliency, but it fails delayed causal checkpoint selection.  
 > B2 supports the diagnosis that delayed operational checkpoints require trace-bearing paths.
 > B2.1a and B2.2 show that the current recurrent/field/schema models should not yet be treated as independent trace mechanisms because they share effectively identical selector behavior.
+> B2.3 reduces that shared-selector interpretation by replacing the shared selector with private recurrent, field, and schema trace scorers.
+> B3 shows that those private traces can guide a one-region active inspection decision under toy budgeted-inspect gates.
 
 Current strongest claim:
 
-> In the toy PLOS world, short-horizon checkpoint structure is insufficient for delayed operational relevance. Delayed operational structure appears to require a trace-bearing path, but current trace-bearing models still need selector-provenance separation before they can count as independent substrate mechanisms.
+> In the toy PLOS world, short-horizon checkpoint structure is insufficient for delayed operational relevance. Delayed operational structure appears to require a trace-bearing path. After B2.3, the current private selectors show partial mechanism separation under toy diagnostics. B3 adds evidence that private delayed trace can guide budgeted active inspection, while still not proving natural emergence, complete independence, or general active intelligence.
 
 Current unsupported claims:
 
@@ -58,6 +66,7 @@ Current unsupported claims:
 - The W -> O1 -> O2 framework is proven.
 - The model understands physics in a human-like way.
 - The result transfers to real-world robotics, construction, or geotechnical monitoring.
+- The system has general active inspection or control intelligence.
 
 ---
 
@@ -581,7 +590,94 @@ but trace selector provenance is not yet disentangled
 
 ---
 
-## 10. Recommended Repository Placement
+## 10. B2.3 Private Trace Selector Construction
+
+B2.3 reconstructs the three trace-bearing models so that delayed checkpoint
+selection is performed by model-private scorers:
+
+```text
+recurrent_flow_checkpoint_model -> recurrent_memory private scorer
+field_memory_model              -> field_trace private scorer
+schema_memory_model             -> schema_memory private scorer
+```
+
+Key result:
+
+```text
+shared_selector_usage_rate = 0.000
+model_private_score_usage_rate = 1.000
+cross_model_exact_prediction_match_rate = 0.000
+disagreement_episode_divergence = 1.000
+b2_delayed_score = 1.000
+b21_trace_hardening_score = 0.960
+b23_private_selector_score = 0.972
+```
+
+Interpretation:
+
+> B2.3 reduces the shared-selector explanation of B2/B2.1 by replacing the shared selector with private trace scorers. Under the current toy diagnostics, recurrent, field, and schema trace paths show partial mechanism separation.
+
+Boundary:
+
+```text
+B2.3 does not prove blank-slate emergence.
+B2.3 does not prove complete mechanism independence.
+B2.3 does not prove general delayed causality.
+```
+
+---
+
+## 11. B3 Delayed Trace-Guided Active Inspection
+
+B3 keeps the B2.3 private trace selectors fixed and tests whether they can
+guide a budgeted inspect decision:
+
+```text
+private delayed trace
+  -> one 8x8 inspect-region choice
+  -> delayed information gain
+```
+
+The key conflict is:
+
+```text
+visual saliency / short-horizon checkpoint
+  vs
+currently non-salient but delayed-information-value trace region
+```
+
+Key result:
+
+```text
+trace_guided_inspection_accuracy = 1.000
+trace_vs_saliency_rejection = 1.000
+delayed_information_gain = 1.000
+inspection_value_gain_over_random = 0.936
+inspection_value_gain_over_saliency = 0.950
+inspection_value_gain_over_short_horizon = 0.950
+trace_ablation_inspection_drop = 1.000
+delay_ood_inspection_accuracy = 0.975
+oracle_inspection_score = 1.000
+random_inspection_score = 0.006
+b3_active_inspection_score = 0.985
+```
+
+Interpretation:
+
+> B3 shows that, in the toy PLOS environment, B2.3 private delayed traces can guide budgeted active inspection. The models choose delayed trace regions over saliency and short-horizon baselines, achieve delayed information gain, and lose inspection performance after private trace ablation.
+
+Boundary:
+
+```text
+B3 does not prove general active intelligence.
+B3 does not prove real-world robot inspection.
+B3 does not prove human-like attention.
+B3 does not prove language-free cognition solved.
+```
+
+---
+
+## 12. Recommended Repository Placement
 
 Save this document as:
 
@@ -592,11 +688,11 @@ prelinguistic-operational-structure-test/reports/B_LINE_EVIDENCE_LADDER.md
 Also update README with a short pointer:
 
 ```text
-See reports/B_LINE_EVIDENCE_LADDER.md for the current B-line evidence ladder from PLOS v1 through B1.1, B2, B2.1, B2.1a, and B2.2.
+See reports/B_LINE_EVIDENCE_LADDER.md for the current B-line evidence ladder from PLOS v1 through B1.1, B2, B2.1, B2.1a, B2.2, B2.3, and B3.
 ```
 
 ---
 
-## 11. One-Sentence Project Status
+## 13. One-Sentence Project Status
 
-> B-line has progressed from diagnosing short-horizon operational checkpoints to identifying delayed causal trace, then to showing that current trace-bearing models still share a selector path rather than demonstrating separated trace mechanisms.
+> B-line has progressed from diagnosing short-horizon operational checkpoints to identifying delayed causal trace, exposing shared-selector dependence, constructing private trace selectors with partial mechanism separation, and showing that those private traces can guide budgeted active inspection in the toy PLOS environment.

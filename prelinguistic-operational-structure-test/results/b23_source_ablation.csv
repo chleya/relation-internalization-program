@@ -1,0 +1,4 @@
+model,model_private_trace_drop,post_private_ablation_score,seed,shared_selector_ablation_advantage,shared_selector_ablation_drop
+recurrent_flow_checkpoint_model,0.8913927183796962,0.10860728162030375,0,-0.8913927183796962,0.0
+field_memory_model,0.8913927183796962,0.10860728162030375,0,-0.8913927183796962,0.0
+schema_memory_model,0.8913927183796962,0.10860728162030375,0,-0.8913927183796962,0.0

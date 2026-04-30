@@ -133,6 +133,8 @@ prelinguistic-operational-structure-test\reports\B_LINE_EVIDENCE_LADDER.md
 prelinguistic-operational-structure-test\reports\B2_1_TRACE_HARDENING_REPORT.md
 prelinguistic-operational-structure-test\reports\B2_1A_TRACE_DEGENERACY_AUDIT.md
 prelinguistic-operational-structure-test\reports\B2_2_TRACE_SELECTOR_DISENTANGLEMENT.md
+prelinguistic-operational-structure-test\reports\B2_3_PRIVATE_TRACE_SELECTOR_REPORT.md
+prelinguistic-operational-structure-test\reports\B3_DELAYED_TRACE_GUIDED_ACTIVE_INSPECTION.md
 LLM_RELATION_DIAGNOSTIC_SCOUTING.md
 RELATION_INTERNALIZATION_PROJECT_SUMMARY.md
 RELATION_INTERNALIZATION_V1_V5_FINAL_REPORT.md
@@ -193,7 +195,11 @@ python -m src.run_b2_delayed_checkpoint --config configs/b2_delayed_checkpoint.y
 python -m src.run_b21_trace_hardening --config configs/b21_trace_hardening.yaml --seed 0
 python -m src.run_b21a_degeneracy_audit --config configs/b21a_degeneracy_audit.yaml --seed 0
 python -m src.run_b22_selector_disentanglement --config configs/b22_selector_disentanglement.yaml --seed 0
+python -m src.run_b23_private_selector --config configs/b23_private_selector.yaml --seed 0
+python -m src.run_b3_active_inspection --config configs/b3_active_inspection.yaml --seed 0
 python -m src.visualize_b22 --summary results/b22_selector_disentanglement_summary.csv
+python -m src.visualize_b23 --summary results/b23_private_selector_summary.csv
+python -m src.visualize_b3 --summary results/b3_active_inspection_summary.csv
 python -m src.visualize --summary results/overall_summary.csv
 
 cd ..\relation-internalization-test
