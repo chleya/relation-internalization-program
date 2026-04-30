@@ -1,0 +1,2 @@
+solver,n,random_symbol_transfer,support_conditioned_binding,counterfactual_use,local_edit_locality,audit_correctness,missing_observation_uncertainty,budgeted_inspect,mean_case_score,llm_relation_gated_score
+llama_cpp,21,1.0,1.0,0.6666666666666666,0.3333333333333333,1.0,0.3333333333333333,0.0,0.6190476190476191,0.0

@@ -1,0 +1,25 @@
+seeds: [0, 1, 2]
+case_profile: strict
+
+solvers:
+  - relation_oracle
+  - global_mapping
+  - edit_compliance
+  - missingness_template
+  - surface_audit
+
+gates:
+  random_symbol_transfer: 1.0
+  support_conditioned_binding: 1.0
+  counterfactual_use: 1.0
+  local_edit_locality: 1.0
+  audit_correctness: 1.0
+  missing_observation_uncertainty: 1.0
+  budgeted_inspect: 1.0
+
+outputs:
+  records: results/llm_relation_records_strict.csv
+  summary: results/llm_relation_summary_strict.csv
+  raw: results/llm_relation_raw_strict.jsonl
+  report: reports/LLM_RELATION_DIAGNOSTIC_REPORT_STRICT.md
+  self_audit: reports/LLM_RELATION_DIAGNOSTIC_SELF_AUDIT_STRICT.md

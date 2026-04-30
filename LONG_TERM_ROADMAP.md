@@ -20,6 +20,16 @@ After V6, the route was corrected. V4-V6 remain useful review/governance shell
 diagnostics, but they are not the core non-LLM intelligence path. The active
 mainline now returns to agent internals through R1.
 
+The LLM black-box route has also been tested and frozen as a sidecar negative
+baseline. It is useful for showing what prompt-level relation behavior does not
+establish, but it is not the constructive mainline.
+
+The B-line now has a separate runnable foothold: PLOS-Test. It tests whether
+pre-linguistic operational structure can arise from continuous 2D dynamics
+without language labels, using behavior, structural intervention, and OOD gates.
+This is a parallel diagnostic branch, not a replacement for the explicit R1/R2
+agent line.
+
 Do not drift into:
 
 ```text
@@ -29,6 +39,7 @@ unrestricted world modeling
 symbol emergence
 multi-agent language emergence
 generic agent governance
+open-ended black-box LLM prompt stress testing
 ```
 
 Those may remain side projects, but they are not the mainline.
@@ -572,11 +583,15 @@ replace evidence with theory
 Recommended allocation:
 
 ```text
-80% R1/R1.1 active relation-agent line
-10% maintenance of V1-V6 diagnostic evidence
+85% R1/R2 active relation-agent line
+10% maintenance of V1-V6 and LLM sidecar diagnostic evidence
 5% method borrowing from SVT/unified-sel/CEE when it improves R1
-5% archive and product-tool maintenance
+0% open-ended LLM prompt expansion without a new false-positive theory
 ```
+
+B-line work is allowed when it stays inside PLOS-Test's scope: minimal 2D
+dynamics, no language labels, no prediction-only success claims, and explicit
+behavior + intervention + OOD gates.
 
 ## 5. Current Next Step
 
@@ -595,4 +610,19 @@ Then:
 
 ```text
 If R2.1 survives, move toward richer environments with stochastic dynamics.
+After the explicit agent line survives stronger uncertainty hardening, consider
+a neural constructive agent trained against counterfactual, edit, audit, and
+inspect objectives.
+```
+
+Parallel B-line:
+
+```text
+PLOS-Test v1 is implemented and tested.
+Current substrate-search result: flow_checkpoint_model qualifies under the v1
+gates with plos_candidate_score = 0.434 and survives the first hardening pass
+with flow_checkpoint_hardening_score = 0.771.
+Next B-line work should broaden hardening against checkpoint-prior,
+metric-design, richer OOD, and distributed-representation false positives before
+strengthening the claim.
 ```

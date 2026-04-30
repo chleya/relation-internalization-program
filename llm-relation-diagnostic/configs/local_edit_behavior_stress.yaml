@@ -1,0 +1,19 @@
+seeds: [0, 1, 2]
+case_profile: strict
+case_set: local_edit_behavior_stress
+
+solvers:
+  - relation_oracle
+  - edit_compliance
+  - edit_no_behavior
+  - global_mapping
+
+gates:
+  local_edit_locality: 1.0
+
+outputs:
+  records: results/local_edit_behavior_stress_records.csv
+  summary: results/local_edit_behavior_stress_summary.csv
+  raw: results/local_edit_behavior_stress_raw.jsonl
+  report: reports/LOCAL_EDIT_BEHAVIOR_STRESS_REPORT.md
+  self_audit: reports/LOCAL_EDIT_BEHAVIOR_STRESS_SELF_AUDIT.md

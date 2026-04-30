@@ -1,0 +1,4 @@
+solver,n,budgeted_inspect,mean_case_score,llm_relation_gated_score
+missingness_template,15,0.2,0.2,0.0
+relation_oracle,15,1.0,1.0,1.0
+surface_audit,15,0.2,0.2,0.0

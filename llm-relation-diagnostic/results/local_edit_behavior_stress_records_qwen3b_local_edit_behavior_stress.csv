@@ -1,0 +1,4 @@
+solver,seed,case_id,gate,case_score,answer_match,inspect_match,uncertain_match,audit_links_match,query_sets_match,answers_by_query_match,error
+llama_cpp,0,seed0_local_edit_behavior,local_edit_locality,0.0,1.0,1.0,1.0,1.0,0.0,0.0,
+llama_cpp,1,seed1_local_edit_behavior,local_edit_locality,0.0,1.0,1.0,1.0,1.0,0.0,1.0,
+llama_cpp,2,seed2_local_edit_behavior,local_edit_locality,0.0,1.0,1.0,1.0,1.0,0.0,0.0,

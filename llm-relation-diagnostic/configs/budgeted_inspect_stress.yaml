@@ -1,0 +1,18 @@
+seeds: [0, 1, 2]
+case_profile: strict
+case_set: budgeted_inspect_stress
+
+solvers:
+  - relation_oracle
+  - missingness_template
+  - surface_audit
+
+gates:
+  budgeted_inspect: 1.0
+
+outputs:
+  records: results/budgeted_inspect_stress_records.csv
+  summary: results/budgeted_inspect_stress_summary.csv
+  raw: results/budgeted_inspect_stress_raw.jsonl
+  report: reports/BUDGETED_INSPECT_STRESS_REPORT.md
+  self_audit: reports/BUDGETED_INSPECT_STRESS_SELF_AUDIT.md

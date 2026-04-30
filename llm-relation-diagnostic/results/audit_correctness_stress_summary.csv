@@ -1,0 +1,6 @@
+solver,n,audit_correctness,mean_case_score,llm_relation_gated_score
+missingness_template,15,0.0,0.0,0.0
+outcome_audit,15,0.2,0.2,0.0
+relation_oracle,15,1.0,1.0,1.0
+reverse_audit,15,0.2,0.2,0.0
+surface_audit,15,0.0,0.0,0.0

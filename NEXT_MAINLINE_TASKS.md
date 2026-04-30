@@ -12,6 +12,8 @@ R1 is implemented and tested.
 R1.1 hardening is implemented and tested.
 R1.2 discovery baseline is implemented and tested.
 R2 partial-observability baseline is implemented and tested.
+llm-relation-diagnostic is implemented and frozen as a sidecar negative baseline.
+prelinguistic-operational-structure-test is implemented as a B-line diagnostic.
 ```
 
 Current mainline:
@@ -22,6 +24,9 @@ R2.1: Partial-Observability Hardening
 
 Do not move back into generic review, governance, arbitration, or deployment
 claims unless the task directly supports the agent's internal relation learning.
+Do not continue expanding black-box LLM prompt stress tests as the mainline.
+Do not treat PLOS-Test as video prediction; it is a B-line W -> O1 -> O2
+diagnostic with behavior + intervention + OOD gates.
 
 ## 2. Why R1 Is The Mainline Now
 
@@ -104,6 +109,59 @@ Important negative controls:
 shortcut has high in-distribution action_success but fails OOD shortcut reversal.
 passive_memory has high action_success but fails relation recovery, counterfactual,
 edit, and active-exploration gates.
+```
+
+LLM sidecar negative baseline:
+
+```text
+llm-relation-diagnostic shows that tested local black-box LLMs fail the full
+toy relation gates for budgeted inspect, behavior-level local edit, and exact
+audit. It is frozen as negative evidence, not a constructive route.
+```
+
+Read:
+
+```text
+llm-relation-diagnostic\reports\LLM_RELATION_DIAGNOSTIC_FREEZE_MEMO.md
+```
+
+B-line PLOS-Test:
+
+```text
+prelinguistic-operational-structure-test\reports\B_LINE_RESEARCH_PROGRAM.md
+prelinguistic-operational-structure-test\reports\B_LINE_PLOS_REPORT.md
+prelinguistic-operational-structure-test\reports\B_LINE_SELF_AUDIT.md
+prelinguistic-operational-structure-test\reports\B_LINE_SUBSTRATE_AUDIT.md
+prelinguistic-operational-structure-test\reports\B_LINE_SUBSTRATE_SEARCH.md
+prelinguistic-operational-structure-test\reports\B_LINE_FLOW_CHECKPOINT_HARDENING.md
+```
+
+Current B-line result:
+
+```text
+pytest -q: 19 passed
+field_model: plos_candidate_score = 0.000
+flow_checkpoint_model: plos_candidate_score = 0.434
+koopman_model: plos_candidate_score = 0.000
+patch_graph_model: plos_candidate_score = 0.000
+pixel_predictor: plos_candidate_score = 0.000
+predictive_coding_model: plos_candidate_score = 0.000
+schema_model: plos_candidate_score = 0.000
+slot_model: plos_candidate_score = 0.000
+trajectory_memory: plos_candidate_score = 0.000
+world_model: plos_candidate_score = 0.000
+```
+
+B-line substrate search result:
+
+```text
+predictive_coding_model, patch_graph_model, koopman_model, and
+flow_checkpoint_model were added as lower object-prior substrate candidates.
+flow_checkpoint_model qualifies under the current v1 gates
+(plos_candidate_score = 0.434) and survives the first hardening pass
+(flow_checkpoint_hardening_score = 0.771). It remains a high-prior checkpoint
+substrate, so treat it as a hardened PLOS candidate foothold, not as a final
+internalization result.
 ```
 
 ## 5. Next Task: R2.1

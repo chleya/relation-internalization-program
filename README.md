@@ -22,6 +22,25 @@ against shortcut and passive-memory baselines. This is the current core agent
 line.
 
 ```text
+llm-relation-diagnostic
+```
+
+Sidecar black-box LLM diagnostic. It adapts the relation-internalization gates
+to random-symbol prompts, support-conditioned binding, local edits, audit
+specificity, missing-observation uncertainty, and budgeted inspect selection.
+The default run uses mock baselines and does not claim LLM relation
+understanding.
+
+```text
+prelinguistic-operational-structure-test
+```
+
+B-line PLOS-Test diagnostic. It tests whether operational structure can emerge
+from non-linguistic continuous 2D dynamics along W -> O1 -> O2, using behavior,
+structural intervention, and OOD gates. It deliberately excludes language labels
+and does not treat prediction accuracy as evidence of operational structure.
+
+```text
 relation-internalization-test
 ```
 
@@ -97,6 +116,20 @@ relation-agent-r1\reports\R1_CLAIMS.md
 relation-agent-r1\reports\R1_1_HARDENING_REPORT.md
 relation-agent-r1\reports\R1_2_DISCOVERY_REPORT.md
 relation-agent-r1\reports\R2_PARTIAL_OBSERVABILITY_REPORT.md
+llm-relation-diagnostic\reports\LLM_RELATION_DIAGNOSTIC_REPORT.md
+llm-relation-diagnostic\reports\LLM_RELATION_DIAGNOSTIC_LIVE_SMOKE_REPORT.md
+llm-relation-diagnostic\reports\LLM_RELATION_DIAGNOSTIC_FREEZE_MEMO.md
+llm-relation-diagnostic\reports\BUDGETED_INSPECT_STRESS_LIVE_REPORT.md
+llm-relation-diagnostic\reports\BUDGETED_INSPECT_STRESS_MATRIX_REPORT.md
+llm-relation-diagnostic\reports\LOCAL_EDIT_BEHAVIOR_STRESS_LIVE_REPORT.md
+llm-relation-diagnostic\reports\AUDIT_CORRECTNESS_STRESS_LIVE_REPORT.md
+prelinguistic-operational-structure-test\reports\B_LINE_RESEARCH_PROGRAM.md
+prelinguistic-operational-structure-test\reports\B_LINE_PLOS_REPORT.md
+prelinguistic-operational-structure-test\reports\B_LINE_SELF_AUDIT.md
+prelinguistic-operational-structure-test\reports\B_LINE_SUBSTRATE_AUDIT.md
+prelinguistic-operational-structure-test\reports\B_LINE_SUBSTRATE_SEARCH.md
+prelinguistic-operational-structure-test\reports\B_LINE_FLOW_CHECKPOINT_HARDENING.md
+LLM_RELATION_DIAGNOSTIC_SCOUTING.md
 RELATION_INTERNALIZATION_PROJECT_SUMMARY.md
 RELATION_INTERNALIZATION_V1_V5_FINAL_REPORT.md
 RELATION_INTERNALIZATION_V1_V6_FINAL_REPORT.md
@@ -132,6 +165,26 @@ python -m src.run_r12_discovery --config configs/r12_discovery.yaml
 python -m src.visualize_r12 --summary results/r12_discovery_summary.csv
 python -m src.run_r2_partial_observability --config configs/r2_partial_observability.yaml
 python -m src.visualize_r2 --summary results/r2_partial_observability_summary.csv
+
+cd ..\llm-relation-diagnostic
+pytest -q
+python -m src.run_experiment --config configs/base.yaml
+python -m src.run_experiment --config configs/strict.yaml
+python -m src.run_experiment --config configs/budgeted_inspect_stress.yaml
+python -m src.run_experiment --config configs/local_edit_behavior_stress.yaml
+python -m src.run_experiment --config configs/audit_correctness_stress.yaml
+
+# Optional live LLM run, after starting a llama.cpp server separately:
+python -m src.run_experiment --config configs/base.yaml --solvers llama_cpp --base-url http://127.0.0.1:8083 --model qwen2.5-3b-instruct-q5_k_m --label qwen3b_smoke
+
+# Optional local GGUF matrix for the budgeted-inspect stress set:
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\run_live_matrix.ps1 -Config configs\budgeted_inspect_stress.yaml -Models qwen05b,qwen15b,qwen3b,gemma3_4b
+
+cd ..\prelinguistic-operational-structure-test
+pytest -q
+python -m src.run_sweep --config configs/sweep.yaml
+python -m src.run_hardening --config configs/sweep.yaml --seed 0
+python -m src.visualize --summary results/overall_summary.csv
 
 cd ..\relation-internalization-test
 pytest -q

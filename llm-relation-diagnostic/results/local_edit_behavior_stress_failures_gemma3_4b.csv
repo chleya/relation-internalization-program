@@ -1,0 +1,4 @@
+solver,seed,case_id,gate,variant,case_score,expected_inspect,actual_inspect,inspect_error,expected_uncertain,actual_uncertain,expected_audit_links,actual_audit_links,answer_match,inspect_match,uncertain_match,audit_links_match,query_sets_match,answers_by_query_match,error
+llama_cpp,0,seed0_local_edit_behavior,local_edit_locality,local_edit_behavior,0.0,,q2,correct,,False,,target_chain -> unrelated_chain,1.0,1.0,1.0,1.0,0.0,0.0,
+llama_cpp,1,seed1_local_edit_behavior,local_edit_locality,local_edit_behavior,0.0,,none,correct,,False,,target_chain -> unrelated_chain,1.0,1.0,1.0,1.0,1.0,0.0,
+llama_cpp,2,seed2_local_edit_behavior,local_edit_locality,local_edit_behavior,0.0,,r5,correct,,False,,target_chain -> other_support,1.0,1.0,1.0,1.0,1.0,0.0,

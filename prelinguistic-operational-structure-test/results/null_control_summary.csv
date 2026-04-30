@@ -1,0 +1,11 @@
+model,n,null_event_activation,null_inspection_concentration,null_structure_applicable,null_prior_alarm
+field_model,3,0.0,0.0,1.0,0.0
+flow_checkpoint_model,3,0.0,0.0,0.0,0.0
+koopman_model,3,0.12613932291666666,0.007614539315303166,1.0,1.0
+patch_graph_model,3,0.0,5.313195288181305e-06,1.0,0.0
+pixel_predictor,3,0.0,0.0,0.0,0.0
+predictive_coding_model,3,0.0,0.0,1.0,0.0
+schema_model,3,0.0,0.0,1.0,0.0
+slot_model,3,0.0,0.4486522078514099,1.0,1.0
+trajectory_memory,3,0.0,0.0,0.0,0.0
+world_model,3,0.0,0.0,1.0,0.0

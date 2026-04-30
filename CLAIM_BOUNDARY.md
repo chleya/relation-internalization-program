@@ -68,6 +68,30 @@ audits. Discovery without uncertainty handling fails the gated R2 score despite
 high partial-observation action success.
 ```
 
+### LLM Black-Box Diagnostic Sidecar
+
+```text
+The llm-relation-diagnostic sidecar adapts the relation gates to black-box LLM
+prompts. Tested local GGUF models fail full toy gates for budgeted inspect,
+behavior-level local edit, and exact audit. This supports the negative baseline:
+language-level answers, uncertainty statements, edit acknowledgement, and related
+audit fragments are not sufficient evidence for relation internalization.
+```
+
+### B-Line PLOS-Test
+
+```text
+PLOS-Test implements a pre-linguistic operational-structure diagnostic in a
+minimal continuous 2D world. It tests W -> O1 -> O2 without language labels,
+using behavior, structural intervention, and OOD gates. After the observable
+forcefield and flow-checkpoint substrate revisions, `flow_checkpoint_model`
+qualifies under the current v1 gates. This is a PLOS candidate foothold, not a
+settled internalization proof, because the model has a high checkpoint-selection
+prior. The first flow-checkpoint hardening pass survives decoy-patch,
+static-decoy, and causal-endpoint checks, but the result remains a bounded toy
+candidate rather than a final proof.
+```
+
 ### Static Relation Diagnostics
 
 ```text
@@ -209,12 +233,17 @@ unrestricted relation enumeration without a process-variable schema
 real monitoring uncertainty calibration
 learned inspection policy from deployment feedback
 general proof that large AI systems internalize real engineering relations
+general proof that LLMs cannot internalize relations
+proof that larger hosted LLMs would fail the same gates
 deployment-ready engineering review AI
 real construction-plan approval
 formal proof of human-level understanding
 general solution to AI complexity governance
 symbol emergence from continuous experience
 language emergence from continuous communication
+proof that pre-linguistic operational structure has been produced in a real
+world model
+proof that field, slot, or schema substrates are universal forms of structure
 ```
 
 ## 4. Boundary Between Motivation And Evidence
@@ -350,6 +379,7 @@ failure case
 The project provides a runnable diagnostic chain showing that prediction, memory,
 surface cues, probe readability, and generic review text are insufficient for
 relation internalization unless the system exposes usable, editable, auditable,
-and action-guiding relations; R1 now begins testing this as an active non-LLM
-agent rather than only as a review or governance shell.
+and action-guiding relations; R1/R2 test this as an active non-LLM agent, while
+the frozen LLM sidecar records black-box prompt failures as negative evidence
+rather than a constructive route.
 ```

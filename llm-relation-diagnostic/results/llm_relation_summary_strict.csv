@@ -1,0 +1,6 @@
+solver,n,random_symbol_transfer,support_conditioned_binding,counterfactual_use,local_edit_locality,audit_correctness,missing_observation_uncertainty,budgeted_inspect,mean_case_score,llm_relation_gated_score
+edit_compliance,21,1.0,1.0,1.0,0.0,1.0,1.0,1.0,0.8571428571428571,0.0
+global_mapping,21,1.0,0.0,0.0,1.0,1.0,1.0,1.0,0.7142857142857143,0.0
+missingness_template,21,1.0,1.0,1.0,1.0,1.0,0.0,0.0,0.7142857142857143,0.0
+relation_oracle,21,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+surface_audit,21,1.0,1.0,1.0,1.0,0.0,1.0,0.0,0.7142857142857143,0.0

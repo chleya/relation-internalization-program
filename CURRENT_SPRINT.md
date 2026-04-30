@@ -111,6 +111,8 @@ R2 unsafe automation metric implemented
 R2 relation-specific uncertainty audit implemented
 R2_PARTIAL_OBSERVABILITY_REPORT.md generated
 R2_SELF_AUDIT.md generated
+LLM black-box diagnostic sidecar implemented and frozen as negative baseline
+PLOS-Test B-line diagnostic implemented
 ```
 
 ### Now
@@ -121,6 +123,10 @@ Keep V4-V6 as shell/evaluation lines, not the main intelligence route.
 Treat R1.1 as the current hardening baseline.
 Treat R1.2 as the current discovery baseline.
 Treat R2 as the current partial-observability baseline.
+Treat llm-relation-diagnostic as a frozen sidecar negative baseline, not the
+mainline.
+Treat PLOS-Test as a parallel B-line diagnostic for W -> O1 -> O2, not as a
+generic video prediction project and not as an LLM/language route.
 ```
 
 ### Next
@@ -133,6 +139,43 @@ R2.1:
   add audit-label-only negative control
   add fake uncertainty shortcut
 ```
+
+### Sidecar Freeze
+
+```text
+llm-relation-diagnostic is frozen.
+```
+
+It showed that tested local black-box LLMs can answer some simple relation
+prompts but fail the full gates for budgeted inspect, behavior-level local edit,
+and exact audit. This is useful as a negative baseline, but continuing to add
+prompt stress cases is no longer the main route.
+
+Read:
+
+```text
+llm-relation-diagnostic\reports\LLM_RELATION_DIAGNOSTIC_FREEZE_MEMO.md
+```
+
+### B-Line PLOS-Test
+
+```text
+prelinguistic-operational-structure-test is implemented.
+pytest -q: 20 passed
+substrate expansion: predictive_coding_model, patch_graph_model,
+koopman_model, and flow_checkpoint_model added
+flow_checkpoint_model qualifies under current v1 gates:
+plos_candidate_score = 0.434
+flow_checkpoint_hardening_score = 0.771
+```
+
+It tests whether a model can form pre-linguistic operational structure from
+continuous 2D dynamics without language labels. The evidence rule is behavior +
+structural intervention + OOD. The current substrate search found
+flow_checkpoint_model as the first PLOS candidate under the v1 gates. This is
+still discounted because it uses a high checkpoint-selection prior and weak
+causal-drop intervention magnitudes. The first hardening pass survives
+noncausal decoy patch, static decoy, and causal endpoint-shift checks.
 
 ## Verification
 
@@ -186,7 +229,13 @@ the result is a first runnable foothold, not a proof of a new intelligence
 paradigm. R1.1 strengthened the foothold. R1.2 removes the hand-written true-link
 candidate table. R2 shows that relation discovery is still insufficient under
 partial observability unless the agent can inspect, avoid unsafe automation, and
-name the uncertain relation link.
+name the uncertain relation link. The LLM black-box sidecar is useful for
+negative evidence, but it is not a constructive route toward relation
+internalization. PLOS-Test opens a separate B-line for continuous pre-linguistic
+operational structure. Its current positive result is a candidate foothold:
+flow_checkpoint_model passes the v1 gates and the first hardening pass, but the
+pass is not blank-slate emergence and still needs broader hardening against
+checkpoint-prior, metric-design, and richer OOD false positives.
 ```
 
 ## Decision Rule

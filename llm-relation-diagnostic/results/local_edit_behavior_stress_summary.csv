@@ -1,0 +1,5 @@
+solver,n,local_edit_locality,mean_case_score,llm_relation_gated_score
+edit_compliance,3,0.0,0.0,0.0
+edit_no_behavior,3,0.0,0.0,0.0
+global_mapping,3,0.0,0.0,0.0
+relation_oracle,3,1.0,1.0,1.0
