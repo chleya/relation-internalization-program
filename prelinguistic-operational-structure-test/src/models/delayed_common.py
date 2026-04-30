@@ -207,34 +207,43 @@ def build_delayed_structure(
     if family == "recurrent_flow_checkpoint":
         return {
             "applicable": True,
+            "trace_family": "recurrent_flow_checkpoint",
             "memory_trace": np.asarray(tracks["positions"], dtype=np.float32),
             "checkpoint_logits": checkpoint_logits.astype(np.float32),
+            "delayed_checkpoint_logits": checkpoint_logits.astype(np.float32),
             "delayed_checkpoint_map": locality.copy(),
             "inspection_logits": logits,
             "critical_region_logits": logits,
+            "trace_confidence": float(confidence),
             "event_boundary_map": locality.copy(),
             "intervention_family": "recurrent_flow_checkpoint",
         }
     if family == "field_memory":
         return {
             "applicable": True,
+            "trace_family": "field_memory",
             "latent_field_memory": trace_field.astype(np.float32),
             "force_trace_field": trace_field.astype(np.float32),
             "uncertainty_trace_field": np.sqrt(np.maximum(trace_field, 0.0)).astype(np.float32),
             "delayed_influence_field": locality.copy(),
             "inspection_value_field": locality.copy(),
             "inspection_logits": logits,
+            "delayed_checkpoint_logits": checkpoint_logits.astype(np.float32),
             "critical_region_logits": logits,
+            "trace_confidence": float(confidence),
             "intervention_family": "field_memory",
         }
     return {
         "applicable": True,
+        "trace_family": "schema_memory",
         "schema_memory_slots": candidate_slots,
         "delayed_candidate_slots": candidate_slots.copy(),
         "schema_checkpoint_logits": checkpoint_logits.astype(np.float32),
+        "delayed_checkpoint_logits": checkpoint_logits.astype(np.float32),
         "schema_delay_logits": checkpoint_logits.astype(np.float32),
         "inspection_logits": logits,
         "critical_region_logits": logits,
+        "trace_confidence": float(confidence),
         "event_boundary_map": locality.copy(),
         "intervention_family": "schema_memory",
     }

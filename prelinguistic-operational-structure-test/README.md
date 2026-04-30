@@ -96,9 +96,11 @@ python -m src.run_sweep --config configs/sweep.yaml
 python -m src.run_hardening --config configs/sweep.yaml --seed 0
 python -m src.run_b11_flow_hardening --config configs/b11_flow_hardening.yaml --seed 0
 python -m src.run_b2_delayed_checkpoint --config configs/b2_delayed_checkpoint.yaml --seed 0
+python -m src.run_b21_trace_hardening --config configs/b21_trace_hardening.yaml --seed 0
 python -m src.visualize --summary results/overall_summary.csv
 python -m src.visualize_b11 --summary results/b11_flow_checkpoint_hardening_summary.csv
 python -m src.visualize_b2 --summary results/b2_delayed_checkpoint_summary.csv
+python -m src.visualize_b21 --summary results/b21_trace_hardening_summary.csv
 ```
 
 Run one model:
@@ -124,6 +126,7 @@ reports/B_LINE_SELF_AUDIT.md
 reports/B_LINE_SUBSTRATE_AUDIT.md
 reports/B_LINE_SUBSTRATE_SEARCH.md
 reports/B_LINE_FLOW_CHECKPOINT_HARDENING.md
+reports/B_LINE_EVIDENCE_LADDER.md
 results/substrate_audit.csv
 results/b11_flow_checkpoint_hardening_summary.csv
 results/b11_flow_checkpoint_records.csv
@@ -138,6 +141,14 @@ figures/b2_delay_gate_breakdown.png
 figures/b2_trace_intervention_effects.png
 reports/B2_DELAYED_CHECKPOINT_REPORT.md
 reports/B2_DELAYED_CHECKPOINT_SELF_AUDIT.md
+results/b21_trace_hardening_summary.csv
+results/b21_trace_hardening_records.csv
+figures/b21_trace_hardening_scores.png
+figures/b21_trace_attack_breakdown.png
+figures/b21_trace_deletion_specificity.png
+figures/b21_trace_compression_curve.png
+reports/B2_1_TRACE_HARDENING_REPORT.md
+reports/B2_1_TRACE_HARDENING_SELF_AUDIT.md
 ```
 
 ## B1.1 Reviewer Hardening
@@ -176,6 +187,22 @@ trace intervention, and heldout-delay OOD gates.
 A passing B2 model is a delayed PLOS candidate in this 64x64 toy world. It is
 not proof of blank-slate emergence, physics understanding, or general
 pre-linguistic intelligence.
+
+See `reports/B_LINE_EVIDENCE_LADDER.md` for the current B-line evidence ladder
+from PLOS v1 through B1.1 and B2.
+
+## B2.1 Trace Hardening
+
+B2.1 attacks the trace-bearing models from B2. It asks whether temporal memory,
+field trace, and sparse schema memory are actually used as causal delayed
+trace, rather than acting as another structure prior or clean-generator cue.
+
+The attacks are false delayed trace, trace swap, trace deletion specificity,
+multi-source trace conflict, noisy trace, trace length extrapolation, and trace
+compression pressure.
+
+Passing B2.1 means only that a model remains a hardened trace-bearing substrate
+candidate in the toy PLOS environment.
 
 ## Boundary
 

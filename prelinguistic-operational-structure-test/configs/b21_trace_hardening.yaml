@@ -1,0 +1,47 @@
+base_config: configs/b2_delayed_checkpoint.yaml
+
+target_models:
+  - recurrent_flow_checkpoint_model
+  - field_memory_model
+  - schema_memory_model
+
+reference_models:
+  - flow_checkpoint_model
+
+seeds: [0, 1, 2]
+
+b21:
+  n_attack_episodes: 300
+  frame_size: 64
+  grid_size: 8
+  past_frames: 8
+  future_frames: 12
+
+  train_delays: [2, 4, 6]
+  heldout_delays: [3, 5, 7]
+  extrapolation_delays: [8, 10]
+
+  attacks:
+    false_delayed_trace: true
+    trace_swap: true
+    trace_deletion_specificity: true
+    multi_source_trace_conflict: true
+    noisy_delayed_trace: true
+    trace_length_extrapolation: true
+    trace_compression_pressure: true
+
+  gates:
+    false_trace_rejection: 0.75
+    trace_swap_sensitivity: 0.70
+    trace_deletion_specificity_ratio: 1.50
+    multi_source_conflict_resolution: 0.70
+    noisy_trace_robustness: 0.70
+    trace_length_extrapolation: 0.65
+    trace_compression_survival: 0.65
+    true_trace_intervention_drop: 0.20
+    non_trace_stability: 0.70
+
+  compression_levels: [1.0, 0.75, 0.5, 0.25]
+
+  scoring:
+    zero_if_any_core_gate_fails: true

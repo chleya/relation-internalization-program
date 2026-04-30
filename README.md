@@ -129,6 +129,8 @@ prelinguistic-operational-structure-test\reports\B_LINE_SELF_AUDIT.md
 prelinguistic-operational-structure-test\reports\B_LINE_SUBSTRATE_AUDIT.md
 prelinguistic-operational-structure-test\reports\B_LINE_SUBSTRATE_SEARCH.md
 prelinguistic-operational-structure-test\reports\B_LINE_FLOW_CHECKPOINT_HARDENING.md
+prelinguistic-operational-structure-test\reports\B_LINE_EVIDENCE_LADDER.md
+prelinguistic-operational-structure-test\reports\B2_1_TRACE_HARDENING_REPORT.md
 LLM_RELATION_DIAGNOSTIC_SCOUTING.md
 RELATION_INTERNALIZATION_PROJECT_SUMMARY.md
 RELATION_INTERNALIZATION_V1_V5_FINAL_REPORT.md
@@ -184,6 +186,9 @@ cd ..\prelinguistic-operational-structure-test
 pytest -q
 python -m src.run_sweep --config configs/sweep.yaml
 python -m src.run_hardening --config configs/sweep.yaml --seed 0
+python -m src.run_b11_flow_hardening --config configs/b11_flow_hardening.yaml --seed 0
+python -m src.run_b2_delayed_checkpoint --config configs/b2_delayed_checkpoint.yaml --seed 0
+python -m src.run_b21_trace_hardening --config configs/b21_trace_hardening.yaml --seed 0
 python -m src.visualize --summary results/overall_summary.csv
 
 cd ..\relation-internalization-test
