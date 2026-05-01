@@ -1,0 +1,63 @@
+base_config: configs/b31_inspection_audit.yaml
+
+target_models:
+  - recurrent_flow_checkpoint_model
+  - field_memory_model
+  - schema_memory_model
+
+baselines:
+  - random_inspection_baseline
+  - saliency_inspection_baseline
+  - short_horizon_checkpoint_baseline
+  - oracle_family_inspection_baseline
+
+seeds: [0, 1, 2]
+
+b32:
+  n_train: 2000
+  n_test: 500
+  n_ood: 500
+  max_eval_episodes: 160
+
+  frame_size: 64
+  grid_size: 8
+  past_frames: 8
+  future_frames: 12
+  inspect_budget: 1
+
+  goal_codes:
+    recurrent_goal: [1, 0, 0]
+    field_goal: [0, 1, 0]
+    schema_goal: [0, 0, 1]
+
+  tasks:
+    family_specific_inspection_targets: true
+    multi_objective_inspection_value: true
+    task_conditioned_goal_code: true
+    inspect_value_decomposition: true
+    mechanism_disagreement_episodes: true
+    family_specific_trace_ablation: true
+
+  gates:
+    family_specific_inspection_accuracy: 0.70
+    recurrent_goal_accuracy: 0.70
+    field_goal_accuracy: 0.70
+    schema_goal_accuracy: 0.70
+    mechanism_disagreement_rate: 0.50
+    cross_model_same_region_rate: 0.70
+    task_conditioned_switch_accuracy: 0.70
+    inspect_value_decomposition_alignment: 0.70
+    recurrent_value_alignment: 0.70
+    field_value_alignment: 0.70
+    schema_value_alignment: 0.70
+    family_specific_trace_ablation_drop: 0.20
+    non_target_family_stability: 0.70
+    gain_over_random: 0.20
+    gain_over_saliency: 0.15
+    gain_over_short_horizon: 0.15
+    oracle_family_inspection_score: 0.95
+
+  scoring:
+    zero_if_no_mechanism_disagreement: true
+    zero_if_goal_switching_fails: true
+    zero_if_family_ablation_fails: true

@@ -102,6 +102,7 @@ python -m src.run_b22_selector_disentanglement --config configs/b22_selector_dis
 python -m src.run_b23_private_selector --config configs/b23_private_selector.yaml --seed 0
 python -m src.run_b3_active_inspection --config configs/b3_active_inspection.yaml --seed 0
 python -m src.run_b31_inspection_audit --config configs/b31_inspection_audit.yaml --seed 0
+python -m src.run_b32_mechanism_inspection --config configs/b32_mechanism_inspection.yaml --seed 0
 python -m src.visualize --summary results/overall_summary.csv
 python -m src.visualize_b11 --summary results/b11_flow_checkpoint_hardening_summary.csv
 python -m src.visualize_b2 --summary results/b2_delayed_checkpoint_summary.csv
@@ -111,6 +112,7 @@ python -m src.visualize_b22 --summary results/b22_selector_disentanglement_summa
 python -m src.visualize_b23 --summary results/b23_private_selector_summary.csv
 python -m src.visualize_b3 --summary results/b3_active_inspection_summary.csv
 python -m src.visualize_b31 --summary results/b31_inspection_audit_summary.csv
+python -m src.visualize_b32 --summary results/b32_mechanism_inspection_summary.csv
 ```
 
 Run one model:
@@ -234,6 +236,21 @@ figures/b31_shared_policy_ablation.png
 figures/b31_baseline_sanity.png
 reports/B3_1_ACTIVE_INSPECTION_DEGENERACY_AUDIT.md
 reports/B3_1_ACTIVE_INSPECTION_DEGENERACY_SELF_AUDIT.md
+results/b32_mechanism_inspection_summary.csv
+results/b32_mechanism_inspection_records.csv
+results/b32_inspection_value_decomposition.csv
+results/b32_goal_conditioned_results.csv
+results/b32_mechanism_disagreement_results.csv
+results/b32_family_ablation_results.csv
+results/b32_baseline_comparison.csv
+figures/b32_mechanism_inspection_scores.png
+figures/b32_family_specific_targets.png
+figures/b32_value_decomposition.png
+figures/b32_goal_conditioned_switching.png
+figures/b32_mechanism_disagreement.png
+figures/b32_family_ablation.png
+reports/B3_2_MECHANISM_DISAMBIGUATING_ACTIVE_INSPECTION.md
+reports/B3_2_MECHANISM_DISAMBIGUATING_SELF_AUDIT.md
 ```
 
 ## B1.1 Reviewer Hardening
@@ -382,6 +399,30 @@ is useful, but B3.1 does not support independent recurrent / field / schema
 active-inspection mechanism validation. The failing gate is ordinary B3
 per-episode inspect-region overlap: all three models pick the same region on
 the standard B3 episodes.
+
+## B3.2 Mechanism-Disambiguating Active Inspection
+
+B3.2 addresses the B3.1 same-region degeneracy by constructing episodes with
+different recurrent-, field-, and schema-optimal inspect regions. It adds
+multi-objective inspection values, a non-linguistic goal code, mechanism
+disagreement episodes, and family-specific trace ablation.
+
+The current B3.2 result reports:
+
+```text
+family_specific_inspection_accuracy = 1.000
+task_conditioned_switch_accuracy = 1.000
+mechanism_disagreement_rate = 1.000
+cross_model_same_region_rate = 0.000
+family_specific_trace_ablation_drop = 1.000
+non_target_family_stability = 1.000
+b32_mechanism_inspection_score = 0.963
+```
+
+Interpretation: B3.2 reduces the B3.1 same-region degeneracy under the current
+toy diagnostics and supports partial mechanism-disambiguated active inspection
+behavior. It does not prove real active intelligence, real-world inspection
+ability, complete mechanism independence, or language-free cognition solved.
 
 ## Boundary
 
