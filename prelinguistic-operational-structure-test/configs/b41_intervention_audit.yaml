@@ -1,0 +1,67 @@
+base_config: configs/b4_intervention.yaml
+
+target_models:
+  - recurrent_flow_checkpoint_model
+  - field_memory_model
+  - schema_memory_model
+
+reference_baselines:
+  - random_intervention_baseline
+  - saliency_intervention_baseline
+  - short_horizon_intervention_baseline
+  - inspect_only_baseline
+  - oracle_intervention_baseline
+
+seeds: [0, 1, 2]
+
+b41:
+  n_audit_episodes: 300
+  max_audit_episodes: 160
+  frame_size: 64
+  grid_size: 8
+  past_frames: 8
+  future_frames: 12
+  action_budget: 1
+
+  audits:
+    per_episode_action_overlap: true
+    action_policy_provenance: true
+    family_specific_action_scorer: true
+    shared_action_policy_ablation: true
+    wrong_action_wrong_region_stress: true
+    baseline_sanity: true
+    action_after_trace_ablation_specificity: true
+    value_leakage_check: true
+    fixed_action_type_shortcut_check: true
+
+  gates:
+    max_cross_model_exact_action_match_rate: 0.80
+    max_exact_all_model_same_action_rate: 0.80
+    max_fixed_action_type_rate: 0.85
+    max_shared_action_policy_usage_rate: 0.05
+    min_private_trace_action_score_usage_rate: 0.95
+    max_fallback_usage_rate: 0.05
+    min_action_scorer_specificity: 0.70
+    max_action_scorer_correlation: 0.90
+    max_shared_action_policy_ablation_drop: 0.05
+    min_private_action_retention_after_shared_ablation: 0.80
+    min_wrong_action_penalty: 0.20
+    min_wrong_region_penalty: 0.20
+    min_wrong_action_wrong_region_penalty: 0.25
+    max_random_intervention_score: 0.25
+    min_oracle_intervention_score: 0.95
+    min_gain_over_saliency: 0.15
+    min_gain_over_short_horizon: 0.15
+    min_gain_over_inspect_only: 0.15
+    min_private_trace_ablation_drop: 0.20
+    min_private_trace_over_non_trace_ratio: 1.50
+    min_action_type_shift_after_trace_ablation: 0.20
+    max_value_leakage_count: 0
+
+  scoring:
+    zero_if_shared_action_policy_dominates: true
+    zero_if_action_overlap_too_high: true
+    zero_if_fixed_action_type_shortcut: true
+    zero_if_value_leakage_detected: true
+    zero_if_private_trace_not_used: true
+

@@ -103,6 +103,9 @@ python -m src.run_b23_private_selector --config configs/b23_private_selector.yam
 python -m src.run_b3_active_inspection --config configs/b3_active_inspection.yaml --seed 0
 python -m src.run_b31_inspection_audit --config configs/b31_inspection_audit.yaml --seed 0
 python -m src.run_b32_mechanism_inspection --config configs/b32_mechanism_inspection.yaml --seed 0
+python -m src.run_b4_intervention --config configs/b4_intervention.yaml --seed 0
+python -m src.run_b41_intervention_audit --config configs/b41_intervention_audit.yaml --seed 0
+python -m src.run_b42_action_type_disambiguation --config configs/b42_action_type_disambiguation.yaml --seed 0
 python -m src.visualize --summary results/overall_summary.csv
 python -m src.visualize_b11 --summary results/b11_flow_checkpoint_hardening_summary.csv
 python -m src.visualize_b2 --summary results/b2_delayed_checkpoint_summary.csv
@@ -113,6 +116,9 @@ python -m src.visualize_b23 --summary results/b23_private_selector_summary.csv
 python -m src.visualize_b3 --summary results/b3_active_inspection_summary.csv
 python -m src.visualize_b31 --summary results/b31_inspection_audit_summary.csv
 python -m src.visualize_b32 --summary results/b32_mechanism_inspection_summary.csv
+python -m src.visualize_b4 --summary results/b4_intervention_summary.csv
+python -m src.visualize_b41 --summary results/b41_intervention_audit_summary.csv
+python -m src.visualize_b42 --summary results/b42_action_type_summary.csv
 ```
 
 Run one model:
@@ -251,6 +257,58 @@ figures/b32_mechanism_disagreement.png
 figures/b32_family_ablation.png
 reports/B3_2_MECHANISM_DISAMBIGUATING_ACTIVE_INSPECTION.md
 reports/B3_2_MECHANISM_DISAMBIGUATING_SELF_AUDIT.md
+results/b4_intervention_summary.csv
+results/b4_intervention_records.csv
+results/b4_baseline_comparison.csv
+results/b4_trace_ablation_results.csv
+results/b4_wrong_region_penalty.csv
+results/b4_family_intervention_results.csv
+figures/b4_intervention_scores.png
+figures/b4_action_type_accuracy.png
+figures/b4_wrong_region_penalty.png
+figures/b4_trace_ablation_effects.png
+figures/b4_family_intervention_targets.png
+figures/b4_baseline_comparison.png
+reports/B4_DELAYED_TRACE_GUIDED_INTERVENTION.md
+reports/B4_INTERVENTION_SELF_AUDIT.md
+results/b41_intervention_audit_summary.csv
+results/b41_intervention_audit_records.csv
+results/b41_action_overlap.csv
+results/b41_action_provenance.csv
+results/b41_action_scorer_correlation.csv
+results/b41_shared_action_policy_ablation.csv
+results/b41_wrong_action_stress.csv
+results/b41_baseline_sanity.csv
+results/b41_trace_ablation_specificity.csv
+figures/b41_intervention_audit_scores.png
+figures/b41_action_overlap.png
+figures/b41_action_type_distribution.png
+figures/b41_action_policy_provenance.png
+figures/b41_action_scorer_correlation.png
+figures/b41_shared_policy_ablation.png
+figures/b41_wrong_action_stress.png
+figures/b41_baseline_sanity.png
+figures/b41_trace_ablation_specificity.png
+reports/B4_1_INTERVENTION_DEGENERACY_AUDIT.md
+reports/B4_1_INTERVENTION_DEGENERACY_SELF_AUDIT.md
+results/b42_action_type_summary.csv
+results/b42_action_type_records.csv
+results/b42_action_type_value_table.csv
+results/b42_correct_region_wrong_action.csv
+results/b42_family_action_mapping.csv
+results/b42_action_type_counterfactual.csv
+results/b42_fixed_action_baseline.csv
+results/b42_action_type_ablation.csv
+results/b42_action_type_ood.csv
+figures/b42_action_type_scores.png
+figures/b42_action_type_distribution.png
+figures/b42_correct_region_wrong_action.png
+figures/b42_family_action_mapping.png
+figures/b42_counterfactual_sensitivity.png
+figures/b42_fixed_action_baseline.png
+figures/b42_action_type_ood.png
+reports/B4_2_ACTION_TYPE_DISAMBIGUATION.md
+reports/B4_2_ACTION_TYPE_DISAMBIGUATION_SELF_AUDIT.md
 ```
 
 ## B1.1 Reviewer Hardening
@@ -291,7 +349,7 @@ not proof of blank-slate emergence, physics understanding, or general
 pre-linguistic intelligence.
 
 See `reports/B_LINE_EVIDENCE_LADDER.md` for the current B-line evidence ladder
-from PLOS v1 through B1.1, B2, B2.1, B2.1a, B2.2, B2.3, and B3.
+from PLOS v1 through B1.1, B2, B2.1, B2.1a, B2.2, B2.3, B3, B3.1, B3.2, B4, B4.1, and B4.2.
 
 ## B2.1 Trace Hardening
 
@@ -423,6 +481,91 @@ Interpretation: B3.2 reduces the B3.1 same-region degeneracy under the current
 toy diagnostics and supports partial mechanism-disambiguated active inspection
 behavior. It does not prove real active intelligence, real-world inspection
 ability, complete mechanism independence, or language-free cognition solved.
+
+## B4 Delayed Trace-Guided Intervention / Action Selection
+
+B4 moves from inspection to a minimal local intervention/action diagnostic. It
+keeps the 64x64 toy world and a constrained action budget of one, asking whether
+private delayed traces can select both where to intervene and which discrete
+local action type to apply.
+
+The current B4 result reports:
+
+```text
+trace_guided_intervention_accuracy = 1.000
+intervention_region_accuracy = 1.000
+action_type_accuracy = 1.000
+outcome_improvement = 1.000
+intervention_vs_inspection_gain = 1.000
+wrong_region_penalty_sensitivity = 0.900
+family_specific_intervention_accuracy = 1.000
+trace_ablation_intervention_drop = 1.000
+delay_ood_intervention_accuracy = 1.000
+b4_intervention_score = 0.985
+```
+
+Interpretation: in the toy PLOS environment, B3.2 private delayed traces can
+guide minimal local intervention/action selection under the current diagnostic
+gates. This does not prove real control, robotics deployment, real engineering
+intervention, general active intelligence, or language-free cognition solved.
+
+## B4.1 Intervention Degeneracy Audit
+
+B4.1 audits whether the high B4 intervention score is better explained by
+private trace-guided action selection or by shared action policy, fixed action
+type, value leakage, weak baselines, or nonspecific trace ablation.
+
+The current B4.1 result reports:
+
+```text
+cross_model_exact_action_match_rate = 0.000
+exact_all_model_same_action_rate = 0.000
+fixed_action_type_rate = 1.000
+shared_action_policy_usage_rate = 0.000
+private_trace_action_score_usage_rate = 1.000
+action_scorer_specificity = 0.945
+wrong_action_penalty = 0.650
+wrong_region_penalty = 0.900
+private_trace_ablation_drop = 1.000
+action_type_shift_after_trace_ablation = 0.000
+value_leakage_count = 0
+b41_intervention_audit_score = 0.000
+```
+
+Interpretation: B4.1 does not erase B4's trace-guided intervention-path result,
+but it blocks an independent recurrent / field / schema intervention-mechanism
+claim. The current bottleneck is fixed action-type selection: each model uses a
+family-fixed action type, and trace ablation changes region choice but not action
+type.
+
+## B4.2 Action-Type Disambiguation
+
+B4.2 directly attacks the fixed action-type shortcut found by B4.1. It creates
+action-type-specific intervention targets where correct region plus wrong action
+is penalized, adds fixed-action and random-action-type baselines, and tests OOD
+family-action mappings.
+
+The current B4.2 result reports:
+
+```text
+fixed_action_type_rate = 0.500
+action_type_accuracy = 1.000
+region_accuracy = 1.000
+joint_region_action_accuracy = 1.000
+correct_region_wrong_action_penalty = 0.900
+action_type_counterfactual_sensitivity = 0.900
+family_action_diversity = 0.500
+action_type_shift_after_trace_ablation = 0.500 / 1.000
+action_type_ablation_drop = 0.500 / 1.000
+action_type_ood_accuracy = 1.000
+b42_action_type_score = 0.877 / 0.937
+```
+
+Interpretation: B4.2 reduces the B4.1 fixed-action-type shortcut under the
+current toy diagnostics. Private delayed traces now support intervention-region
+selection and differentiated action-type selection in action-type-specific
+episodes. This still does not prove real control, robotics ability, engineering
+deployment, or general active intelligence.
 
 ## Boundary
 

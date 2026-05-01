@@ -1,0 +1,91 @@
+base_config: configs/b41_intervention_audit.yaml
+
+target_models:
+  - recurrent_flow_checkpoint_model
+  - field_memory_model
+  - schema_memory_model
+
+baselines:
+  - fixed_action_baseline
+  - random_action_type_baseline
+  - saliency_intervention_baseline
+  - short_horizon_intervention_baseline
+  - oracle_action_type_baseline
+
+seeds: [0, 1, 2]
+
+b42:
+  n_train: 2000
+  n_test: 500
+  n_ood: 500
+  max_eval_episodes: 160
+
+  frame_size: 64
+  grid_size: 8
+  past_frames: 8
+  future_frames: 12
+
+  action_budget: 1
+  action_strength: 1.0
+
+  allowed_action_types:
+    - apply_local_damping
+    - apply_local_push
+    - block_force_region
+    - stabilize_trace_region
+
+  excluded_from_disambiguation:
+    - do_nothing
+    - inspect_only
+
+  family_action_map_train:
+    recurrent_memory:
+      preferred_actions: [apply_local_damping, stabilize_trace_region]
+    field_trace:
+      preferred_actions: [block_force_region, apply_local_damping]
+    schema_memory:
+      preferred_actions: [stabilize_trace_region, apply_local_push]
+
+  family_action_map_ood:
+    recurrent_memory:
+      preferred_actions: [block_force_region]
+    field_trace:
+      preferred_actions: [stabilize_trace_region]
+    schema_memory:
+      preferred_actions: [apply_local_damping]
+
+  tasks:
+    action_type_specific_targets: true
+    correct_region_wrong_action_penalty: true
+    family_action_mapping_stress: true
+    action_type_counterfactual: true
+    fixed_action_baseline: true
+    action_type_ablation: true
+    action_type_ood: true
+
+  gates:
+    fixed_action_type_rate: 0.70
+    action_type_accuracy: 0.70
+    region_accuracy: 0.75
+    joint_region_action_accuracy: 0.70
+    correct_region_wrong_action_penalty: 0.25
+    action_type_counterfactual_sensitivity: 0.25
+    family_action_diversity: 0.50
+    family_action_mapping_accuracy: 0.70
+    action_type_shift_after_trace_ablation: 0.20
+    action_type_ablation_drop: 0.20
+    non_target_action_stability: 0.70
+    region_stability_after_action_ablation: 0.70
+    gain_over_fixed_action_baseline: 0.15
+    gain_over_random_action_type: 0.20
+    gain_over_saliency: 0.15
+    gain_over_short_horizon: 0.15
+    action_type_ood_accuracy: 0.65
+    oracle_action_type_score: 0.95
+    value_leakage_count: 0
+
+  scoring:
+    zero_if_fixed_action_shortcut: true
+    zero_if_correct_region_wrong_action_not_penalized: true
+    zero_if_action_type_ablation_fails: true
+    zero_if_fixed_baseline_matches: true

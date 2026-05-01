@@ -1,0 +1,4 @@
+family,family_specific_intervention_accuracy,field_intervention_accuracy,model,record_kind,recurrent_intervention_accuracy,schema_intervention_accuracy,seed
+recurrent,1.0,1.0,recurrent_flow_checkpoint_model,family,1.0,1.0,0
+field,1.0,1.0,field_memory_model,family,1.0,1.0,0
+schema,1.0,1.0,schema_memory_model,family,1.0,1.0,0

@@ -1,0 +1,71 @@
+base_config: configs/b32_mechanism_inspection.yaml
+
+target_models:
+  - recurrent_flow_checkpoint_model
+  - field_memory_model
+  - schema_memory_model
+
+baselines:
+  - random_intervention_baseline
+  - saliency_intervention_baseline
+  - short_horizon_intervention_baseline
+  - inspect_only_baseline
+  - oracle_intervention_baseline
+
+seeds: [0, 1, 2]
+
+b4:
+  n_train: 2000
+  n_test: 500
+  n_ood: 500
+  max_eval_episodes: 160
+
+  frame_size: 64
+  grid_size: 8
+  past_frames: 8
+  future_frames: 12
+
+  action_budget: 1
+  candidate_regions: 64
+
+  action_space:
+    - do_nothing
+    - inspect_only
+    - apply_local_damping
+    - apply_local_push
+    - block_force_region
+    - stabilize_trace_region
+
+  action_strength: 1.0
+
+  tasks:
+    trace_guided_intervention: true
+    intervention_vs_inspection_distinction: true
+    wrong_region_intervention_penalty: true
+    family_specific_intervention_target: true
+    action_after_trace_ablation: true
+    delay_ood_intervention: true
+
+  gates:
+    trace_guided_intervention_accuracy: 0.75
+    intervention_region_accuracy: 0.75
+    action_type_accuracy: 0.70
+    outcome_improvement: 0.20
+    intervention_vs_inspection_gain: 0.15
+    wrong_region_penalty_sensitivity: 0.20
+    family_specific_intervention_accuracy: 0.70
+    recurrent_intervention_accuracy: 0.70
+    field_intervention_accuracy: 0.70
+    schema_intervention_accuracy: 0.70
+    trace_ablation_intervention_drop: 0.20
+    delay_ood_intervention_accuracy: 0.65
+    gain_over_random: 0.20
+    gain_over_saliency: 0.15
+    gain_over_short_horizon: 0.15
+    gain_over_inspect_only: 0.15
+    oracle_intervention_score: 0.95
+    random_intervention_score_max: 0.25
+
+  scoring:
+    zero_if_any_core_gate_fails: true
+

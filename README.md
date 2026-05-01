@@ -200,11 +200,17 @@ python -m src.run_b23_private_selector --config configs/b23_private_selector.yam
 python -m src.run_b3_active_inspection --config configs/b3_active_inspection.yaml --seed 0
 python -m src.run_b31_inspection_audit --config configs/b31_inspection_audit.yaml --seed 0
 python -m src.run_b32_mechanism_inspection --config configs/b32_mechanism_inspection.yaml --seed 0
+python -m src.run_b4_intervention --config configs/b4_intervention.yaml --seed 0
+python -m src.run_b41_intervention_audit --config configs/b41_intervention_audit.yaml --seed 0
+python -m src.run_b42_action_type_disambiguation --config configs/b42_action_type_disambiguation.yaml --seed 0
 python -m src.visualize_b22 --summary results/b22_selector_disentanglement_summary.csv
 python -m src.visualize_b23 --summary results/b23_private_selector_summary.csv
 python -m src.visualize_b3 --summary results/b3_active_inspection_summary.csv
 python -m src.visualize_b31 --summary results/b31_inspection_audit_summary.csv
 python -m src.visualize_b32 --summary results/b32_mechanism_inspection_summary.csv
+python -m src.visualize_b4 --summary results/b4_intervention_summary.csv
+python -m src.visualize_b41 --summary results/b41_intervention_audit_summary.csv
+python -m src.visualize_b42 --summary results/b42_action_type_summary.csv
 python -m src.visualize --summary results/overall_summary.csv
 
 cd ..\relation-internalization-test

@@ -709,12 +709,152 @@ Boundary:
 ```text
 B3.1 does not add a new capability claim.
 B3.1 does not prove independent active-inspection mechanisms.
-B3.1 blocks moving to B4 until active-inspection policy is redesigned or further disentangled.
+B3.1 blocked moving directly to intervention/action selection until active-inspection policy was redesigned or further disentangled.
 ```
 
 ---
 
-## 13. Recommended Repository Placement
+## 13. B3.2 Mechanism-Disambiguating Active Inspection
+
+B3.2 addresses the B3.1 same-region degeneracy by constructing
+family-specific inspection targets and multi-objective inspection values.
+
+Key result:
+
+```text
+family_specific_inspection_accuracy = 1.000
+task_conditioned_switch_accuracy = 1.000
+mechanism_disagreement_rate = 1.000
+cross_model_same_region_rate = 0.000
+family_specific_trace_ablation_drop = 1.000
+non_target_family_stability = 1.000
+b32_mechanism_inspection_score = 0.963
+```
+
+Interpretation:
+
+> B3.2 reduces the B3.1 same-region degeneracy. Under current toy diagnostics, recurrent / field / schema private traces show partial mechanism-disambiguated active inspection behavior.
+
+Boundary:
+
+```text
+B3.2 does not prove real active intelligence.
+B3.2 does not prove real-world inspection ability.
+B3.2 does not prove complete mechanism independence.
+B3.2 does not prove language-free cognition solved.
+```
+
+---
+
+## 14. B4 Delayed Trace-Guided Intervention / Action Selection
+
+B4 moves from "where to inspect" to a minimal constrained test of "where and how
+to intervene" using a small discrete local action set.
+
+Key result:
+
+```text
+trace_guided_intervention_accuracy = 1.000
+intervention_region_accuracy = 1.000
+action_type_accuracy = 1.000
+outcome_improvement = 1.000
+intervention_vs_inspection_gain = 1.000
+wrong_region_penalty_sensitivity = 0.900
+family_specific_intervention_accuracy = 1.000
+trace_ablation_intervention_drop = 1.000
+delay_ood_intervention_accuracy = 1.000
+b4_intervention_score = 0.985
+```
+
+Interpretation:
+
+> B4 supports that, in the toy PLOS environment, B3.2 private delayed traces can guide local intervention/action selection under a constrained action budget.
+
+Boundary:
+
+```text
+B4 does not prove real control.
+B4 does not prove robotics deployment.
+B4 does not prove real engineering intervention.
+B4 does not prove general active intelligence.
+B4 does not prove language-free cognition solved.
+```
+
+---
+
+## 15. B4.1 Intervention Degeneracy Audit
+
+B4.1 audits whether B4's high score reflects private trace-guided local action
+selection or a degeneracy such as fixed action type, shared action policy, value
+leakage, weak baselines, or nonspecific trace ablation.
+
+Key result:
+
+```text
+cross_model_exact_action_match_rate = 0.000
+exact_all_model_same_action_rate = 0.000
+fixed_action_type_rate = 1.000
+shared_action_policy_usage_rate = 0.000
+private_trace_action_score_usage_rate = 1.000
+action_scorer_specificity = 0.945
+wrong_action_penalty = 0.650
+wrong_region_penalty = 0.900
+private_trace_ablation_drop = 1.000
+action_type_shift_after_trace_ablation = 0.000
+value_leakage_count = 0
+b41_intervention_audit_score = 0.000
+```
+
+Interpretation:
+
+> B4.1 fails conservatively because each model uses a fixed family-specific action type and trace ablation shifts region choice but not action type. B4 remains evidence for a trace-guided intervention path, but not independently validated recurrent / field / schema intervention mechanisms.
+
+Boundary:
+
+```text
+B4.1 does not add a new capability claim.
+B4.1 does not prove independent intervention mechanisms.
+B4.1 blocks moving to B5 until action-type selection is further disentangled.
+```
+
+---
+
+## 16. B4.2 Action-Type Disambiguation
+
+B4.2 directly addresses the B4.1 fixed action-type shortcut by constructing
+action-type-specific intervention episodes where correct-region wrong-action is
+penalized and required action type varies within each family.
+
+Key result:
+
+```text
+fixed_action_type_rate = 0.500
+action_type_accuracy = 1.000
+region_accuracy = 1.000
+joint_region_action_accuracy = 1.000
+correct_region_wrong_action_penalty = 0.900
+action_type_counterfactual_sensitivity = 0.900
+family_action_diversity = 0.500
+action_type_ood_accuracy = 1.000
+b42_action_type_score = 0.877 / 0.937
+```
+
+Interpretation:
+
+> B4.2 reduces the fixed-action-type shortcut discovered in B4.1. Under current toy diagnostics, private delayed traces can guide both intervention-region selection and differentiated action-type selection under action-type-specific intervention values.
+
+Boundary:
+
+```text
+B4.2 does not prove real control.
+B4.2 does not prove robotics ability.
+B4.2 does not prove engineering deployment.
+B4.2 does not prove general active intelligence.
+```
+
+---
+
+## 17. Recommended Repository Placement
 
 Save this document as:
 
@@ -725,11 +865,11 @@ prelinguistic-operational-structure-test/reports/B_LINE_EVIDENCE_LADDER.md
 Also update README with a short pointer:
 
 ```text
-See reports/B_LINE_EVIDENCE_LADDER.md for the current B-line evidence ladder from PLOS v1 through B1.1, B2, B2.1, B2.1a, B2.2, B2.3, B3, and B3.1.
+See reports/B_LINE_EVIDENCE_LADDER.md for the current B-line evidence ladder from PLOS v1 through B1.1, B2, B2.1, B2.1a, B2.2, B2.3, B3, B3.1, B3.2, B4, B4.1, and B4.2.
 ```
 
 ---
 
-## 14. One-Sentence Project Status
+## 18. One-Sentence Project Status
 
-> B-line has progressed from diagnosing short-horizon operational checkpoints to identifying delayed causal trace, exposing shared-selector dependence, constructing private trace selectors with partial mechanism separation, showing that those private traces can guide budgeted active inspection, and then localizing the next blocker: standard B3 active-inspection decisions are still cross-model degenerate.
+> B-line has progressed from diagnosing short-horizon operational checkpoints to identifying delayed causal trace, exposing shared-selector dependence, constructing private trace selectors with partial mechanism separation, resolving the B3 same-inspect-region degeneracy with family-specific inspection targets, showing that those traces can guide minimal local intervention/action selection, auditing and localizing a fixed action-type shortcut, and reducing that shortcut with action-type-specific intervention diagnostics.
