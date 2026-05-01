@@ -1,0 +1,4 @@
+model,seed,inspect_timing_accuracy,epistemic_value_alignment,trace_update_accuracy,trace_uncertainty_reduction,post_inspection_intervention_accuracy,pragmatic_value_alignment,feedback_revision_accuracy,closed_loop_gain_over_inspect_always,closed_loop_gain_over_intervene_immediately,closed_loop_gain_over_random,closed_loop_gain_over_saliency,closed_loop_gain_over_short_horizon,wrong_inspect_penalty_sensitivity,wrong_intervention_penalty_sensitivity,planning_budget_compliance,oracle_closed_loop_score,random_closed_loop_score,b5_closed_loop_score
+recurrent_flow_checkpoint_model,0,1.0,1.0,1.0,0.39999999999999997,1.0,1.0,1.0,0.775,0.5,0.981875,0.875,0.875,1.0,0.75,1.0,1.0,0.018125,0.8875
+field_memory_model,0,1.0,1.0,1.0,0.39999999999999997,1.0,1.0,1.0,0.775,0.5,0.98875,0.875,0.875,1.0,0.75,1.0,1.0,0.01125,0.8875
+schema_memory_model,0,1.0,1.0,1.0,0.39999999999999997,1.0,1.0,1.0,0.775,0.5,0.994375,0.875,0.875,1.0,0.75,1.0,1.0,0.005625,0.8875

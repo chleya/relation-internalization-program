@@ -1,0 +1,77 @@
+base_config: configs/b5_clean_closed_loop.yaml
+clean_audit_config: configs/b51_clean_closed_loop_audit.yaml
+
+target_models:
+  - recurrent_flow_checkpoint_model
+  - field_memory_model
+  - schema_memory_model
+
+seeds: [0, 1, 2]
+
+b52:
+  n_test: 500
+  n_stress_pairs: 300
+  max_eval_pairs: 120
+
+  frame_size: 64
+  grid_size: 8
+  past_frames: 8
+  future_frames: 12
+
+  enforce_sanitized_model_input: true
+  evaluator_ground_truth_only: true
+  oracle_baseline_view_only: true
+  fail_fast_on_leakage: true
+
+  tasks:
+    inspection_content_swap: true
+    counterfactual_inspection_observation: true
+    same_initial_different_info_plan_divergence: true
+    contradictory_feedback: true
+    delayed_feedback: true
+    update_vs_scripted_baseline: true
+    feedback_vs_scripted_baseline: true
+    revision_specific_ablation: true
+
+  gates:
+    value_leakage_count: 0
+    oracle_plan_usage_rate: 0.00
+    oracle_trace_update_usage_rate: 0.00
+    oracle_feedback_revision_usage_rate: 0.00
+
+    inspection_content_sensitivity: 0.70
+    inspection_swap_update_change_rate: 0.50
+    counterfactual_update_switch_rate: 0.50
+    same_initial_different_info_plan_divergence: 0.50
+
+    post_update_plan_divergence: 0.50
+    post_update_intervention_change_rate: 0.50
+
+    model_gain_over_scripted_update: 0.15
+    update_specificity_over_scripted: 1.50
+    update_specificity_over_shuffled: 1.50
+
+    feedback_content_sensitivity: 0.65
+    contradictory_feedback_revision_accuracy: 0.65
+    delayed_feedback_revision_accuracy: 0.60
+    model_gain_over_scripted_feedback: 0.15
+    feedback_specificity_over_scripted: 1.50
+
+    revision_specific_ablation_drop: 0.20
+    update_path_ablation_drop: 0.20
+    feedback_path_ablation_drop: 0.20
+    non_revision_path_stability: 0.70
+
+    cross_model_exact_plan_match_rate_max: 0.80
+    exact_all_model_same_plan_rate_max: 0.80
+
+    oracle_adaptive_update_score: 0.95
+    random_update_score_max: 0.25
+
+  scoring:
+    zero_if_leakage_detected: true
+    zero_if_update_not_content_sensitive: true
+    zero_if_feedback_not_content_sensitive: true
+    zero_if_scripted_baseline_matches: true
+    zero_if_same_plan_degeneracy_remains: true
+    zero_if_revision_ablation_nonspecific: true

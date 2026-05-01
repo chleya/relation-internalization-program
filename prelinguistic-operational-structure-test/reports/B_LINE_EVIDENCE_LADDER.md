@@ -814,7 +814,7 @@ Boundary:
 ```text
 B4.1 does not add a new capability claim.
 B4.1 does not prove independent intervention mechanisms.
-B4.1 blocks moving to B5 until action-type selection is further disentangled.
+B4.1 blocked moving to B5 until action-type selection was further disentangled.
 ```
 
 ---
@@ -854,7 +854,235 @@ B4.2 does not prove general active intelligence.
 
 ---
 
-## 17. Recommended Repository Placement
+## 17. B5 Epistemic-Pragmatic Closed-Loop Operation
+
+B5 moves the B-line from one-shot inspect/intervene stages into a minimal
+closed loop:
+
+```text
+observe
+inspect or skip
+update trace
+intervene or skip
+observe consequence
+revise trace
+```
+
+Key result:
+
+```text
+inspect_timing_accuracy = 1.000
+epistemic_value_alignment = 1.000
+trace_update_accuracy = 1.000
+trace_uncertainty_reduction = 0.400
+post_inspection_intervention_accuracy = 1.000
+pragmatic_value_alignment = 1.000
+feedback_revision_accuracy = 1.000
+closed_loop_gain_over_inspect_always = 0.775
+closed_loop_gain_over_intervene_immediately = 0.500
+wrong_inspect_penalty_sensitivity = 1.000
+wrong_intervention_penalty_sensitivity = 0.750
+planning_budget_compliance = 1.000
+oracle_closed_loop_score = 1.000
+random_closed_loop_score = 0.006 / 0.018
+b5_closed_loop_score = 0.887
+```
+
+Interpretation:
+
+> B5 supports that, in the toy PLOS environment, private delayed operational trace can support a minimal epistemic-pragmatic closed loop: the system can decide when to inspect, update trace from inspection, intervene based on updated trace, observe consequence, and revise trace under budget.
+
+Boundary:
+
+```text
+B5 does not prove real control.
+B5 does not prove robotics capability.
+B5 does not prove engineering deployment.
+B5 does not prove human-like active inference.
+B5 does not prove language-free cognition solved.
+```
+
+---
+
+## 18. B5.1 Closed-Loop Degeneracy Audit
+
+B5.1 audits whether B5's high closed-loop score reflects genuine adaptive
+closed-loop operational structure or fixed/scripted/leaky paths.
+
+Key result:
+
+```text
+b51_closed_loop_audit_score = 0.000
+cross_model_exact_plan_match_rate = 1.000
+exact_all_model_same_plan_rate = 1.000
+fixed_closed_loop_plan_rate = 0.113
+inspect_always_rate = 0.500
+intervene_immediately_rate = 0.250
+skip_inspect_when_not_needed_rate = 1.000
+skip_intervention_when_not_needed_rate = 1.000
+decision_diversity_score = 0.750
+private_trace_closed_loop_usage_rate = 1.000
+scripted_update_score = 1.000
+model_gain_over_scripted_update = 0.000
+feedback_revision_over_scripted_ratio = 1.000
+value_leakage_count = 800.000
+planning_budget_stress_retention = 1.000
+```
+
+Interpretation:
+
+> B5.1 shows that B5 should currently be interpreted as closed-loop path success under toy diagnostics, not genuine adaptive closed-loop operational structure. The failure localizes the next bottleneck to same-plan degeneracy, oracle/value-field accessibility, scripted trace update, and scripted feedback revision.
+
+Boundary:
+
+```text
+B5.1 does not add a capability claim.
+B5.1 does not invalidate B5's closed-loop path evidence.
+B5.1 blocks moving to B6 until closed-loop authenticity is repaired.
+```
+
+---
+
+## 19. B5-Clean Oracle-Free Closed-Loop Rerun
+
+B5-Clean repairs the urgent B5.1 experimental hygiene failure by separating
+policy-visible `model_input`, evaluator-only `evaluator_ground_truth`, and
+oracle-only `oracle_baseline_view`. It does not add closed-loop capability and
+does not enter B6.
+
+Clean B5 result:
+
+```text
+clean_b5_closed_loop_score = 0.925
+original_b5_closed_loop_score = 0.887
+score_drop_from_original = 0.000
+model_input_leakage_count = 0.000
+policy_output_oracle_usage_rate = 0.000
+evaluator_ground_truth_policy_access_count = 0.000
+oracle_baseline_access_violation_count = 0.000
+clean_random_closed_loop_score = 0.000
+clean_oracle_closed_loop_score = 1.000
+```
+
+Clean B5.1 result:
+
+```text
+b51_clean_closed_loop_audit_score = 0.000
+value_leakage_count = 0.000
+oracle_plan_usage_rate = 0.000
+oracle_trace_update_usage_rate = 0.000
+oracle_feedback_revision_usage_rate = 0.000
+cross_model_exact_plan_match_rate = 1.000
+exact_all_model_same_plan_rate = 1.000
+model_gain_over_scripted_update = 0.000
+feedback_revision_over_scripted_ratio = 1.000
+```
+
+Interpretation:
+
+> B5-Clean fixes the oracle/value leakage found by B5.1 and shows that the B5 closed-loop path remains usable as an oracle-free toy diagnostic. However, clean B5.1 still blocks the stronger adaptive closed-loop claim because same-plan degeneracy and scripted update / feedback explanations remain.
+
+Boundary:
+
+```text
+B5-Clean does not prove genuine adaptive closed-loop operational structure.
+B5-Clean does not repair same-plan degeneracy.
+B5-Clean does not repair scripted update or scripted feedback.
+B5-Clean keeps B6 blocked until closed-loop authenticity is repaired.
+```
+
+---
+
+## 20. B5.2 Adaptive Trace Update and Feedback Revision
+
+B5.2 directly attacks the remaining clean B5.1 failures by testing whether
+inspection content and consequence feedback change trace updates, feedback
+revision, and downstream plans under clean oracle-free inputs.
+
+Key result:
+
+```text
+b52_adaptive_update_score = 0.993 / 0.996
+value_leakage_count = 0.000
+inspection_content_sensitivity = 1.000
+inspection_swap_update_change_rate = 1.000
+counterfactual_update_switch_rate = 1.000
+same_initial_different_info_plan_divergence = 1.000
+post_update_plan_divergence = 1.000
+post_update_intervention_change_rate = 1.000
+model_gain_over_scripted_update = 0.983 / 0.988
+feedback_content_sensitivity = 1.000
+contradictory_feedback_revision_accuracy = 1.000
+delayed_feedback_revision_accuracy = 1.000
+model_gain_over_scripted_feedback = 0.979 / 0.983
+revision_specific_ablation_drop = 1.000
+cross_model_exact_plan_match_rate = 0.000
+exact_all_model_same_plan_rate = 0.000
+```
+
+Interpretation:
+
+> B5.2 reduces the clean B5.1 concerns of same-plan degeneracy and scripted update/feedback. Under current toy diagnostics and oracle-free inputs, trace update and feedback revision show sensitivity to inspection and consequence content, and post-update plans diverge when information differs.
+
+Boundary:
+
+```text
+B5.2 does not prove real control.
+B5.2 does not prove robotics capability.
+B5.2 does not prove engineering deployment.
+B5.2 does not prove human-like active inference.
+B5.2 does not prove natural emergence.
+B5.2 does not prove language-free cognition solved.
+```
+
+---
+
+## 21. B6 Actionability Mask / Risk-Constrained Closed Loop
+
+B6 adds a public actionability mask and risk/cost constraints to the clean B5.2
+closed loop. It tests whether the system can distinguish what is observable,
+inspectable, directly intervenable, indirectly intervenable, unsafe,
+irreversible, or costly, and then choose inspect, direct intervention, indirect
+intervention, or abstain.
+
+Key result:
+
+```text
+b6_risk_constrained_score = 0.986
+value_leakage_count = 0.000
+actionability_mask_accuracy = 1.000
+inspectable_decision_accuracy = 1.000
+direct_intervention_accuracy = 1.000
+indirect_intervention_accuracy = 1.000
+unsafe_action_rejection_rate = 1.000
+irreversible_action_rejection_rate = 1.000
+costly_action_avoidance_accuracy = 1.000
+abstain_when_required_accuracy = 1.000
+risk_aware_feedback_revision_accuracy = 1.000
+gain_over_random = 0.900
+gain_over_risk_blind = 0.857
+oracle_risk_constrained_score = 1.000
+random_risk_constrained_score = 0.100
+```
+
+Interpretation:
+
+> B6 supports that, in the toy PLOS environment, the clean B5.2 closed-loop system can use an actionability mask to decide whether to inspect, intervene directly, intervene indirectly, or abstain under risk, cost, unsafe, and irreversible constraints.
+
+Boundary:
+
+```text
+B6 does not prove real control.
+B6 does not prove robotics capability.
+B6 does not prove engineering deployment.
+B6 does not prove safety-certified planning.
+B6 does not prove human-like risk reasoning.
+B6 does not prove language-free cognition solved.
+```
+
+---
+
+## 22. Recommended Repository Placement
 
 Save this document as:
 
@@ -865,11 +1093,11 @@ prelinguistic-operational-structure-test/reports/B_LINE_EVIDENCE_LADDER.md
 Also update README with a short pointer:
 
 ```text
-See reports/B_LINE_EVIDENCE_LADDER.md for the current B-line evidence ladder from PLOS v1 through B1.1, B2, B2.1, B2.1a, B2.2, B2.3, B3, B3.1, B3.2, B4, B4.1, and B4.2.
+See reports/B_LINE_EVIDENCE_LADDER.md for the current B-line evidence ladder from PLOS v1 through B1.1, B2, B2.1, B2.1a, B2.2, B2.3, B3, B3.1, B3.2, B4, B4.1, B4.2, B5, B5.1, B5-Clean, B5.2, and B6.
 ```
 
 ---
 
-## 18. One-Sentence Project Status
+## 23. One-Sentence Project Status
 
-> B-line has progressed from diagnosing short-horizon operational checkpoints to identifying delayed causal trace, exposing shared-selector dependence, constructing private trace selectors with partial mechanism separation, resolving the B3 same-inspect-region degeneracy with family-specific inspection targets, showing that those traces can guide minimal local intervention/action selection, auditing and localizing a fixed action-type shortcut, and reducing that shortcut with action-type-specific intervention diagnostics.
+> B-line has progressed from diagnosing short-horizon operational checkpoints to delayed causal trace, private selector construction, mechanism-disambiguated inspection, trace-guided intervention-region and action-type selection, a clean oracle-free content-sensitive closed loop, and B6 actionability/risk-constrained operation; claims remain bounded to the 64x64 toy PLOS environment.

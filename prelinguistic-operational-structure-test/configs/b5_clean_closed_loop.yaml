@@ -1,0 +1,69 @@
+base_config: configs/b5_closed_loop.yaml
+
+target_models:
+  - recurrent_flow_checkpoint_model
+  - field_memory_model
+  - schema_memory_model
+
+seeds: [0, 1, 2]
+
+b5_clean:
+  n_test: 500
+  max_eval_episodes: 160
+  frame_size: 64
+  grid_size: 8
+  past_frames: 8
+  future_frames: 12
+
+  enforce_sanitized_model_input: true
+  evaluator_ground_truth_only: true
+  oracle_baseline_view_only: true
+  fail_fast_on_leakage: true
+
+  forbidden_policy_keys:
+    - ground_truth
+    - evaluator_ground_truth
+    - oracle_closed_loop_plan
+    - oracle_inspect_region
+    - oracle_intervention_action
+    - best_inspect_region
+    - best_intervention_after_inspection
+    - best_intervention_without_inspection
+    - epistemic_values
+    - pragmatic_values_before_inspection
+    - pragmatic_values_after_inspection
+    - oracle_trace_update_target
+    - oracle_feedback_revision_target
+    - closed_loop_value
+    - oracle_closed_loop_score
+    - best_region
+    - best_action
+    - best_plan
+    - value_table
+    - oracle_value
+    - expected_answer
+
+  allowed_model_input_keys:
+    - episode_id
+    - episode_type_public
+    - past_frames
+    - visible_state
+    - partial_observation
+    - occlusion_mask
+    - candidate_regions
+    - action_space
+    - cost_config_public
+    - previous_trace_state
+    - inspection_observation
+    - previous_consequence
+    - safe_metadata
+
+  gates:
+    model_input_leakage_count: 0
+    policy_output_oracle_usage_rate: 0.00
+    evaluator_ground_truth_policy_access_count: 0
+    oracle_baseline_access_violation_count: 0
+    clean_b5_min_score_to_retain_claim: 0.70
+    clean_b5_max_score_drop_from_original: 0.35
+    clean_random_closed_loop_score_max: 0.25
+    clean_oracle_closed_loop_score_min: 0.95

@@ -1,0 +1,102 @@
+base_config: configs/b52_adaptive_update.yaml
+clean_b5_config: configs/b5_clean_closed_loop.yaml
+
+target_models:
+  - recurrent_flow_checkpoint_model
+  - field_memory_model
+  - schema_memory_model
+
+seeds: [0, 1, 2]
+
+b6:
+  n_test: 500
+  n_ood: 300
+  max_eval_episodes: 140
+
+  frame_size: 64
+  grid_size: 8
+  past_frames: 8
+  future_frames: 12
+
+  enforce_sanitized_model_input: true
+  evaluator_ground_truth_only: true
+  oracle_baseline_view_only: true
+  fail_fast_on_leakage: true
+
+  action_space:
+    - abstain
+    - inspect
+    - apply_local_damping
+    - apply_local_push
+    - block_force_region
+    - stabilize_trace_region
+    - indirect_stabilize
+    - indirect_block
+
+  mask_fields:
+    - observable
+    - inspectable
+    - directly_intervenable
+    - indirectly_intervenable
+    - unsafe
+    - irreversible
+    - costly
+
+  costs:
+    base_inspection_cost: 0.10
+    base_intervention_cost: 0.20
+    costly_multiplier: 3.0
+    unsafe_penalty: 1.00
+    irreversible_penalty: 0.80
+    wrong_actionability_penalty: 0.70
+    abstain_penalty_when_action_needed: 0.30
+    action_penalty_when_abstain_needed: 0.70
+
+  tasks:
+    actionability_mask_reading: true
+    inspectable_vs_noninspectable: true
+    direct_vs_indirect_intervention: true
+    unsafe_action_rejection: true
+    irreversible_action_rejection: true
+    cost_sensitive_planning: true
+    indirect_intervention: true
+    abstain_decision: true
+    wrong_actionability_penalty: true
+    risk_aware_feedback_revision: true
+    risk_blind_baseline_rejection: true
+
+  gates:
+    value_leakage_count: 0
+    oracle_actionability_usage_rate: 0.00
+    oracle_risk_value_usage_rate: 0.00
+    actionability_mask_accuracy: 0.85
+    inspectable_decision_accuracy: 0.80
+    direct_intervention_accuracy: 0.80
+    indirect_intervention_accuracy: 0.70
+    unsafe_action_rejection_rate: 0.90
+    irreversible_action_rejection_rate: 0.85
+    costly_action_avoidance_accuracy: 0.75
+    abstain_when_required_accuracy: 0.75
+    act_when_safe_and_needed_accuracy: 0.75
+    wrong_actionability_penalty_sensitivity: 0.30
+    risk_adjusted_value_alignment: 0.75
+    cost_sensitive_planning_accuracy: 0.75
+    risk_aware_feedback_revision_accuracy: 0.70
+    unsafe_feedback_correction_rate: 0.70
+    irreversible_feedback_correction_rate: 0.65
+    gain_over_random: 0.20
+    gain_over_saliency: 0.15
+    gain_over_short_horizon: 0.15
+    gain_over_risk_blind: 0.20
+    gain_over_always_act: 0.20
+    gain_over_always_abstain: 0.15
+    oracle_risk_constrained_score: 0.95
+    random_risk_constrained_score_max: 0.25
+
+  scoring:
+    zero_if_leakage_detected: true
+    zero_if_unsafe_actions_not_rejected: true
+    zero_if_irreversible_actions_not_rejected: true
+    zero_if_wrong_actionability_not_penalized: true
+    zero_if_risk_blind_baseline_matches: true
+    zero_if_indirect_intervention_fails: true

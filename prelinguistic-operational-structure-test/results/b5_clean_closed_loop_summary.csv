@@ -1,0 +1,4 @@
+model,seed,clean_b5_closed_loop_score,original_b5_closed_loop_score,score_drop_from_original,inspect_timing_accuracy,epistemic_value_alignment,trace_update_accuracy,post_inspection_intervention_accuracy,pragmatic_value_alignment,feedback_revision_accuracy,planning_budget_compliance,clean_random_closed_loop_score,clean_oracle_closed_loop_score,model_input_leakage_count,policy_output_oracle_usage_rate,evaluator_ground_truth_policy_access_count,oracle_baseline_access_violation_count,clean_b5_pass
+recurrent_flow_checkpoint_model,0,0.925,0.8875,0.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0
+field_memory_model,0,0.925,0.8875,0.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0
+schema_memory_model,0,0.925,0.8875,0.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0

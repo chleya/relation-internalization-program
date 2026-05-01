@@ -106,6 +106,12 @@ python -m src.run_b32_mechanism_inspection --config configs/b32_mechanism_inspec
 python -m src.run_b4_intervention --config configs/b4_intervention.yaml --seed 0
 python -m src.run_b41_intervention_audit --config configs/b41_intervention_audit.yaml --seed 0
 python -m src.run_b42_action_type_disambiguation --config configs/b42_action_type_disambiguation.yaml --seed 0
+python -m src.run_b5_closed_loop --config configs/b5_closed_loop.yaml --seed 0
+python -m src.run_b51_closed_loop_audit --config configs/b51_closed_loop_audit.yaml --seed 0
+python -m src.run_b5_clean_closed_loop --config configs/b5_clean_closed_loop.yaml --seed 0
+python -m src.run_b51_clean_closed_loop_audit --config configs/b51_clean_closed_loop_audit.yaml --seed 0
+python -m src.run_b52_adaptive_update --config configs/b52_adaptive_update.yaml --seed 0
+python -m src.run_b6_risk_constrained_loop --config configs/b6_risk_constrained_loop.yaml --seed 0
 python -m src.visualize --summary results/overall_summary.csv
 python -m src.visualize_b11 --summary results/b11_flow_checkpoint_hardening_summary.csv
 python -m src.visualize_b2 --summary results/b2_delayed_checkpoint_summary.csv
@@ -119,6 +125,11 @@ python -m src.visualize_b32 --summary results/b32_mechanism_inspection_summary.c
 python -m src.visualize_b4 --summary results/b4_intervention_summary.csv
 python -m src.visualize_b41 --summary results/b41_intervention_audit_summary.csv
 python -m src.visualize_b42 --summary results/b42_action_type_summary.csv
+python -m src.visualize_b5 --summary results/b5_closed_loop_summary.csv
+python -m src.visualize_b51 --summary results/b51_closed_loop_audit_summary.csv
+python -m src.visualize_b5_clean --summary results/b5_clean_closed_loop_summary.csv --audit results/b51_clean_closed_loop_audit_summary.csv
+python -m src.visualize_b52 --summary results/b52_adaptive_update_summary.csv
+python -m src.visualize_b6 --summary results/b6_risk_constrained_summary.csv
 ```
 
 Run one model:
@@ -349,7 +360,7 @@ not proof of blank-slate emergence, physics understanding, or general
 pre-linguistic intelligence.
 
 See `reports/B_LINE_EVIDENCE_LADDER.md` for the current B-line evidence ladder
-from PLOS v1 through B1.1, B2, B2.1, B2.1a, B2.2, B2.3, B3, B3.1, B3.2, B4, B4.1, and B4.2.
+from PLOS v1 through B1.1, B2, B2.1, B2.1a, B2.2, B2.3, B3, B3.1, B3.2, B4, B4.1, B4.2, B5, B5.1, B5-Clean, B5.2, and B6.
 
 ## B2.1 Trace Hardening
 
@@ -566,6 +577,180 @@ current toy diagnostics. Private delayed traces now support intervention-region
 selection and differentiated action-type selection in action-type-specific
 episodes. This still does not prove real control, robotics ability, engineering
 deployment, or general active intelligence.
+
+## B5 Epistemic-Pragmatic Closed-Loop Operation
+
+B5 moves from one-shot inspection/intervention to a minimal two-step closed
+loop: observe, inspect or skip, update trace, intervene or skip, observe
+consequence, and revise trace. It explicitly separates epistemic value
+(information gain from inspection) from pragmatic value (outcome improvement from
+intervention), then compares against random, saliency, short-horizon,
+inspect-always, intervene-immediately, and oracle baselines under a planning
+budget.
+
+The current B5 result reports:
+
+```text
+inspect_timing_accuracy = 1.000
+epistemic_value_alignment = 1.000
+trace_update_accuracy = 1.000
+trace_uncertainty_reduction = 0.400
+post_inspection_intervention_accuracy = 1.000
+pragmatic_value_alignment = 1.000
+feedback_revision_accuracy = 1.000
+closed_loop_gain_over_inspect_always = 0.775
+closed_loop_gain_over_intervene_immediately = 0.500
+planning_budget_compliance = 1.000
+oracle_closed_loop_score = 1.000
+random_closed_loop_score = 0.006 / 0.018
+b5_closed_loop_score = 0.887
+```
+
+Interpretation: B5 supports a minimal epistemic-pragmatic closed loop in the toy
+PLOS environment. Private delayed trace is used to decide when to inspect,
+update trace from inspection, intervene based on updated trace, observe
+consequence, and revise trace under budget. This still does not prove real
+control, robotics ability, engineering deployment, human-like active inference,
+or general active intelligence.
+
+## B5.1 Closed-Loop Degeneracy Audit
+
+B5.1 audits whether the B5 closed-loop result is genuinely adaptive and
+trace-driven, or whether it can be explained by fixed scripts, shortcut timing,
+oracle-like update, scripted feedback, value leakage, loose planning budget, or
+nonspecific ablations.
+
+The current B5.1 result reports:
+
+```text
+b51_closed_loop_audit_score = 0.000
+cross_model_exact_plan_match_rate = 1.000
+exact_all_model_same_plan_rate = 1.000
+inspect_always_rate = 0.500
+intervene_immediately_rate = 0.250
+decision_diversity_score = 0.750
+private_trace_closed_loop_usage_rate = 1.000
+scripted_update_score = 1.000
+model_gain_over_scripted_update = 0.000
+feedback_revision_over_scripted_ratio = 1.000
+value_leakage_count = 800.000
+planning_budget_stress_retention = 1.000
+```
+
+Interpretation: B5.1 does not invalidate the B5 closed-loop path result, but it
+blocks the stronger claim that B5 has established genuine adaptive closed-loop
+operational structure. The next bottleneck is eliminating same-plan degeneracy,
+removing oracle/value-field accessibility, and separating private trace update
+and feedback revision from scripted baselines.
+
+## B5-Clean Oracle-Free Closed-Loop Rerun
+
+B5-Clean fixes the experimental hygiene issue exposed by B5.1. It strictly
+separates policy-visible `model_input`, evaluator-only `evaluator_ground_truth`,
+and oracle-only `oracle_baseline_view`, then reruns clean B5 and clean B5.1
+without overwriting the original B5/B5.1 outputs.
+
+The current B5-Clean result reports:
+
+```text
+clean_b5_closed_loop_score = 0.925
+original_b5_closed_loop_score = 0.887
+score_drop_from_original = 0.000
+model_input_leakage_count = 0.000
+policy_output_oracle_usage_rate = 0.000
+evaluator_ground_truth_policy_access_count = 0.000
+oracle_baseline_access_violation_count = 0.000
+clean_random_closed_loop_score = 0.000
+clean_oracle_closed_loop_score = 1.000
+```
+
+Clean B5.1 reports:
+
+```text
+b51_clean_closed_loop_audit_score = 0.000
+value_leakage_count = 0.000
+oracle_plan_usage_rate = 0.000
+oracle_trace_update_usage_rate = 0.000
+oracle_feedback_revision_usage_rate = 0.000
+cross_model_exact_plan_match_rate = 1.000
+exact_all_model_same_plan_rate = 1.000
+model_gain_over_scripted_update = 0.000
+feedback_revision_over_scripted_ratio = 1.000
+```
+
+Interpretation: B5-Clean removes the oracle/value leakage failure and preserves
+an oracle-free closed-loop path diagnostic. It does not repair the stronger
+closed-loop authenticity failures: three models still execute the same plan per
+episode, and trace update / feedback revision remain explainable by scripted
+baselines. B6 remains blocked until those failures are repaired.
+
+## B5.2 Adaptive Trace Update and Feedback Revision
+
+B5.2 attacks the remaining clean B5.1 failures by constructing paired and
+counterfactual clean-input episodes. The initial observation is held fixed or
+near-fixed while inspection content or consequence feedback changes, so a
+content-sensitive update/revision path should change trace state and downstream
+plans.
+
+The current B5.2 result reports:
+
+```text
+b52_adaptive_update_score = 0.993 / 0.996
+value_leakage_count = 0.000
+inspection_content_sensitivity = 1.000
+inspection_swap_update_change_rate = 1.000
+counterfactual_update_switch_rate = 1.000
+same_initial_different_info_plan_divergence = 1.000
+post_update_plan_divergence = 1.000
+post_update_intervention_change_rate = 1.000
+model_gain_over_scripted_update = 0.983 / 0.988
+feedback_content_sensitivity = 1.000
+contradictory_feedback_revision_accuracy = 1.000
+delayed_feedback_revision_accuracy = 1.000
+model_gain_over_scripted_feedback = 0.979 / 0.983
+revision_specific_ablation_drop = 1.000
+cross_model_exact_plan_match_rate = 0.000
+exact_all_model_same_plan_rate = 0.000
+```
+
+Interpretation: B5.2 reduces the clean B5.1 concerns of same-plan degeneracy
+and scripted update/feedback under current toy diagnostics and oracle-free
+inputs. It supports content-sensitive trace update and feedback revision in the
+toy closed-loop diagnostic, but still does not prove real control, robotics
+ability, engineering deployment, human-like active inference, or natural
+emergence.
+
+## B6 Actionability Mask / Risk-Constrained Closed Loop
+
+B6 adds a public actionability mask to the clean B5.2 closed loop. The model must
+distinguish observable, inspectable, directly intervenable, indirectly
+intervenable, unsafe, irreversible, and costly regions, then decide whether to
+inspect, intervene directly, intervene indirectly, or abstain.
+
+The current B6 result reports:
+
+```text
+b6_risk_constrained_score = 0.986
+value_leakage_count = 0.000
+actionability_mask_accuracy = 1.000
+inspectable_decision_accuracy = 1.000
+direct_intervention_accuracy = 1.000
+indirect_intervention_accuracy = 1.000
+unsafe_action_rejection_rate = 1.000
+irreversible_action_rejection_rate = 1.000
+costly_action_avoidance_accuracy = 1.000
+abstain_when_required_accuracy = 1.000
+risk_aware_feedback_revision_accuracy = 1.000
+gain_over_risk_blind = 0.857
+oracle_risk_constrained_score = 1.000
+random_risk_constrained_score = 0.100
+```
+
+Interpretation: B6 supports that, in the toy PLOS environment, the clean B5.2
+closed-loop system can use an actionability mask to decide whether to inspect,
+intervene directly, intervene indirectly, or abstain under risk, cost, unsafe,
+and irreversible constraints. This is still not real control, robotics ability,
+engineering deployment, safety certification, or human-like risk reasoning.
 
 ## Boundary
 

@@ -203,6 +203,12 @@ python -m src.run_b32_mechanism_inspection --config configs/b32_mechanism_inspec
 python -m src.run_b4_intervention --config configs/b4_intervention.yaml --seed 0
 python -m src.run_b41_intervention_audit --config configs/b41_intervention_audit.yaml --seed 0
 python -m src.run_b42_action_type_disambiguation --config configs/b42_action_type_disambiguation.yaml --seed 0
+python -m src.run_b5_closed_loop --config configs/b5_closed_loop.yaml --seed 0
+python -m src.run_b51_closed_loop_audit --config configs/b51_closed_loop_audit.yaml --seed 0
+python -m src.run_b5_clean_closed_loop --config configs/b5_clean_closed_loop.yaml --seed 0
+python -m src.run_b51_clean_closed_loop_audit --config configs/b51_clean_closed_loop_audit.yaml --seed 0
+python -m src.run_b52_adaptive_update --config configs/b52_adaptive_update.yaml --seed 0
+python -m src.run_b6_risk_constrained_loop --config configs/b6_risk_constrained_loop.yaml --seed 0
 python -m src.visualize_b22 --summary results/b22_selector_disentanglement_summary.csv
 python -m src.visualize_b23 --summary results/b23_private_selector_summary.csv
 python -m src.visualize_b3 --summary results/b3_active_inspection_summary.csv
@@ -211,6 +217,11 @@ python -m src.visualize_b32 --summary results/b32_mechanism_inspection_summary.c
 python -m src.visualize_b4 --summary results/b4_intervention_summary.csv
 python -m src.visualize_b41 --summary results/b41_intervention_audit_summary.csv
 python -m src.visualize_b42 --summary results/b42_action_type_summary.csv
+python -m src.visualize_b5 --summary results/b5_closed_loop_summary.csv
+python -m src.visualize_b51 --summary results/b51_closed_loop_audit_summary.csv
+python -m src.visualize_b5_clean --summary results/b5_clean_closed_loop_summary.csv --audit results/b51_clean_closed_loop_audit_summary.csv
+python -m src.visualize_b52 --summary results/b52_adaptive_update_summary.csv
+python -m src.visualize_b6 --summary results/b6_risk_constrained_summary.csv
 python -m src.visualize --summary results/overall_summary.csv
 
 cd ..\relation-internalization-test

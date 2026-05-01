@@ -1,0 +1,82 @@
+base_config: configs/b5_closed_loop.yaml
+
+target_models:
+  - recurrent_flow_checkpoint_model
+  - field_memory_model
+  - schema_memory_model
+
+reference_baselines:
+  - random_closed_loop_baseline
+  - saliency_closed_loop_baseline
+  - short_horizon_closed_loop_baseline
+  - inspect_always_baseline
+  - intervene_immediately_baseline
+  - oracle_closed_loop_baseline
+
+seeds: [0, 1, 2]
+
+b51:
+  n_audit_episodes: 300
+  max_eval_episodes: 160
+  frame_size: 64
+  grid_size: 8
+  past_frames: 8
+  future_frames: 12
+
+  audits:
+    per_episode_plan_overlap: true
+    closed_loop_policy_provenance: true
+    inspect_skip_intervene_skip_diversity: true
+    trace_update_specificity: true
+    feedback_revision_specificity: true
+    baseline_sanity: true
+    value_leakage_audit: true
+    planning_budget_stress: true
+
+  budget_stress:
+    strict_max_candidate_inspections: 4
+    strict_max_candidate_interventions: 4
+    strict_max_rollout_evaluations: 8
+
+  gates:
+    max_cross_model_exact_plan_match_rate: 0.80
+    max_exact_all_model_same_plan_rate: 0.80
+    max_fixed_closed_loop_plan_rate: 0.85
+    max_inspect_always_rate: 0.85
+    max_intervene_immediately_rate: 0.85
+    min_skip_inspect_when_not_needed_rate: 0.70
+    min_skip_intervention_when_not_needed_rate: 0.70
+    min_decision_diversity_score: 0.50
+    max_shared_closed_loop_policy_usage_rate: 0.05
+    min_private_trace_closed_loop_usage_rate: 0.95
+    max_fallback_usage_rate: 0.05
+    min_trace_update_specificity: 0.70
+    min_trace_update_ablation_drop: 0.20
+    min_trace_update_over_non_trace_ratio: 1.50
+    min_feedback_revision_specificity: 0.65
+    min_feedback_revision_ablation_drop: 0.20
+    min_feedback_revision_over_scripted_ratio: 1.50
+    max_random_closed_loop_score: 0.25
+    min_oracle_closed_loop_score: 0.95
+    min_model_gain_over_inspect_always: 0.15
+    min_model_gain_over_intervene_immediately: 0.15
+    min_model_gain_over_saliency: 0.15
+    min_model_gain_over_short_horizon: 0.15
+    min_model_gain_over_scripted_update: 0.10
+    max_value_leakage_count: 0
+    max_oracle_plan_usage_rate: 0.00
+    max_oracle_trace_update_usage_rate: 0.00
+    max_oracle_feedback_revision_usage_rate: 0.00
+    min_planning_budget_stress_retention: 0.70
+    min_strict_budget_compliance: 1.00
+    max_rollout_eval_excess_rate: 0.00
+
+  scoring:
+    zero_if_fixed_closed_loop_script: true
+    zero_if_inspect_always_shortcut: true
+    zero_if_intervene_immediately_shortcut: true
+    zero_if_oracle_like_update_detected: true
+    zero_if_scripted_feedback_detected: true
+    zero_if_value_leakage_detected: true
+    zero_if_budget_too_loose: true
+    zero_if_trace_ablation_nonspecific: true

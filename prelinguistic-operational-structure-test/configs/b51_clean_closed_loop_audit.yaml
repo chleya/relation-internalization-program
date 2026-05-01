@@ -1,0 +1,19 @@
+base_config: configs/b51_closed_loop_audit.yaml
+clean_b5_config: configs/b5_clean_closed_loop.yaml
+
+b51_clean:
+  enforce_sanitized_model_input: true
+  evaluator_ground_truth_only: true
+  oracle_baseline_view_only: true
+  fail_fast_on_leakage: true
+
+  gates:
+    value_leakage_count: 0
+    oracle_plan_usage_rate: 0.00
+    oracle_trace_update_usage_rate: 0.00
+    oracle_feedback_revision_usage_rate: 0.00
+    cross_model_exact_plan_match_rate_max: 0.80
+    exact_all_model_same_plan_rate_max: 0.80
+    model_gain_over_scripted_update_min: 0.10
+    feedback_revision_over_scripted_ratio_min: 1.50
+    b51_clean_score_min_for_closed_loop_authenticity: 0.70
