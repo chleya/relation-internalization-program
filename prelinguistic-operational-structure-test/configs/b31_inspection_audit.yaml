@@ -1,0 +1,53 @@
+base_config: configs/b3_active_inspection.yaml
+
+target_models:
+  - recurrent_flow_checkpoint_model
+  - field_memory_model
+  - schema_memory_model
+
+reference_baselines:
+  - random_inspection_baseline
+  - saliency_inspection_baseline
+  - short_horizon_checkpoint_baseline
+  - oracle_inspection_baseline
+
+seeds: [0, 1, 2]
+
+b31:
+  n_audit_episodes: 300
+  max_audit_episodes: 160
+  frame_size: 64
+  grid_size: 8
+  past_frames: 8
+  future_frames: 12
+
+  audits:
+    inspect_region_overlap: true
+    inspection_policy_provenance: true
+    trace_family_specific_inspection_scorer: true
+    shared_inspection_policy_ablation: true
+    disagreement_inspection_episodes: true
+    baseline_sanity_check: true
+    trace_ablation_specificity: true
+
+  gates:
+    max_cross_model_inspect_region_match_rate: 0.80
+    max_shared_inspection_policy_usage_rate: 0.05
+    min_private_inspection_score_usage_rate: 0.95
+    fallback_usage_rate: 0.05
+    min_inspection_scorer_specificity: 0.70
+    max_inspection_scorer_correlation: 0.90
+    max_shared_policy_ablation_drop: 0.05
+    min_private_trace_ablation_drop: 0.20
+    min_disagreement_inspection_divergence: 0.50
+    min_family_aligned_inspection_rate: 0.60
+    max_random_inspection_score: 0.25
+    min_oracle_inspection_score: 0.95
+    min_trace_over_saliency_gain_margin: 0.15
+    min_trace_over_short_horizon_gain_margin: 0.15
+    private_trace_over_non_trace_ratio: 1.50
+
+  scoring:
+    zero_if_shared_policy_dominates: true
+    zero_if_region_overlap_too_high: true
+    zero_if_private_trace_not_used: true

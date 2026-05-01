@@ -101,6 +101,7 @@ python -m src.run_b21a_degeneracy_audit --config configs/b21a_degeneracy_audit.y
 python -m src.run_b22_selector_disentanglement --config configs/b22_selector_disentanglement.yaml --seed 0
 python -m src.run_b23_private_selector --config configs/b23_private_selector.yaml --seed 0
 python -m src.run_b3_active_inspection --config configs/b3_active_inspection.yaml --seed 0
+python -m src.run_b31_inspection_audit --config configs/b31_inspection_audit.yaml --seed 0
 python -m src.visualize --summary results/overall_summary.csv
 python -m src.visualize_b11 --summary results/b11_flow_checkpoint_hardening_summary.csv
 python -m src.visualize_b2 --summary results/b2_delayed_checkpoint_summary.csv
@@ -109,6 +110,7 @@ python -m src.visualize_b21a --summary results/b21a_degeneracy_audit_summary.csv
 python -m src.visualize_b22 --summary results/b22_selector_disentanglement_summary.csv
 python -m src.visualize_b23 --summary results/b23_private_selector_summary.csv
 python -m src.visualize_b3 --summary results/b3_active_inspection_summary.csv
+python -m src.visualize_b31 --summary results/b31_inspection_audit_summary.csv
 ```
 
 Run one model:
@@ -214,6 +216,24 @@ figures/b3_trace_ablation_effects.png
 figures/b3_baseline_comparison.png
 reports/B3_DELAYED_TRACE_GUIDED_ACTIVE_INSPECTION.md
 reports/B3_ACTIVE_INSPECTION_SELF_AUDIT.md
+results/b31_inspection_audit_summary.csv
+results/b31_inspection_audit_records.csv
+results/b31_inspect_region_overlap.csv
+results/b31_inspection_provenance.csv
+results/b31_inspection_scorer_correlation.csv
+results/b31_disagreement_inspection_results.csv
+results/b31_shared_policy_ablation.csv
+results/b31_baseline_sanity.csv
+results/b31_trace_ablation_specificity.csv
+figures/b31_inspection_audit_scores.png
+figures/b31_inspect_region_overlap.png
+figures/b31_policy_provenance.png
+figures/b31_scorer_correlation.png
+figures/b31_disagreement_inspection.png
+figures/b31_shared_policy_ablation.png
+figures/b31_baseline_sanity.png
+reports/B3_1_ACTIVE_INSPECTION_DEGENERACY_AUDIT.md
+reports/B3_1_ACTIVE_INSPECTION_DEGENERACY_SELF_AUDIT.md
 ```
 
 ## B1.1 Reviewer Hardening
@@ -337,6 +357,31 @@ Interpretation: in the toy PLOS environment, B2.3 private delayed traces can
 guide budgeted active inspection under the current gates. This does not prove
 general active intelligence, real-world inspection ability, human-like
 attention, or language-free cognition.
+
+## B3.1 Active Inspection Degeneracy Audit
+
+B3.1 audits the identical B3 scores. It checks whether the three private-trace
+models choose the same inspect region per episode, whether a shared inspection
+policy is used, whether private trace inspection scorers are active, and
+whether disagreement-inspection episodes force divergence.
+
+The current B3.1 result reports:
+
+```text
+cross_model_inspect_region_match_rate = 1.000
+shared_inspection_policy_usage_rate = 0.000
+private_trace_inspection_score_usage_rate = 1.000
+inspection_scorer_specificity = 1.000
+disagreement_inspection_divergence = 1.000
+private_trace_over_non_trace_ratio = 1000000.000
+b31_inspection_audit_score = 0.000
+```
+
+Interpretation: B3 remains evidence that the shared trace-guided inspection path
+is useful, but B3.1 does not support independent recurrent / field / schema
+active-inspection mechanism validation. The failing gate is ordinary B3
+per-episode inspect-region overlap: all three models pick the same region on
+the standard B3 episodes.
 
 ## Boundary
 

@@ -44,6 +44,9 @@ B2.3:
 
 B3:
   Tests whether private delayed trace guides budgeted active inspection.
+
+B3.1:
+  Audits whether B3 active inspection is mechanism-separated or policy-degenerate.
 ```
 
 Current best interpretation:
@@ -54,10 +57,11 @@ Current best interpretation:
 > B2.1a and B2.2 show that the current recurrent/field/schema models should not yet be treated as independent trace mechanisms because they share effectively identical selector behavior.
 > B2.3 reduces that shared-selector interpretation by replacing the shared selector with private recurrent, field, and schema trace scorers.
 > B3 shows that those private traces can guide a one-region active inspection decision under toy budgeted-inspect gates.
+> B3.1 shows that standard B3 inspect choices remain degenerate across models: all three choose the same region episode by episode, so B3 should not be treated as independent active-inspection mechanism validation.
 
 Current strongest claim:
 
-> In the toy PLOS world, short-horizon checkpoint structure is insufficient for delayed operational relevance. Delayed operational structure appears to require a trace-bearing path. After B2.3, the current private selectors show partial mechanism separation under toy diagnostics. B3 adds evidence that private delayed trace can guide budgeted active inspection, while still not proving natural emergence, complete independence, or general active intelligence.
+> In the toy PLOS world, short-horizon checkpoint structure is insufficient for delayed operational relevance. Delayed operational structure appears to require a trace-bearing path. After B2.3, the current private selectors show partial mechanism separation under toy diagnostics. B3 adds evidence that private delayed trace can guide budgeted active inspection, but B3.1 shows the standard active-inspection behavior is still not mechanism-separated across recurrent, field, and schema models.
 
 Current unsupported claims:
 
@@ -677,7 +681,40 @@ B3 does not prove language-free cognition solved.
 
 ---
 
-## 12. Recommended Repository Placement
+## 12. B3.1 Active Inspection Degeneracy Audit
+
+B3.1 audits whether B3's identical model scores reflect private trace-guided
+inspection or a shared inspect decision pattern.
+
+Key result:
+
+```text
+cross_model_inspect_region_match_rate = 1.000
+exact_all_model_same_region_rate = 1.000
+shared_inspection_policy_usage_rate = 0.000
+private_trace_inspection_score_usage_rate = 1.000
+inspection_scorer_specificity = 1.000
+disagreement_inspection_divergence = 1.000
+private_trace_ablation_drop = 1.000
+private_trace_over_non_trace_ratio = 1000000.000
+b31_inspection_audit_score = 0.000
+```
+
+Interpretation:
+
+> B3.1 fails conservatively because the three models select the same inspect region on every standard B3 episode. This does not erase the B3 behavior result, but it means B3 should be interpreted as shared trace-guided inspection path success, not independent recurrent / field / schema active-inspection mechanism validation.
+
+Boundary:
+
+```text
+B3.1 does not add a new capability claim.
+B3.1 does not prove independent active-inspection mechanisms.
+B3.1 blocks moving to B4 until active-inspection policy is redesigned or further disentangled.
+```
+
+---
+
+## 13. Recommended Repository Placement
 
 Save this document as:
 
@@ -688,11 +725,11 @@ prelinguistic-operational-structure-test/reports/B_LINE_EVIDENCE_LADDER.md
 Also update README with a short pointer:
 
 ```text
-See reports/B_LINE_EVIDENCE_LADDER.md for the current B-line evidence ladder from PLOS v1 through B1.1, B2, B2.1, B2.1a, B2.2, B2.3, and B3.
+See reports/B_LINE_EVIDENCE_LADDER.md for the current B-line evidence ladder from PLOS v1 through B1.1, B2, B2.1, B2.1a, B2.2, B2.3, B3, and B3.1.
 ```
 
 ---
 
-## 13. One-Sentence Project Status
+## 14. One-Sentence Project Status
 
-> B-line has progressed from diagnosing short-horizon operational checkpoints to identifying delayed causal trace, exposing shared-selector dependence, constructing private trace selectors with partial mechanism separation, and showing that those private traces can guide budgeted active inspection in the toy PLOS environment.
+> B-line has progressed from diagnosing short-horizon operational checkpoints to identifying delayed causal trace, exposing shared-selector dependence, constructing private trace selectors with partial mechanism separation, showing that those private traces can guide budgeted active inspection, and then localizing the next blocker: standard B3 active-inspection decisions are still cross-model degenerate.

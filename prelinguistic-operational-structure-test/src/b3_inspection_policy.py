@@ -13,6 +13,9 @@ def trace_guided_inspection_policy(model: Any, episode: dict[str, Any], config: 
     selection = select_region_with_private_selector(model, batch)
     region = int(selection["selected_region"])
     scores = selection.get("candidate_scores", {})
+    shared_used = bool(selection.get("shared_selector_used", False))
+    fallback_used = bool(selection.get("fallback_used", False))
+    private_used = bool(selection.get("model_private_score_used", True))
     return {
         "inspect_region": region,
         "policy_source": str(selection.get("source_module", "private_trace_selector")),
@@ -20,10 +23,14 @@ def trace_guided_inspection_policy(model: Any, episode: dict[str, Any], config: 
         "trace_score": float(scores.get(region, selection.get("score", 0.0))) if isinstance(scores, dict) else float(selection.get("score", 0.0)),
         "saliency_score": None,
         "short_horizon_score": None,
+        "inspection_score": float(scores.get(region, selection.get("score", 0.0))) if isinstance(scores, dict) else float(selection.get("score", 0.0)),
+        "candidate_region_scores": {int(key): float(value) for key, value in scores.items()} if isinstance(scores, dict) else {},
         "provenance": {
-            "shared_selector_used": bool(selection.get("shared_selector_used", False)),
-            "fallback_used": bool(selection.get("fallback_used", False)),
-            "model_private_score_used": bool(selection.get("model_private_score_used", True)),
+            "shared_selector_used": shared_used,
+            "shared_inspection_policy_used": shared_used,
+            "fallback_used": fallback_used,
+            "model_private_score_used": private_used,
+            "private_trace_inspection_score_used": private_used,
         },
     }
 
