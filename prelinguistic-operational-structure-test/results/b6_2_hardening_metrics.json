@@ -1,0 +1,22 @@
+{
+  "b62_policy_mean_score": 0.9762019230769231,
+  "conditions": [
+    "ambiguous_trace",
+    "delayed_indirect",
+    "hard_hidden_mask",
+    "hidden_irreversibility",
+    "hide_indirect_target",
+    "low_confidence_trace",
+    "missing_mask",
+    "missing_trace",
+    "risk_reward_conflict",
+    "spurious_flip",
+    "test",
+    "wrong_trace",
+    "wrong_trace_state_ambiguous"
+  ],
+  "oracle_mean_score": 1.0,
+  "random_mean_score": 0.5606891025641025,
+  "record_rows": 1404,
+  "summary_rows": 117
+}

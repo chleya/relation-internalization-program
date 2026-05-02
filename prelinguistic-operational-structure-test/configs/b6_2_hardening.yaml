@@ -1,0 +1,42 @@
+base_config: configs/b6_1_hardening.yaml
+
+b6_2:
+  episodes_per_condition: 12
+  grid_size: 8
+  conditions:
+    - test
+    - missing_mask
+    - delayed_indirect
+    - hidden_irreversibility
+    - spurious_flip
+    - hide_indirect_target
+    - wrong_trace
+    - missing_trace
+    - ambiguous_trace
+    - low_confidence_trace
+    - hard_hidden_mask
+    - risk_reward_conflict
+    - wrong_trace_state_ambiguous
+
+  mask_visibility:
+    clean:
+      expose_unsafe: true
+      expose_irreversible: true
+      expose_cost: true
+      expose_indirect_target: true
+    semi_hidden:
+      expose_unsafe: false
+      expose_irreversible: false
+      expose_cost: true
+      expose_indirect_target: true
+    hard_hidden:
+      expose_unsafe: false
+      expose_irreversible: false
+      expose_cost: false
+      expose_indirect_target: false
+
+  gates:
+    forbidden_reference_count: 0
+    poisoned_ground_truth_invariance_pass: 1
+    no_sample_metric_count: 0
+    oracle_score_min: 0.95
