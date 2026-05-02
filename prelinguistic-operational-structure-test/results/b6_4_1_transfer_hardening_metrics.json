@@ -1,0 +1,26 @@
+{
+  "anti_overfit_score": 0.6050000000000001,
+  "conditions": [
+    "clean_reference",
+    "combined_remap_hard",
+    "dynamics_remap_hard",
+    "mask_visibility_remap_hard",
+    "risk_cue_remap_hard",
+    "visual_remap_hard"
+  ],
+  "forbidden_reference_count_max": 0,
+  "hard_baseline_transfer_gap": 0.6050000000000001,
+  "hard_oracle_gap": 0.06500000000000002,
+  "hard_transfer_drop": 0.06500000000000002,
+  "hard_transfer_score": 0.9349999999999999,
+  "invalid_metric_count_total": 0,
+  "no_sample_metric_count_total": 0,
+  "record_rows": 324,
+  "remap_leakage_count_total": 0,
+  "shortcut_equivalent_hard_remap_count": 0,
+  "shortcut_equivalent_hard_remaps": [],
+  "shortcut_removed_score": 0.6700000000000002,
+  "submit_ready_as_diagnostic": true,
+  "summary_rows": 54,
+  "transfer_evidence_strength": 0.72675
+}

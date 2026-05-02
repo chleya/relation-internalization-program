@@ -1,0 +1,241 @@
+{
+  "decision": "harness_pass_not_strong_transfer_evidence",
+  "integrity": {
+    "forbidden_reference_count_max": 0,
+    "invalid_metric_count_total": 0,
+    "no_sample_metric_count_total": 0,
+    "poisoned_evaluator_invariance_all_pass": true,
+    "remap_leakage_count_total": 0,
+    "review_claim_boundary": "toy_to_toy_transfer_only",
+    "selected_source_counts": {
+      "delayed_credit": 12,
+      "feedback": 30,
+      "hidden_indirect_history": 6
+    }
+  },
+  "recommended_second_pass_focus": [
+    "visual_remap_hard",
+    "risk_cue_remap_hard",
+    "dynamics_remap_hard",
+    "mask_visibility_remap_hard",
+    "combined_remap_hard"
+  ],
+  "remap_review": [
+    {
+      "anti_overfit_score": 0.0,
+      "baseline_transfer_gap": 0.0,
+      "condition": "clean_reference",
+      "likely_shortcut_source": "state_only",
+      "needed_hardening": "reduce state_only shortcut",
+      "oracle_gap": 0.0,
+      "remap_generalization_score": 1.0,
+      "scores": {
+        "always_abstain": 0.45,
+        "b64_transfer_policy": 1.0,
+        "conservative_uncertainty": 1.0,
+        "mask_only": 0.6975000000000001,
+        "oracle": 1.0,
+        "random": 0.8166666666666668,
+        "state_only": 1.0,
+        "trace_only": 1.0
+      },
+      "shortcut_explainable": true,
+      "transfer_drop": 0.0
+    },
+    {
+      "anti_overfit_score": 0.44999999999999996,
+      "baseline_transfer_gap": 0.44999999999999996,
+      "condition": "combined_remap",
+      "likely_shortcut_source": "none",
+      "needed_hardening": "retain_as_transfer_diagnostic",
+      "oracle_gap": 0.0,
+      "remap_generalization_score": 1.0,
+      "scores": {
+        "always_abstain": 0.45,
+        "b64_transfer_policy": 1.0,
+        "conservative_uncertainty": 0.45,
+        "mask_only": 0.45,
+        "oracle": 1.0,
+        "random": 0.5166666666666667,
+        "state_only": 0.45,
+        "trace_only": 0.55
+      },
+      "shortcut_explainable": false,
+      "transfer_drop": 0.0
+    },
+    {
+      "anti_overfit_score": 0.44999999999999996,
+      "baseline_transfer_gap": 0.44999999999999996,
+      "condition": "delay_profile_remap",
+      "likely_shortcut_source": "none",
+      "needed_hardening": "retain_as_transfer_diagnostic",
+      "oracle_gap": 0.0,
+      "remap_generalization_score": 1.0,
+      "scores": {
+        "always_abstain": 0.45,
+        "b64_transfer_policy": 1.0,
+        "conservative_uncertainty": 0.55,
+        "mask_only": 0.55,
+        "oracle": 1.0,
+        "random": 0.5166666666666667,
+        "state_only": 0.55,
+        "trace_only": 0.55
+      },
+      "shortcut_explainable": false,
+      "transfer_drop": 0.0
+    },
+    {
+      "anti_overfit_score": 0.0,
+      "baseline_transfer_gap": 0.0,
+      "condition": "dynamics_remap",
+      "likely_shortcut_source": "trace_only",
+      "needed_hardening": "alter dynamics enough that trace-only and conservative rules fail",
+      "oracle_gap": 0.0,
+      "remap_generalization_score": 1.0,
+      "scores": {
+        "always_abstain": 0.45,
+        "b64_transfer_policy": 1.0,
+        "conservative_uncertainty": 1.0,
+        "mask_only": 0.6975000000000001,
+        "oracle": 1.0,
+        "random": 0.615,
+        "state_only": 0.45,
+        "trace_only": 1.0
+      },
+      "shortcut_explainable": true,
+      "transfer_drop": 0.0
+    },
+    {
+      "anti_overfit_score": 0.44999999999999996,
+      "baseline_transfer_gap": 0.44999999999999996,
+      "condition": "indirect_path_remap",
+      "likely_shortcut_source": "none",
+      "needed_hardening": "retain_as_transfer_diagnostic",
+      "oracle_gap": 0.0,
+      "remap_generalization_score": 1.0,
+      "scores": {
+        "always_abstain": 0.45,
+        "b64_transfer_policy": 1.0,
+        "conservative_uncertainty": 0.55,
+        "mask_only": 0.45,
+        "oracle": 1.0,
+        "random": 0.5166666666666667,
+        "state_only": 0.55,
+        "trace_only": 0.55
+      },
+      "shortcut_explainable": false,
+      "transfer_drop": 0.0
+    },
+    {
+      "anti_overfit_score": 0.0,
+      "baseline_transfer_gap": 0.0,
+      "condition": "mask_visibility_remap",
+      "likely_shortcut_source": "state_only",
+      "needed_hardening": "hide answer-like mask fields plus state/trace substitutes",
+      "oracle_gap": 0.0,
+      "remap_generalization_score": 1.0,
+      "scores": {
+        "always_abstain": 0.45,
+        "b64_transfer_policy": 1.0,
+        "conservative_uncertainty": 1.0,
+        "mask_only": 0.45,
+        "oracle": 1.0,
+        "random": 0.8166666666666668,
+        "state_only": 1.0,
+        "trace_only": 1.0
+      },
+      "shortcut_explainable": true,
+      "transfer_drop": 0.0
+    },
+    {
+      "anti_overfit_score": 0.0,
+      "baseline_transfer_gap": 0.0,
+      "condition": "risk_cue_remap",
+      "likely_shortcut_source": "state_only",
+      "needed_hardening": "hide direct risk estimate and require feedback/history risk inference",
+      "oracle_gap": 0.0,
+      "remap_generalization_score": 1.0,
+      "scores": {
+        "always_abstain": 0.45,
+        "b64_transfer_policy": 1.0,
+        "conservative_uncertainty": 1.0,
+        "mask_only": 0.6975000000000001,
+        "oracle": 1.0,
+        "random": 0.8166666666666668,
+        "state_only": 1.0,
+        "trace_only": 1.0
+      },
+      "shortcut_explainable": true,
+      "transfer_drop": 0.0
+    },
+    {
+      "anti_overfit_score": 0.0,
+      "baseline_transfer_gap": 0.0,
+      "condition": "visual_remap",
+      "likely_shortcut_source": "trace_only",
+      "needed_hardening": "remove trace-equivalent visual/state target cue and add appearance distractors",
+      "oracle_gap": 0.0,
+      "remap_generalization_score": 1.0,
+      "scores": {
+        "always_abstain": 0.45,
+        "b64_transfer_policy": 1.0,
+        "conservative_uncertainty": 1.0,
+        "mask_only": 0.6975000000000001,
+        "oracle": 1.0,
+        "random": 0.615,
+        "state_only": 0.45,
+        "trace_only": 1.0
+      },
+      "shortcut_explainable": true,
+      "transfer_drop": 0.0
+    }
+  ],
+  "second_pass_needed": true,
+  "shortcut_audit": {
+    "dynamics_shortcut_source": "trace_only",
+    "mask_visibility_shortcut_source": "state_only",
+    "risk_cue_shortcut_source": "state_only",
+    "shortcut_equivalent_remap_count": 4,
+    "visual_shortcut_source": "trace_only"
+  },
+  "stronger_remap_audit": {
+    "combined_remap": {
+      "baseline_transfer_gap": 0.44999999999999996,
+      "interpretation": "stronger harness signal, still synthetic toy transfer",
+      "mechanism_readout": "delayed_credit_or_hidden_indirect_history",
+      "oracle_gap": 0.0,
+      "present": true
+    },
+    "delay_profile_remap": {
+      "baseline_transfer_gap": 0.44999999999999996,
+      "interpretation": "stronger harness signal, still synthetic toy transfer",
+      "mechanism_readout": "delayed_credit_or_hidden_indirect_history",
+      "oracle_gap": 0.0,
+      "present": true
+    },
+    "indirect_path_remap": {
+      "baseline_transfer_gap": 0.44999999999999996,
+      "interpretation": "stronger harness signal, still synthetic toy transfer",
+      "mechanism_readout": "delayed_credit_or_hidden_indirect_history",
+      "oracle_gap": 0.0,
+      "present": true
+    }
+  },
+  "summary": {
+    "b64_policy_scores_all_remaps": true,
+    "mean_baseline_transfer_gap": 0.19285714285714284,
+    "mean_oracle_gap": 0.0,
+    "shortcut_equivalent_remap_count": 4,
+    "shortcut_equivalent_remaps": [
+      "dynamics_remap",
+      "mask_visibility_remap",
+      "risk_cue_remap",
+      "visual_remap"
+    ],
+    "stronger_transfer_remaps": [
+      "combined_remap",
+      "delay_profile_remap",
+      "indirect_path_remap"
+    ]
+  }
+}
