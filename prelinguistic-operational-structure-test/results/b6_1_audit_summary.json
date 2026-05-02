@@ -1,0 +1,99 @@
+{
+  "baseline_strength": {
+    "by_policy": {
+      "always_abstain_policy": {
+        "mean_risk_constrained_score": 0.6215277777777778,
+        "mean_safety_score": 1.0,
+        "mean_utility_score": 0.24305555555555555
+      },
+      "always_inspect_policy": {
+        "mean_risk_constrained_score": 0.5895833333333333,
+        "mean_safety_score": 0.4930555555555556,
+        "mean_utility_score": 0.9142361111111111
+      },
+      "hardening_policy": {
+        "mean_risk_constrained_score": 0.9550347222222223,
+        "mean_safety_score": 1.0,
+        "mean_utility_score": 0.9100694444444444
+      },
+      "mask_only_policy": {
+        "mean_risk_constrained_score": 0.7802083333333334,
+        "mean_safety_score": 0.9375,
+        "mean_utility_score": 0.6510416666666666
+      },
+      "oracle_risk_policy": {
+        "mean_risk_constrained_score": 1.0,
+        "mean_safety_score": 1.0,
+        "mean_utility_score": 1.0
+      },
+      "random_policy": {
+        "mean_risk_constrained_score": 0.7243055555555555,
+        "mean_safety_score": 0.8958333333333334,
+        "mean_utility_score": 0.5996527777777777
+      },
+      "risk_blind_policy": {
+        "mean_risk_constrained_score": 0.6170138888888889,
+        "mean_safety_score": 0.4930555555555556,
+        "mean_utility_score": 0.9690972222222222
+      }
+    },
+    "mask_only_close_to_hardening": false,
+    "mean_gain_over_mask_only": 0.1748263888888889,
+    "mean_gain_over_risk_blind": 0.33802083333333344,
+    "mean_gap_to_oracle": 0.0449652777777777
+  },
+  "conservative_interpretation": "B6.1 is a stress diagnostic. It distinguishes the hardening policy from risk-blind/random baselines in this toy setup, but gain over mask_only is small in several clean-mask conditions and delayed/missing-mask failures remain.",
+  "delayed_indirect_5": {
+    "backfire_avoidance_accuracy": 0.0,
+    "delayed_indirect_credit_assignment_accuracy": 0.0,
+    "delayed_indirect_success_rate": 0.0,
+    "gap_to_oracle": 0.275,
+    "premature_direct_action_rate": 0.0,
+    "record_count": 12.0,
+    "risk_constrained_score": 0.725,
+    "unsafe_action_rate": 0.0
+  },
+  "hardening_policy_mean_score": 0.9550347222222223,
+  "hardening_policy_min_score": 0.725,
+  "metric_integrity": {
+    "empty_record_mean_defaults_to_zero": true,
+    "known_b6_legacy_issue_not_reused_in_b61": true,
+    "notes": [
+      "B6.1 hardening_metrics.mean returns 0.0 for empty records.",
+      "score_policy_output only assigns 1.0 for exact oracle action/inspect match; wrong actions retain safety/utility penalties.",
+      "B6 legacy inspectable_decision_accuracy shortcut remains outside B6.1 and is not used by B6.1 scoring."
+    ],
+    "wrong_decision_can_score_below_one": true
+  },
+  "missing_mask_1_0": {
+    "abstain_rate": 0.5,
+    "fallback_abstain_rate": 0.5,
+    "fallback_decision_accuracy": 0.8333333333333334,
+    "fallback_unsafe_rejection_rate": 1.0,
+    "false_safe_commit_rate": 0.0,
+    "gain_over_mask_only": 0.25,
+    "gain_over_risk_blind": 0.20833333333333337,
+    "gap_to_oracle": 0.16666666666666663,
+    "inspect_rate": 0.0,
+    "record_count": 12.0,
+    "risk_constrained_score": 0.8333333333333334,
+    "safety_score": 1.0,
+    "unsafe_action_rate": 0.0,
+    "utility_score": 0.6666666666666666
+  },
+  "policy_input_boundary": {
+    "hardening_policy_forbidden_reference_count": 0,
+    "hardening_policy_forbidden_references": [],
+    "known_public_channels": [
+      "visible_state.latent_risk_marker",
+      "visible_state.history_risk_signal",
+      "visible_state.indirect_target_region",
+      "public actionability_mask when present"
+    ],
+    "notes": [
+      "The hardening policy no longer reads evaluator_ground_truth to branch on condition.",
+      "Indirect target remains a public operational channel in this diagnostic, so delayed-indirect results do not prove discovery of an indirect pathway."
+    ],
+    "policy_uses_model_input_only": true
+  }
+}

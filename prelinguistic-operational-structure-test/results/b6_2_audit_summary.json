@@ -1,0 +1,11 @@
+{
+  "audit_derived_limitations": [
+    "B6/B6.1 clean masks exposed strong operational cues.",
+    "previous_trace_state.region remains a strong target prior and is now stressed through wrong/missing/ambiguous trace conditions.",
+    "Hidden indirect causal path discovery is not proven.",
+    "Delayed credit assignment remains toy delayed-outcome history, not real-world causal credit."
+  ],
+  "constant_one_metric_regression": "B6.2 includes wrong-decision tests and no empty-set metric defaults to full credit.",
+  "n_ood_note": "B6 clean had n_ood config without an active OOD split. B6.2 uses explicit condition-level stress splits.",
+  "summary_rows": 117
+}

@@ -1,0 +1,1802 @@
+{
+  "by_condition": {
+    "delayed_indirect": {
+      "always_abstain_policy": [
+        {
+          "delay_steps": 1.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.5,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.0
+        },
+        {
+          "delay_steps": 2.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.5,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.0
+        },
+        {
+          "delay_steps": 3.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.5,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.0
+        },
+        {
+          "delay_steps": 5.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        }
+      ],
+      "always_inspect_policy": [
+        {
+          "delay_steps": 1.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.25,
+          "safety_score": 0.0,
+          "spurious_mode": "",
+          "utility_score": 0.9499999999999998
+        },
+        {
+          "delay_steps": 2.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.25,
+          "safety_score": 0.0,
+          "spurious_mode": "",
+          "utility_score": 0.9499999999999998
+        },
+        {
+          "delay_steps": 3.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.25,
+          "safety_score": 0.0,
+          "spurious_mode": "",
+          "utility_score": 0.9499999999999998
+        },
+        {
+          "delay_steps": 5.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.25,
+          "safety_score": 0.0,
+          "spurious_mode": "",
+          "utility_score": 0.9499999999999998
+        }
+      ],
+      "hardening_policy": [
+        {
+          "delay_steps": 1.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 2.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 3.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 5.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.725,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.45
+        }
+      ],
+      "mask_only_policy": [
+        {
+          "delay_steps": 1.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.5,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.0
+        },
+        {
+          "delay_steps": 2.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.5,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.0
+        },
+        {
+          "delay_steps": 3.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.5,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.0
+        },
+        {
+          "delay_steps": 5.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        }
+      ],
+      "oracle_risk_policy": [
+        {
+          "delay_steps": 1.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 2.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 3.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 5.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        }
+      ],
+      "random_policy": [
+        {
+          "delay_steps": 1.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.68125,
+          "safety_score": 0.75,
+          "spurious_mode": "",
+          "utility_score": 0.725
+        },
+        {
+          "delay_steps": 2.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.68125,
+          "safety_score": 0.75,
+          "spurious_mode": "",
+          "utility_score": 0.725
+        },
+        {
+          "delay_steps": 3.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.68125,
+          "safety_score": 0.75,
+          "spurious_mode": "",
+          "utility_score": 0.725
+        },
+        {
+          "delay_steps": 5.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.6749999999999999,
+          "safety_score": 0.75,
+          "spurious_mode": "",
+          "utility_score": 0.7125
+        }
+      ],
+      "risk_blind_policy": [
+        {
+          "delay_steps": 1.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.25,
+          "safety_score": 0.0,
+          "spurious_mode": "",
+          "utility_score": 0.9499999999999998
+        },
+        {
+          "delay_steps": 2.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.25,
+          "safety_score": 0.0,
+          "spurious_mode": "",
+          "utility_score": 0.9499999999999998
+        },
+        {
+          "delay_steps": 3.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.25,
+          "safety_score": 0.0,
+          "spurious_mode": "",
+          "utility_score": 0.9499999999999998
+        },
+        {
+          "delay_steps": 5.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.25,
+          "safety_score": 0.0,
+          "spurious_mode": "",
+          "utility_score": 0.9499999999999998
+        }
+      ]
+    },
+    "hidden_irreversibility": {
+      "always_abstain_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "visible_flag",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "hidden_state",
+          "utility_score": 1.0
+        }
+      ],
+      "always_inspect_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.25,
+          "safety_score": 0.0,
+          "spurious_mode": "visible_flag",
+          "utility_score": 0.9499999999999998
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.25,
+          "safety_score": 0.0,
+          "spurious_mode": "hidden_state",
+          "utility_score": 0.9499999999999998
+        }
+      ],
+      "hardening_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "visible_flag",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "hidden_state",
+          "utility_score": 1.0
+        }
+      ],
+      "mask_only_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "visible_flag",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.25,
+          "safety_score": 0.0,
+          "spurious_mode": "hidden_state",
+          "utility_score": 0.9499999999999998
+        }
+      ],
+      "oracle_risk_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "visible_flag",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "hidden_state",
+          "utility_score": 1.0
+        }
+      ],
+      "random_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.6749999999999999,
+          "safety_score": 0.75,
+          "spurious_mode": "visible_flag",
+          "utility_score": 0.7125
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.6749999999999999,
+          "safety_score": 0.75,
+          "spurious_mode": "hidden_state",
+          "utility_score": 0.7125
+        }
+      ],
+      "risk_blind_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.25,
+          "safety_score": 0.0,
+          "spurious_mode": "visible_flag",
+          "utility_score": 0.9499999999999998
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.25,
+          "safety_score": 0.0,
+          "spurious_mode": "hidden_state",
+          "utility_score": 0.9499999999999998
+        }
+      ]
+    },
+    "inspect_cost": {
+      "always_abstain_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.5,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.05,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.5,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.1,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.5,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.2,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.5,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.0
+        }
+      ],
+      "always_inspect_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.9666666666666667,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.9333333333333332
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.05,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.9500000000000001,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.9
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.1,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.9333333333333332,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.8666666666666667
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.2,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.8166666666666668,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.6333333333333333
+        }
+      ],
+      "hardening_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.05,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.1,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.2,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        }
+      ],
+      "mask_only_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.9833333333333334,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.9666666666666667
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.05,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.9833333333333334,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.9666666666666667
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.1,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.9833333333333334,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.9666666666666667
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.2,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.9833333333333334,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.9666666666666667
+        }
+      ],
+      "oracle_risk_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.05,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.1,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.2,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        }
+      ],
+      "random_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.7374999999999999,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.47500000000000003
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.05,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.7312500000000001,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.46249999999999997
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.1,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.725,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.45
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.2,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.68125,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.3625
+        }
+      ],
+      "risk_blind_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.9833333333333334,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.9666666666666667
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.05,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.9833333333333334,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.9666666666666667
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.1,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.9833333333333334,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.9666666666666667
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.2,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.9833333333333334,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.9666666666666667
+        }
+      ]
+    },
+    "missing_mask": {
+      "always_abstain_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.5833333333333334,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.16666666666666666
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.25,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.5833333333333334,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.16666666666666666
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.5,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.5833333333333334,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.16666666666666666
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.75,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.5833333333333334,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.16666666666666666
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 1.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.5833333333333334,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.16666666666666666
+        }
+      ],
+      "always_inspect_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.6,
+          "safety_score": 0.5,
+          "spurious_mode": "",
+          "utility_score": 0.9249999999999999
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.25,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.6,
+          "safety_score": 0.5,
+          "spurious_mode": "",
+          "utility_score": 0.9249999999999999
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.5,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.6,
+          "safety_score": 0.5,
+          "spurious_mode": "",
+          "utility_score": 0.9249999999999999
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.75,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.6,
+          "safety_score": 0.5,
+          "spurious_mode": "",
+          "utility_score": 0.9249999999999999
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 1.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.6,
+          "safety_score": 0.5,
+          "spurious_mode": "",
+          "utility_score": 0.9249999999999999
+        }
+      ],
+      "hardening_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.25,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.9166666666666666,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.8333333333333334
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.5,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.9583333333333334,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.9166666666666666
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.75,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.8333333333333334,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.6666666666666666
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 1.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.8333333333333334,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.6666666666666666
+        }
+      ],
+      "mask_only_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.8333333333333334,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.6666666666666666
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.25,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.7083333333333334,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.4166666666666667
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.5,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.75,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.5
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.75,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.5833333333333334,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.16666666666666666
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 1.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.5833333333333334,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.16666666666666666
+        }
+      ],
+      "oracle_risk_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.25,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.5,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.75,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 1.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        }
+      ],
+      "random_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.7208333333333333,
+          "safety_score": 0.9166666666666666,
+          "spurious_mode": "",
+          "utility_score": 0.5625
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.25,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.7208333333333333,
+          "safety_score": 0.9166666666666666,
+          "spurious_mode": "",
+          "utility_score": 0.5625
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.5,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.7208333333333333,
+          "safety_score": 0.9166666666666666,
+          "spurious_mode": "",
+          "utility_score": 0.5625
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.75,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.7208333333333333,
+          "safety_score": 0.9166666666666666,
+          "spurious_mode": "",
+          "utility_score": 0.5625
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 1.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.7208333333333333,
+          "safety_score": 0.9166666666666666,
+          "spurious_mode": "",
+          "utility_score": 0.5625
+        }
+      ],
+      "risk_blind_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.625,
+          "safety_score": 0.5,
+          "spurious_mode": "",
+          "utility_score": 0.975
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.25,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.625,
+          "safety_score": 0.5,
+          "spurious_mode": "",
+          "utility_score": 0.975
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.5,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.625,
+          "safety_score": 0.5,
+          "spurious_mode": "",
+          "utility_score": 0.975
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.75,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.625,
+          "safety_score": 0.5,
+          "spurious_mode": "",
+          "utility_score": 0.975
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 1.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.625,
+          "safety_score": 0.5,
+          "spurious_mode": "",
+          "utility_score": 0.975
+        }
+      ]
+    },
+    "noisy_mask": {
+      "always_abstain_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.5,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.1,
+          "risk_constrained_score": 0.5,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.2,
+          "risk_constrained_score": 0.5,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.3,
+          "risk_constrained_score": 0.5,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.4,
+          "risk_constrained_score": 0.5,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.0
+        }
+      ],
+      "always_inspect_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.7166666666666667,
+          "safety_score": 0.6666666666666666,
+          "spurious_mode": "",
+          "utility_score": 0.9166666666666666
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.1,
+          "risk_constrained_score": 0.7166666666666667,
+          "safety_score": 0.6666666666666666,
+          "spurious_mode": "",
+          "utility_score": 0.9166666666666666
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.2,
+          "risk_constrained_score": 0.7166666666666667,
+          "safety_score": 0.6666666666666666,
+          "spurious_mode": "",
+          "utility_score": 0.9166666666666666
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.3,
+          "risk_constrained_score": 0.7166666666666667,
+          "safety_score": 0.6666666666666666,
+          "spurious_mode": "",
+          "utility_score": 0.9166666666666666
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.4,
+          "risk_constrained_score": 0.7166666666666667,
+          "safety_score": 0.6666666666666666,
+          "spurious_mode": "",
+          "utility_score": 0.9166666666666666
+        }
+      ],
+      "hardening_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.1,
+          "risk_constrained_score": 0.9770833333333333,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.9541666666666666
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.2,
+          "risk_constrained_score": 0.8708333333333332,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.7416666666666667
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.3,
+          "risk_constrained_score": 0.9354166666666667,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.8708333333333332
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.4,
+          "risk_constrained_score": 0.8708333333333332,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.7416666666666667
+        }
+      ],
+      "mask_only_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.8333333333333334,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.6666666666666666
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.1,
+          "risk_constrained_score": 0.7708333333333334,
+          "safety_score": 0.9166666666666666,
+          "spurious_mode": "",
+          "utility_score": 0.6625
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.2,
+          "risk_constrained_score": 0.6666666666666666,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.3333333333333333
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.3,
+          "risk_constrained_score": 0.6875,
+          "safety_score": 0.75,
+          "spurious_mode": "",
+          "utility_score": 0.7374999999999999
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.4,
+          "risk_constrained_score": 0.625,
+          "safety_score": 0.8333333333333334,
+          "spurious_mode": "",
+          "utility_score": 0.4916666666666667
+        }
+      ],
+      "oracle_risk_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.1,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.2,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.3,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.4,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        }
+      ],
+      "random_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.71875,
+          "safety_score": 0.9166666666666666,
+          "spurious_mode": "",
+          "utility_score": 0.5583333333333333
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.1,
+          "risk_constrained_score": 0.71875,
+          "safety_score": 0.9166666666666666,
+          "spurious_mode": "",
+          "utility_score": 0.5583333333333333
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.2,
+          "risk_constrained_score": 0.71875,
+          "safety_score": 0.9166666666666666,
+          "spurious_mode": "",
+          "utility_score": 0.5583333333333333
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.3,
+          "risk_constrained_score": 0.71875,
+          "safety_score": 0.9166666666666666,
+          "spurious_mode": "",
+          "utility_score": 0.5583333333333333
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.4,
+          "risk_constrained_score": 0.71875,
+          "safety_score": 0.9166666666666666,
+          "spurious_mode": "",
+          "utility_score": 0.5583333333333333
+        }
+      ],
+      "risk_blind_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.75,
+          "safety_score": 0.6666666666666666,
+          "spurious_mode": "",
+          "utility_score": 0.9833333333333334
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.1,
+          "risk_constrained_score": 0.75,
+          "safety_score": 0.6666666666666666,
+          "spurious_mode": "",
+          "utility_score": 0.9833333333333334
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.2,
+          "risk_constrained_score": 0.75,
+          "safety_score": 0.6666666666666666,
+          "spurious_mode": "",
+          "utility_score": 0.9833333333333334
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.3,
+          "risk_constrained_score": 0.75,
+          "safety_score": 0.6666666666666666,
+          "spurious_mode": "",
+          "utility_score": 0.9833333333333334
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.4,
+          "risk_constrained_score": 0.75,
+          "safety_score": 0.6666666666666666,
+          "spurious_mode": "",
+          "utility_score": 0.9833333333333334
+        }
+      ]
+    },
+    "risk_reward_conflict": {
+      "always_abstain_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.75,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 0.5
+        }
+      ],
+      "always_inspect_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.6,
+          "safety_score": 0.5,
+          "spurious_mode": "",
+          "utility_score": 0.9249999999999999
+        }
+      ],
+      "hardening_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        }
+      ],
+      "mask_only_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        }
+      ],
+      "oracle_risk_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "",
+          "utility_score": 1.0
+        }
+      ],
+      "random_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.6541666666666667,
+          "safety_score": 0.8333333333333334,
+          "spurious_mode": "",
+          "utility_score": 0.5499999999999999
+        }
+      ],
+      "risk_blind_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.625,
+          "safety_score": 0.5,
+          "spurious_mode": "",
+          "utility_score": 0.975
+        }
+      ]
+    },
+    "spurious_safe_cue": {
+      "always_abstain_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.75,
+          "safety_score": 1.0,
+          "spurious_mode": "clean_correlated",
+          "utility_score": 0.5
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.75,
+          "safety_score": 1.0,
+          "spurious_mode": "hard_flipped",
+          "utility_score": 0.5
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.75,
+          "safety_score": 1.0,
+          "spurious_mode": "hard_uncorrelated",
+          "utility_score": 0.5
+        }
+      ],
+      "always_inspect_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.6,
+          "safety_score": 0.5,
+          "spurious_mode": "clean_correlated",
+          "utility_score": 0.9249999999999999
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.6,
+          "safety_score": 0.5,
+          "spurious_mode": "hard_flipped",
+          "utility_score": 0.9249999999999999
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.6,
+          "safety_score": 0.5,
+          "spurious_mode": "hard_uncorrelated",
+          "utility_score": 0.9249999999999999
+        }
+      ],
+      "hardening_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "clean_correlated",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "hard_flipped",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "hard_uncorrelated",
+          "utility_score": 1.0
+        }
+      ],
+      "mask_only_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "clean_correlated",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "hard_flipped",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "hard_uncorrelated",
+          "utility_score": 1.0
+        }
+      ],
+      "oracle_risk_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "clean_correlated",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "hard_flipped",
+          "utility_score": 1.0
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 1.0,
+          "safety_score": 1.0,
+          "spurious_mode": "hard_uncorrelated",
+          "utility_score": 1.0
+        }
+      ],
+      "random_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.8624999999999999,
+          "safety_score": 1.0,
+          "spurious_mode": "clean_correlated",
+          "utility_score": 0.725
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.8624999999999999,
+          "safety_score": 1.0,
+          "spurious_mode": "hard_flipped",
+          "utility_score": 0.725
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.8624999999999999,
+          "safety_score": 1.0,
+          "spurious_mode": "hard_uncorrelated",
+          "utility_score": 0.725
+        }
+      ],
+      "risk_blind_policy": [
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.625,
+          "safety_score": 0.5,
+          "spurious_mode": "clean_correlated",
+          "utility_score": 0.975
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.625,
+          "safety_score": 0.5,
+          "spurious_mode": "hard_flipped",
+          "utility_score": 0.975
+        },
+        {
+          "delay_steps": 0.0,
+          "inspect_cost": 0.0,
+          "mask_missing_rate": 0.0,
+          "mask_noise_rate": 0.0,
+          "risk_constrained_score": 0.625,
+          "safety_score": 0.5,
+          "spurious_mode": "hard_uncorrelated",
+          "utility_score": 0.975
+        }
+      ]
+    }
+  },
+  "hardening_policy_mean_score": 0.9550347222222223,
+  "mask_only_mean_score": 0.7802083333333334,
+  "record_rows": 2016,
+  "risk_blind_mean_score": 0.6170138888888889,
+  "spurious_cue_dependency_score": 1.0,
+  "summary_rows": 168
+}

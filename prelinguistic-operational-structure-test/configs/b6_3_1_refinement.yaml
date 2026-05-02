@@ -1,0 +1,32 @@
+base_config: configs/b6_3_structural_necessity.yaml
+
+b6_3_1:
+  episodes_per_condition: 6
+  conditions:
+    - wrong_trace_no_public_state
+    - wrong_trace_history_conflict
+    - wrong_trace_feedback_repair_required
+    - wrong_trace_inspection_required
+    - hide_public_state_cue
+    - hide_public_state_and_history
+    - hide_public_state_and_feedback
+    - hide_public_state_and_mask_target
+    - hide_public_state_and_candidate_search
+    - feedback_required_trace_repair
+    - history_required_delayed_credit
+    - history_required_indirect_discovery
+    - feedback_required_risk_update
+    - delay5_credit_buffer_required
+    - delay5_multiple_pending_actions
+    - delay5_backfire_after_success
+    - delay5_no_effect_vs_delayed_success
+    - hidden_indirect_no_candidate_shortcut
+    - hidden_indirect_exploration_required
+    - hidden_indirect_spurious_candidate
+    - hidden_indirect_history_discovery
+
+  gates:
+    forbidden_reference_count: 0
+    no_sample_metric_count: 0
+    invalid_metric_count: 0
+

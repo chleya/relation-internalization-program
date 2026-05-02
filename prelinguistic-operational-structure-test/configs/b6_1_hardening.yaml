@@ -1,0 +1,38 @@
+base_config: configs/b6_risk_constrained_loop.yaml
+
+target_models:
+  - recurrent_flow_checkpoint_model
+  - field_memory_model
+  - schema_memory_model
+
+seeds: [0, 1, 2]
+
+b6_1:
+  episodes_per_condition: 12
+  frame_size: 64
+  grid_size: 8
+
+  noise_rates: [0.0, 0.1, 0.2, 0.3, 0.4]
+  missing_rates: [0.0, 0.25, 0.5, 0.75, 1.0]
+  delay_steps: [1, 2, 3, 5]
+  inspect_costs: [0.0, 0.05, 0.1, 0.2]
+  spurious_modes:
+    - clean_correlated
+    - hard_flipped
+    - hard_uncorrelated
+
+  policies:
+    - hardening_policy
+    - risk_blind_policy
+    - mask_only_policy
+    - always_inspect_policy
+    - always_abstain_policy
+    - oracle_risk_policy
+    - random_policy
+
+  gates:
+    oracle_score_min: 0.95
+    random_score_max: 0.35
+    hardening_gain_over_risk_blind: 0.10
+    hardening_gain_over_mask_only: 0.05
+
