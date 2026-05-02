@@ -20,4 +20,3 @@ def test_empty_records_mark_invalid_not_full_score():
     assert row["transfer_score"] == 0.0
     assert row["no_sample_metric_count"] == 1
     assert row["invalid_metric_count"] == 1
-

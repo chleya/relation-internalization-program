@@ -28,4 +28,3 @@ def test_combined_remap_hides_state_and_mask_shortcuts():
     assert visible["public_state_available"] is False
     assert visible["candidate_indirect_regions"] == []
     assert all(info.get("indirect_target_region") is None for info in episode["model_input"]["actionability_mask"].values())
-

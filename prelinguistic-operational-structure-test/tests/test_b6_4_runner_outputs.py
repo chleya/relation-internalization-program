@@ -26,4 +26,3 @@ def test_b64_writes_outputs_and_review(tmp_path, monkeypatch):
     assert Path("reports/B6_4_TRANSFER_GENERALIZATION_REPORT.md").exists()
     assert Path("reports/B6_4_RESULT_REVIEW.md").exists()
     assert review["integrity"]["forbidden_reference_count_max"] == 0
-

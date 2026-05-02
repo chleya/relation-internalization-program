@@ -25,4 +25,3 @@ def test_b641_outputs_and_review(tmp_path, monkeypatch):
     assert Path("reports/B6_4_1_TRANSFER_HARDENING_REPORT.md").exists()
     assert Path("reports/B6_4_1_RESULT_REVIEW.md").exists()
     assert review["integrity"]["forbidden_reference_count_max"] == 0
-

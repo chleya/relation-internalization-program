@@ -169,4 +169,3 @@ def hide_answer_like_mask(mask: dict[int, dict[str, Any]]) -> None:
     for info in mask.values():
         for key in ["unsafe", "irreversible", "cost", "risk_cost", "irreversibility_cost", "allowed_actions", "indirect_target_region"]:
             info.pop(key, None)
-

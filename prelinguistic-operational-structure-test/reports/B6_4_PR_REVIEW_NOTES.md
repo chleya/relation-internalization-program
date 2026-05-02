@@ -70,4 +70,3 @@ It should either:
 The next step should be B6.4 second pass: Transfer Hardening.
 
 It should not be B7.
-

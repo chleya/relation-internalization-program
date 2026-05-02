@@ -19,4 +19,3 @@ def test_b641_empty_summary_marks_invalid():
     assert row["hard_transfer_score"] == 0.0
     assert row["no_sample_metric_count"] == 1
     assert row["invalid_metric_count"] == 1
-

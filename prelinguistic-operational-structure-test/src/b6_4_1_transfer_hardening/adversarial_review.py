@@ -211,4 +211,3 @@ def format_value(value: Any) -> str:
     if isinstance(value, float):
         return f"{value:.3f}"
     return str(value)
-

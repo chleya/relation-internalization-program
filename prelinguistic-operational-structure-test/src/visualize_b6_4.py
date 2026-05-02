@@ -41,4 +41,3 @@ def mean(rows: list[dict[str, str]], key: str) -> float:
 
 if __name__ == "__main__":
     main()
-

@@ -163,4 +163,3 @@ def make_public_mask(total: int, target: int, indirect: int) -> dict[int, dict[s
         }
     mask[target]["indirect_target_region"] = indirect
     return mask
-

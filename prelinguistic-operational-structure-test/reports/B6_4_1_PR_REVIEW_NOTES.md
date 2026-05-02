@@ -63,4 +63,3 @@ It does not support:
 ## Recommendation
 
 Keep PR #5 open for review or merge only with the combined_remap_hard caveat preserved. The next work item should be B6.4.2 Combined-Remap Hardening, not B7.
-

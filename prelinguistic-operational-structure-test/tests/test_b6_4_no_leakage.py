@@ -25,4 +25,3 @@ def test_poisoned_evaluator_does_not_change_b64_output():
 def comparable(output):
     action = output.get("action") or {}
     return action.get("action_type"), action.get("region_id"), bool(output.get("inspect")), output.get("transfer_source")
-

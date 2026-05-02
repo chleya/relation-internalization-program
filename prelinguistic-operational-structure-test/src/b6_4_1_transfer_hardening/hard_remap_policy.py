@@ -152,4 +152,3 @@ def audit_policy_integrity(episode: dict[str, Any], config: dict[str, Any]) -> d
 def comparable(output: dict[str, Any]) -> tuple[Any, ...]:
     action = output.get("action") or {}
     return action.get("action_type"), action.get("region_id"), output.get("transfer_source")
-

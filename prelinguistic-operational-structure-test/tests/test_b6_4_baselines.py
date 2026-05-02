@@ -26,4 +26,3 @@ def test_b64_beats_shortcuts_on_combined_remap():
 
 def row(summary, condition, policy_name):
     return next(row for row in summary if row["condition"] == condition and row["policy_name"] == policy_name)
-

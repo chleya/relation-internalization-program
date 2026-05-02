@@ -30,4 +30,3 @@ def test_combined_hard_keeps_baseline_gap():
 
 def row(summary, condition, policy_name):
     return next(row for row in summary if row["condition"] == condition and row["policy_name"] == policy_name)
-

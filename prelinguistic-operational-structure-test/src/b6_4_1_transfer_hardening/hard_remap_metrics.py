@@ -143,4 +143,3 @@ def mean(records: list[dict[str, Any]], key: str) -> float:
     if not records:
         return 0.0
     return sum(float(row.get(key, 0.0)) for row in records) / len(records)
-

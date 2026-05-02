@@ -33,4 +33,3 @@ REMAP_TYPES = {
     "mask_visibility_remap": "mask_visibility",
     "combined_remap": "combined",
 }
-

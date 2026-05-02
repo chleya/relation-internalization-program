@@ -24,4 +24,3 @@ def test_mask_hard_remap_removes_answer_like_mask_fields():
         assert "indirect_target_region" not in info
         assert "unsafe" not in info
         assert "risk_cost" not in info
-
