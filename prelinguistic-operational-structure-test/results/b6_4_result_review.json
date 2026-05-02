@@ -1,0 +1,173 @@
+{
+  "claim_boundary": "toy_to_toy_transfer_only",
+  "conditions": [
+    "clean_reference",
+    "combined_remap",
+    "delay_profile_remap",
+    "dynamics_remap",
+    "indirect_path_remap",
+    "mask_visibility_remap",
+    "risk_cue_remap",
+    "visual_remap"
+  ],
+  "integrity": {
+    "forbidden_reference_count_max": 0,
+    "invalid_metric_count_total": 0,
+    "no_sample_metric_count_total": 0,
+    "poisoned_evaluator_invariance_all_pass": true
+  },
+  "missing_conditions": [],
+  "per_condition_scores": {
+    "clean_reference": {
+      "always_abstain": 0.45,
+      "b63_1_policy_reference": 1.0,
+      "b64_transfer_policy": 1.0,
+      "conservative_uncertainty": 1.0,
+      "mask_only": 0.6975000000000001,
+      "oracle": 1.0,
+      "random": 0.8166666666666668,
+      "state_only": 1.0,
+      "trace_only": 1.0
+    },
+    "combined_remap": {
+      "always_abstain": 0.45,
+      "b63_1_policy_reference": 0.55,
+      "b64_transfer_policy": 1.0,
+      "conservative_uncertainty": 0.45,
+      "mask_only": 0.45,
+      "oracle": 1.0,
+      "random": 0.5166666666666667,
+      "state_only": 0.45,
+      "trace_only": 0.55
+    },
+    "delay_profile_remap": {
+      "always_abstain": 0.45,
+      "b63_1_policy_reference": 0.55,
+      "b64_transfer_policy": 1.0,
+      "conservative_uncertainty": 0.55,
+      "mask_only": 0.55,
+      "oracle": 1.0,
+      "random": 0.5166666666666667,
+      "state_only": 0.55,
+      "trace_only": 0.55
+    },
+    "dynamics_remap": {
+      "always_abstain": 0.45,
+      "b63_1_policy_reference": 1.0,
+      "b64_transfer_policy": 1.0,
+      "conservative_uncertainty": 1.0,
+      "mask_only": 0.6975000000000001,
+      "oracle": 1.0,
+      "random": 0.615,
+      "state_only": 0.45,
+      "trace_only": 1.0
+    },
+    "indirect_path_remap": {
+      "always_abstain": 0.45,
+      "b63_1_policy_reference": 0.55,
+      "b64_transfer_policy": 1.0,
+      "conservative_uncertainty": 0.55,
+      "mask_only": 0.45,
+      "oracle": 1.0,
+      "random": 0.5166666666666667,
+      "state_only": 0.55,
+      "trace_only": 0.55
+    },
+    "mask_visibility_remap": {
+      "always_abstain": 0.45,
+      "b63_1_policy_reference": 1.0,
+      "b64_transfer_policy": 1.0,
+      "conservative_uncertainty": 1.0,
+      "mask_only": 0.45,
+      "oracle": 1.0,
+      "random": 0.8166666666666668,
+      "state_only": 1.0,
+      "trace_only": 1.0
+    },
+    "risk_cue_remap": {
+      "always_abstain": 0.45,
+      "b63_1_policy_reference": 1.0,
+      "b64_transfer_policy": 1.0,
+      "conservative_uncertainty": 1.0,
+      "mask_only": 0.6975000000000001,
+      "oracle": 1.0,
+      "random": 0.8166666666666668,
+      "state_only": 1.0,
+      "trace_only": 1.0
+    },
+    "visual_remap": {
+      "always_abstain": 0.45,
+      "b63_1_policy_reference": 1.0,
+      "b64_transfer_policy": 1.0,
+      "conservative_uncertainty": 1.0,
+      "mask_only": 0.6975000000000001,
+      "oracle": 1.0,
+      "random": 0.615,
+      "state_only": 0.45,
+      "trace_only": 1.0
+    }
+  },
+  "shortcut_review": {
+    "clean_reference": {
+      "b64_beats_shortcuts": false,
+      "b64_score": 1.0,
+      "oracle_gap": 0.0,
+      "shortcut_best": 1.0
+    },
+    "combined_remap": {
+      "b64_beats_shortcuts": true,
+      "b64_score": 1.0,
+      "oracle_gap": 0.0,
+      "shortcut_best": 0.55
+    },
+    "delay_profile_remap": {
+      "b64_beats_shortcuts": true,
+      "b64_score": 1.0,
+      "oracle_gap": 0.0,
+      "shortcut_best": 0.55
+    },
+    "dynamics_remap": {
+      "b64_beats_shortcuts": false,
+      "b64_score": 1.0,
+      "oracle_gap": 0.0,
+      "shortcut_best": 1.0
+    },
+    "indirect_path_remap": {
+      "b64_beats_shortcuts": true,
+      "b64_score": 1.0,
+      "oracle_gap": 0.0,
+      "shortcut_best": 0.55
+    },
+    "mask_visibility_remap": {
+      "b64_beats_shortcuts": false,
+      "b64_score": 1.0,
+      "oracle_gap": 0.0,
+      "shortcut_best": 1.0
+    },
+    "risk_cue_remap": {
+      "b64_beats_shortcuts": false,
+      "b64_score": 1.0,
+      "oracle_gap": 0.0,
+      "shortcut_best": 1.0
+    },
+    "visual_remap": {
+      "b64_beats_shortcuts": false,
+      "b64_score": 1.0,
+      "oracle_gap": 0.0,
+      "shortcut_best": 1.0
+    }
+  },
+  "submit_ready_as_diagnostic": true,
+  "transfer_evidence": {
+    "failing_remaps": [],
+    "mean_b64_transfer_score": 1.0,
+    "mean_baseline_transfer_gap": 0.16874999999999998,
+    "mean_oracle_gap": 0.0,
+    "shortcut_equivalent_remaps": [
+      "dynamics_remap",
+      "mask_visibility_remap",
+      "risk_cue_remap",
+      "visual_remap"
+    ]
+  }
+}
