@@ -1,0 +1,89 @@
+{
+  "condition_review": {
+    "clean_reference": {
+      "b64_1_score": 1.0,
+      "hard_baseline_transfer_gap": 0.0,
+      "hard_oracle_gap": 0.0,
+      "mask_only": 0.25,
+      "oracle": 1.0,
+      "remap_failure_reason": "reference_not_hard_remap",
+      "shortcut_equivalent": true,
+      "state_only": 1.0,
+      "trace_only": 1.0
+    },
+    "combined_remap_hard": {
+      "b64_1_score": 0.6749999999999999,
+      "hard_baseline_transfer_gap": 0.325,
+      "hard_oracle_gap": 0.32500000000000007,
+      "mask_only": 0.3499999999999999,
+      "oracle": 1.0,
+      "remap_failure_reason": "policy_transfer_drop",
+      "shortcut_equivalent": false,
+      "state_only": 0.3499999999999999,
+      "trace_only": 0.25
+    },
+    "dynamics_remap_hard": {
+      "b64_1_score": 1.0,
+      "hard_baseline_transfer_gap": 0.6500000000000001,
+      "hard_oracle_gap": 0.0,
+      "mask_only": 0.25,
+      "oracle": 1.0,
+      "remap_failure_reason": "baseline_separation_present",
+      "shortcut_equivalent": false,
+      "state_only": 0.3499999999999999,
+      "trace_only": 0.25
+    },
+    "mask_visibility_remap_hard": {
+      "b64_1_score": 1.0,
+      "hard_baseline_transfer_gap": 0.6500000000000001,
+      "hard_oracle_gap": 0.0,
+      "mask_only": 0.3499999999999999,
+      "oracle": 1.0,
+      "remap_failure_reason": "baseline_separation_present",
+      "shortcut_equivalent": false,
+      "state_only": 0.3499999999999999,
+      "trace_only": 0.25
+    },
+    "risk_cue_remap_hard": {
+      "b64_1_score": 1.0,
+      "hard_baseline_transfer_gap": 0.75,
+      "hard_oracle_gap": 0.0,
+      "mask_only": 0.25,
+      "oracle": 1.0,
+      "remap_failure_reason": "baseline_separation_present",
+      "shortcut_equivalent": false,
+      "state_only": 0.25,
+      "trace_only": 0.25
+    },
+    "visual_remap_hard": {
+      "b64_1_score": 1.0,
+      "hard_baseline_transfer_gap": 0.6500000000000001,
+      "hard_oracle_gap": 0.0,
+      "mask_only": 0.25,
+      "oracle": 1.0,
+      "remap_failure_reason": "baseline_separation_present",
+      "shortcut_equivalent": false,
+      "state_only": 0.3499999999999999,
+      "trace_only": 0.25
+    }
+  },
+  "hard_remaps_with_baseline_drop": [
+    "combined_remap_hard",
+    "dynamics_remap_hard",
+    "mask_visibility_remap_hard",
+    "risk_cue_remap_hard",
+    "visual_remap_hard"
+  ],
+  "integrity": {
+    "forbidden_reference_count_max": 0,
+    "invalid_metric_count_total": 0,
+    "no_sample_metric_count_total": 0,
+    "poisoned_evaluator_invariance_all_pass": true,
+    "remap_leakage_count_total": 0,
+    "shortcut_leakage_count_total": 0
+  },
+  "missing_conditions": [],
+  "remaining_blockers": [],
+  "shortcut_equivalent_hard_remaps": [],
+  "submit_ready_as_diagnostic": true
+}

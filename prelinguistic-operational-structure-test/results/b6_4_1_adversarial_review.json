@@ -1,0 +1,171 @@
+{
+  "baseline_drop_audit": {
+    "always_abstain_score_by_remap": {
+      "combined_remap_hard": 0.3499999999999999,
+      "dynamics_remap_hard": 0.3499999999999999,
+      "mask_visibility_remap_hard": 0.3499999999999999,
+      "risk_cue_remap_hard": 0.3499999999999999,
+      "visual_remap_hard": 0.3499999999999999
+    },
+    "baseline_drops_valid": true,
+    "mask_only_drop_by_remap": {
+      "combined_remap_hard": 0.6500000000000001,
+      "dynamics_remap_hard": 0.75,
+      "mask_visibility_remap_hard": 0.6500000000000001,
+      "risk_cue_remap_hard": 0.75,
+      "visual_remap_hard": 0.75
+    },
+    "oracle_score_by_remap": {
+      "combined_remap_hard": 1.0,
+      "dynamics_remap_hard": 1.0,
+      "mask_visibility_remap_hard": 1.0,
+      "risk_cue_remap_hard": 1.0,
+      "visual_remap_hard": 1.0
+    },
+    "random_score_by_remap": {
+      "combined_remap_hard": 0.2833333333333333,
+      "dynamics_remap_hard": 0.2833333333333333,
+      "mask_visibility_remap_hard": 0.2833333333333333,
+      "risk_cue_remap_hard": 0.2833333333333333,
+      "visual_remap_hard": 0.2833333333333333
+    },
+    "state_only_drop_by_remap": {
+      "combined_remap_hard": 0.6500000000000001,
+      "dynamics_remap_hard": 0.6500000000000001,
+      "mask_visibility_remap_hard": 0.6500000000000001,
+      "risk_cue_remap_hard": 0.75,
+      "visual_remap_hard": 0.6500000000000001
+    },
+    "trace_only_drop_by_remap": {
+      "combined_remap_hard": 0.75,
+      "dynamics_remap_hard": 0.75,
+      "mask_visibility_remap_hard": 0.75,
+      "risk_cue_remap_hard": 0.75,
+      "visual_remap_hard": 0.75
+    }
+  },
+  "combined_remap_hard_conclusion": "combined_remap_hard shows limited transfer with meaningful oracle gap; preserve as unresolved hard-transfer limit.",
+  "decision": "submit_ready_as_diagnostic_branch",
+  "hard_remap_review": [
+    {
+      "always_abstain": 0.3499999999999999,
+      "baseline_transfer_gap": 0.6500000000000001,
+      "condition": "visual_remap_hard",
+      "conservative": 0.3499999999999999,
+      "failure_reason": "none",
+      "hardening_success": true,
+      "likely_remaining_shortcut": "none",
+      "mask_only": 0.25,
+      "oracle": 1.0,
+      "oracle_gap": 0.0,
+      "policy_score": 1.0,
+      "random": 0.2833333333333333,
+      "shortcut_removed_score": 0.6500000000000001,
+      "state_only": 0.3499999999999999,
+      "trace_only": 0.25
+    },
+    {
+      "always_abstain": 0.3499999999999999,
+      "baseline_transfer_gap": 0.75,
+      "condition": "risk_cue_remap_hard",
+      "conservative": 0.3499999999999999,
+      "failure_reason": "none",
+      "hardening_success": true,
+      "likely_remaining_shortcut": "none",
+      "mask_only": 0.25,
+      "oracle": 1.0,
+      "oracle_gap": 0.0,
+      "policy_score": 1.0,
+      "random": 0.2833333333333333,
+      "shortcut_removed_score": 0.75,
+      "state_only": 0.25,
+      "trace_only": 0.25
+    },
+    {
+      "always_abstain": 0.3499999999999999,
+      "baseline_transfer_gap": 0.6500000000000001,
+      "condition": "dynamics_remap_hard",
+      "conservative": 0.3499999999999999,
+      "failure_reason": "none",
+      "hardening_success": true,
+      "likely_remaining_shortcut": "none",
+      "mask_only": 0.25,
+      "oracle": 1.0,
+      "oracle_gap": 0.0,
+      "policy_score": 1.0,
+      "random": 0.2833333333333333,
+      "shortcut_removed_score": 0.6500000000000001,
+      "state_only": 0.3499999999999999,
+      "trace_only": 0.25
+    },
+    {
+      "always_abstain": 0.3499999999999999,
+      "baseline_transfer_gap": 0.6500000000000001,
+      "condition": "mask_visibility_remap_hard",
+      "conservative": 0.3499999999999999,
+      "failure_reason": "none",
+      "hardening_success": true,
+      "likely_remaining_shortcut": "none",
+      "mask_only": 0.3499999999999999,
+      "oracle": 1.0,
+      "oracle_gap": 0.0,
+      "policy_score": 1.0,
+      "random": 0.2833333333333333,
+      "shortcut_removed_score": 0.6500000000000001,
+      "state_only": 0.3499999999999999,
+      "trace_only": 0.25
+    },
+    {
+      "always_abstain": 0.3499999999999999,
+      "baseline_transfer_gap": 0.325,
+      "condition": "combined_remap_hard",
+      "conservative": 0.3499999999999999,
+      "failure_reason": "limited_transfer_oracle_gap",
+      "hardening_success": true,
+      "likely_remaining_shortcut": "none",
+      "mask_only": 0.3499999999999999,
+      "oracle": 1.0,
+      "oracle_gap": 0.32500000000000007,
+      "policy_score": 0.6749999999999999,
+      "random": 0.2833333333333333,
+      "shortcut_removed_score": 0.6500000000000001,
+      "state_only": 0.3499999999999999,
+      "trace_only": 0.25
+    }
+  ],
+  "hidden_cue_audit": {
+    "b641_transfer_source_counts": {
+      "abstain_uncertain": 3,
+      "delayed_credit": 3,
+      "feedback": 24,
+      "hidden_indirect": 6
+    },
+    "combined_failure_reason_distribution": {
+      "abstain_uncertain": 3,
+      "delayed_credit": 3
+    },
+    "dynamics_shortcut_leakage_count": 0,
+    "hidden_answer_cue_count": 0,
+    "indirect_target_leakage_count": 0,
+    "mask_answer_leakage_count": 0,
+    "public_state_shortcut_leakage_count": 0
+  },
+  "metric_integrity": {
+    "forbidden_reference_count_max": 0,
+    "invalid_metric_count_total": 0,
+    "no_sample_metric_count_total": 0,
+    "poisoned_evaluator_invariance_all_pass": true,
+    "remap_leakage_count_total": 0,
+    "shortcut_leakage_count_total": 0
+  },
+  "remaining_blockers": [
+    "combined_remap_hard remains limited by oracle gap."
+  ],
+  "summary": {
+    "hard_baseline_transfer_gap": 0.6050000000000001,
+    "hard_oracle_gap": 0.06500000000000002,
+    "hard_transfer_score": 0.9349999999999999,
+    "shortcut_equivalent_hard_remap_count": 0,
+    "transfer_evidence_strength": 0.72675
+  }
+}

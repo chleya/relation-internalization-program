@@ -1,0 +1,11 @@
+b6_4_1:
+  episodes_per_condition: 6
+  total_regions: 64
+  conditions:
+    - clean_reference
+    - visual_remap_hard
+    - risk_cue_remap_hard
+    - dynamics_remap_hard
+    - mask_visibility_remap_hard
+    - combined_remap_hard
+
