@@ -1,0 +1,24 @@
+base_config: configs/b6_2_hardening.yaml
+
+b6_3:
+  episodes_per_condition: 12
+  grid_size: 8
+  conditions:
+    - clean_reference
+    - wrong_trace
+    - wrong_trace_state_ambiguous
+    - missing_trace
+    - ambiguous_trace
+    - low_confidence_trace
+    - missing_mask
+    - hard_hidden_mask
+    - hide_public_state_cue
+    - hide_indirect_target
+    - delayed_indirect_delay5
+    - risk_reward_conflict
+    - spurious_flip
+
+  gates:
+    forbidden_reference_count: 0
+    no_sample_metric_count: 0
+    invalid_metric_count: 0
