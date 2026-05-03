@@ -1,0 +1,21 @@
+b6_4_2:
+  episodes_per_condition: 4
+  total_regions: 64
+  conditions:
+    - combined_remap_hard_reference
+    - pair_visual_risk
+    - pair_visual_dynamics
+    - pair_risk_mask
+    - pair_dynamics_delay
+    - pair_mask_indirect
+    - pair_delay_indirect
+    - triple_visual_risk_dynamics
+    - triple_risk_mask_delay
+    - triple_dynamics_delay_indirect
+    - triple_visual_mask_indirect
+    - triple_visual_risk_mask
+    - combined_disable_trace_repair
+    - combined_disable_fallback_risk
+    - combined_disable_delayed_credit
+    - combined_disable_candidate_search
+    - combined_disable_inspection_recovery
