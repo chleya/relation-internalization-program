@@ -1,0 +1,28 @@
+{
+  "compression_pressure_gain": 0.06341435185185192,
+  "conditions": [
+    "compression_required",
+    "feedback_required",
+    "mixed_pressure",
+    "ood_pressure_remap"
+  ],
+  "feedback_pressure_gain": 0.023645833333333355,
+  "g1_1_mask_f1": 0.5334656084656084,
+  "g1_1_mean_score": 0.5967129629629631,
+  "g1_1_ood_pressure_score": 0.7792592592592593,
+  "g1_1_oracle_gap": 0.302037037037037,
+  "generated_rule_pressure_coverage": 2,
+  "generator_rule": {
+    "direct_threshold": 0.45,
+    "indirect_threshold": 0.45,
+    "inspect_threshold": 0.45,
+    "risk_threshold": 0.62,
+    "update_weight": 0.35,
+    "use_compression": true,
+    "use_feedback": true
+  },
+  "invalid_metric_count_total": 0,
+  "record_rows": 504,
+  "submit_ready_as_generator_diagnostic": true,
+  "summary_rows": 28
+}

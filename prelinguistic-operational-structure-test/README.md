@@ -113,6 +113,7 @@ python -m src.run_b51_clean_closed_loop_audit --config configs/b51_clean_closed_
 python -m src.run_b52_adaptive_update --config configs/b52_adaptive_update.yaml --seed 0
 python -m src.run_b6_risk_constrained_loop --config configs/b6_risk_constrained_loop.yaml --seed 0
 python -m src.g_line.run_g1 --config configs/g1_minimal.yaml --seed 0
+python -m src.g_line.run_g1_1 --config configs/g1_1_pressure_hardening.yaml --seed 0
 python -m src.visualize --summary results/overall_summary.csv
 python -m src.visualize_b11 --summary results/b11_flow_checkpoint_hardening_summary.csv
 python -m src.visualize_b2 --summary results/b2_delayed_checkpoint_summary.csv
@@ -772,7 +773,11 @@ Current reports:
 reports/B_LINE_STAGE_FREEZE_AFTER_B6.md
 reports/G1_MINIMAL_GENERATOR_DESIGN.md
 reports/G1_MINIMAL_GENERATOR_RESULTS.md
+reports/G1_MINIMAL_GENERATOR_ADVERSARIAL_REVIEW.md
+reports/G1_1_PRESSURE_USE_HARDENING_PLAN.md
+reports/G1_1_PRESSURE_USE_HARDENING_RESULTS.md
 results/g1_minimal/metrics.json
+results/g1_1_pressure_hardening/metrics.json
 ```
 
 Interpretation: G1 is a minimal toy generator experiment. It can show whether a
@@ -780,6 +785,9 @@ compact generated mask/update rule beats weak baselines under held-out and OOD
 toy pressure. It does not prove autonomous cognition, real-world risk
 intelligence, robotics capability, safety certification, construction-site
 autonomy, or deployable engineering control.
+
+G1.1 hardens this by creating targeted feedback-required and
+compression-required pressure splits. It remains a toy generator diagnostic.
 
 ## Boundary
 

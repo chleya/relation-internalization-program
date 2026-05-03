@@ -128,23 +128,26 @@ def generate_candidate_rules(section: dict[str, Any]) -> list[GeneratedRule]:
 
 
 def direct_value(item: dict[str, Any], rule: GeneratedRule) -> float:
-    value = 0.55 * float(item["intervention_gain"]) + 0.30 * float(item["prediction_error"])
     if rule.use_feedback:
-        value += 0.15 * float(item["feedback_success"])
+        value = 0.42 * float(item["intervention_gain"]) + 0.18 * float(item["prediction_error"])
+    else:
+        value = 0.55 * float(item["intervention_gain"]) + 0.30 * float(item["prediction_error"])
+    if rule.use_feedback:
+        value += 0.40 * float(item["feedback_success"])
     return value
 
 
 def indirect_value(item: dict[str, Any], rule: GeneratedRule) -> float:
-    value = 0.75 * float(item["indirect_evidence"]) + 0.15 * float(item["feedback_success"])
     if rule.use_compression:
-        value += 0.10 * float(item["compression_surprise"])
+        return 0.45 * float(item["indirect_evidence"]) + 0.15 * float(item["feedback_success"]) + 0.40 * float(item["compression_surprise"])
+    value = 0.75 * float(item["indirect_evidence"]) + 0.15 * float(item["feedback_success"])
     return value
 
 
 def inspect_value(item: dict[str, Any], rule: GeneratedRule) -> float:
-    value = 0.60 * float(item["prediction_error"]) + 0.20 * float(item["delay_signal"])
     if rule.use_compression:
-        value += 0.20 * float(item["compression_surprise"])
+        return 0.35 * float(item["prediction_error"]) + 0.20 * float(item["delay_signal"]) + 0.45 * float(item["compression_surprise"])
+    value = 0.60 * float(item["prediction_error"]) + 0.20 * float(item["delay_signal"])
     return value
 
 

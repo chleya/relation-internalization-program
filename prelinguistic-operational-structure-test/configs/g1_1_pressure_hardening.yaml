@@ -1,0 +1,8 @@
+g1_1:
+  episodes_per_condition: 18
+  regions_per_episode: 18
+  compression_budget: 5.0
+  compression_penalty: 0.02
+  threshold_grid: [0.45, 0.55, 0.65, 0.75]
+  risk_threshold_grid: [0.42, 0.52, 0.62]
+  update_weight_grid: [0.35, 0.55, 0.75]
