@@ -112,6 +112,7 @@ python -m src.run_b5_clean_closed_loop --config configs/b5_clean_closed_loop.yam
 python -m src.run_b51_clean_closed_loop_audit --config configs/b51_clean_closed_loop_audit.yaml --seed 0
 python -m src.run_b52_adaptive_update --config configs/b52_adaptive_update.yaml --seed 0
 python -m src.run_b6_risk_constrained_loop --config configs/b6_risk_constrained_loop.yaml --seed 0
+python -m src.g_line.run_g1 --config configs/g1_minimal.yaml --seed 0
 python -m src.visualize --summary results/overall_summary.csv
 python -m src.visualize_b11 --summary results/b11_flow_checkpoint_hardening_summary.csv
 python -m src.visualize_b2 --summary results/b2_delayed_checkpoint_summary.csv
@@ -751,6 +752,34 @@ closed-loop system can use an actionability mask to decide whether to inspect,
 intervene directly, intervene indirectly, or abstain under risk, cost, unsafe,
 and irreversible constraints. This is still not real control, robotics ability,
 engineering deployment, safety certification, or human-like risk reasoning.
+
+## G1 Minimal Operational-Structure Generator
+
+G1 starts the G-line generator path. It does not receive a B-line actionability
+mask. Instead, it searches for a compact rule that generates an actionability
+and update mask from interaction-history features under prediction-error,
+compression, intervention-feedback, action-utility, and OOD-remap pressure.
+
+Run:
+
+```powershell
+python -m src.g_line.run_g1 --config configs/g1_minimal.yaml --seed 0
+```
+
+Current reports:
+
+```text
+reports/B_LINE_STAGE_FREEZE_AFTER_B6.md
+reports/G1_MINIMAL_GENERATOR_DESIGN.md
+reports/G1_MINIMAL_GENERATOR_RESULTS.md
+results/g1_minimal/metrics.json
+```
+
+Interpretation: G1 is a minimal toy generator experiment. It can show whether a
+compact generated mask/update rule beats weak baselines under held-out and OOD
+toy pressure. It does not prove autonomous cognition, real-world risk
+intelligence, robotics capability, safety certification, construction-site
+autonomy, or deployable engineering control.
 
 ## Boundary
 
