@@ -1,0 +1,10 @@
+g1:
+  train_episodes: 32
+  test_episodes: 16
+  ood_episodes: 16
+  regions_per_episode: 24
+  compression_budget: 4.0
+  compression_penalty: 0.025
+  threshold_grid: [0.45, 0.55, 0.65, 0.75]
+  risk_threshold_grid: [0.42, 0.52, 0.62]
+  update_weight_grid: [0.35, 0.55, 0.75]

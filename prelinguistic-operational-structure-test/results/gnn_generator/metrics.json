@@ -1,0 +1,12 @@
+{
+  "gnn_with_edges": 0.19049765793606638,
+  "gnn_no_edges": 0.19399302303791047,
+  "gnn_shuf_edges": 0.19113040920346974,
+  "gnn_edge_benefit": 0.003495365101844089,
+  "gnn_shuf_drop": 0.0006327512674033642,
+  "gnn_ood_with_edges": 0.2107445200905204,
+  "gnn_ood_no_edges": 0.20793730709701777,
+  "gnn_ood_shuf_edges": 0.21883707959204912,
+  "gnn_ood_benefit": -0.002807212993502617,
+  "gnn_ood_shuf_drop": 0.008092559501528734
+}

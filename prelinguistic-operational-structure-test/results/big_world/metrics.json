@@ -1,0 +1,13 @@
+{
+  "big_n_objects": 6,
+  "big_world_size": 2.8,
+  "big_te_avg": 0.07779916894814896,
+  "big_te_shuf": 0.024285974794277347,
+  "big_te_excess": 0.05351319415387162,
+  "te_ratio_vs_small": 1.607002827443592,
+  "big_tf_with_attn": 0.24531366288661957,
+  "big_tf_no_attn": 0.2482936717569828,
+  "big_tf_shuf_attn": 0.24583924561738968,
+  "big_attn_benefit": 0.002980008870363232,
+  "big_shuf_drop": 0.0005255827307701078
+}

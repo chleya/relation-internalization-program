@@ -1,0 +1,42 @@
+{
+  "o1_random_baseline": 0.6593601835932973,
+  "o1_rule_baseline": 0.9033280877976191,
+  "o1_rule_over_random": 0.2439679042043218,
+  "per_question": {
+    "object_identity": {
+      "random": 0.84375,
+      "rule": 1.0,
+      "gap": 0.15625
+    },
+    "interaction_detection": {
+      "random": 0.5,
+      "rule": 0.75,
+      "gap": 0.25
+    },
+    "risk_identification": {
+      "random": 0.7369791666666667,
+      "rule": 1.0,
+      "gap": 0.26302083333333326
+    },
+    "direct_intervention": {
+      "random": 0.6875,
+      "rule": 0.9375,
+      "gap": 0.25
+    },
+    "indirect_intervention": {
+      "random": 0.75,
+      "rule": 1.0,
+      "gap": 0.25
+    },
+    "abstain_judgment": {
+      "random": 0.4,
+      "rule": 0.7,
+      "gap": 0.29999999999999993
+    },
+    "prediction": {
+      "random": 0.697292118486414,
+      "rule": 0.9357966145833334,
+      "gap": 0.23850449609691937
+    }
+  }
+}

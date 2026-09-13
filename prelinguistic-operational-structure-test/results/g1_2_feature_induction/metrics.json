@@ -1,0 +1,37 @@
+{
+  "compression_feature_drop": 0.30784722222222227,
+  "conditions": [
+    "compression_required",
+    "feedback_required",
+    "mixed_pressure",
+    "ood_pressure_remap"
+  ],
+  "feature_program_complexity": 5,
+  "feature_search_size": 20000,
+  "feature_vocabulary_size": 7,
+  "feedback_feature_drop": 0.1977141203703704,
+  "g1_2_mean_score": 0.8133333333333334,
+  "g1_2_ood_score": 0.8870833333333333,
+  "gain_over_random_feature_program": 0.6110763888888888,
+  "invalid_metric_count_total": 0,
+  "mask_f1": 0.75,
+  "oracle_gap": 0.0854166666666667,
+  "record_rows": 240,
+  "selected_program": {
+    "direct_features": [
+      "feedback_success"
+    ],
+    "direct_threshold": 0.45,
+    "indirect_features": [
+      "compression_surprise"
+    ],
+    "indirect_threshold": 0.65,
+    "inspect_features": [
+      "compression_surprise"
+    ],
+    "inspect_threshold": 0.45,
+    "risk_threshold": 0.62
+  },
+  "summary_rows": 20,
+  "total_search_size": 551205
+}

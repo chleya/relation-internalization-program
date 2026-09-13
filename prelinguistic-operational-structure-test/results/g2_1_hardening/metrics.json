@@ -1,0 +1,20 @@
+{
+  "edge_discovery_f1": 1.0,
+  "g2_mean_score": 0.4612724644336802,
+  "g2_ood_novel_score": 0.5062798835624922,
+  "g2_ood_score": 0.33488343184163616,
+  "g2_ood_topology_score": 0.628268456583674,
+  "gain_over_random": 0.2274895833333333,
+  "indirect_ablation_drop": 0.004739583333333297,
+  "indirect_kill_drop": 0.004739583333333297,
+  "mask_f1": 0.19934989838194342,
+  "object_discovery_ari": 0.6100501253132833,
+  "oracle_gap": 0.18872753556631983,
+  "rule": {
+    "action_priority": "lowest_risk",
+    "n_clusters": 4,
+    "risk_threshold": 0.42,
+    "similarity_threshold": 0.75,
+    "use_indirect": true
+  }
+}

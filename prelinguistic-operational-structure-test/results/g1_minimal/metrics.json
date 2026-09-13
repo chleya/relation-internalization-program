@@ -1,0 +1,35 @@
+{
+  "claim": "minimal generated operational-structure diagnostic",
+  "conditions": [
+    "ood_remap",
+    "test",
+    "train"
+  ],
+  "g1_compression_cost": 0.5,
+  "g1_generator_mean_score": 0.8902193730596281,
+  "g1_mask_f1": 0.9339601135036991,
+  "g1_ood_gain_over_hand_designed": 0.2727167710761461,
+  "g1_ood_gain_over_random": 0.6370917710761461,
+  "g1_ood_score": 0.8677167710761461,
+  "g1_oracle_gap": 0.10978062694037198,
+  "g1_test_score": 0.891701388888889,
+  "generated_components": [
+    "actionability_mask",
+    "update_mask",
+    "trace_revision_rule"
+  ],
+  "generator_rule": {
+    "direct_threshold": 0.45,
+    "indirect_threshold": 0.45,
+    "inspect_threshold": 0.45,
+    "risk_threshold": 0.62,
+    "update_weight": 0.35,
+    "use_compression": false,
+    "use_feedback": false
+  },
+  "invalid_metric_count_total": 0,
+  "record_rows": 320,
+  "search_size": 2304,
+  "summary_rows": 15,
+  "train_objective": 0.32018880208333333
+}

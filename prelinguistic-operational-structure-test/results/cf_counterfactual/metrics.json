@@ -1,0 +1,8 @@
+{
+  "cf_loss_with_cross": 0.019887412102737773,
+  "cf_loss_no_cross": 0.01912876827797542,
+  "cf_cross_benefit": -0.000758643824762352,
+  "cf_ood_loss_with_cross": 0.01956994060310535,
+  "cf_ood_loss_no_cross": 0.018943768824101426,
+  "cf_ood_cross_benefit": -0.0006261717790039256
+}

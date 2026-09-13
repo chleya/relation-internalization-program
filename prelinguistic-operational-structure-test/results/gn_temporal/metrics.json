@@ -1,0 +1,15 @@
+{
+  "by_condition": {
+    "ood_remap": 0.3062500000000001,
+    "test": 0.265,
+    "train": 0.29250000000000004
+  },
+  "gnt_cross_drop": 0.0,
+  "gnt_mean_score": 0.2879166666666667,
+  "gnt_no_cross_score": 0.2879166666666667,
+  "no_cross_by_condition": {
+    "ood_remap": 0.3062500000000001,
+    "test": 0.265,
+    "train": 0.29250000000000004
+  }
+}

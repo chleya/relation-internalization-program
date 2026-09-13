@@ -112,6 +112,111 @@ R2 tests partial observability; R2.1 tests relation-specific uncertainty versus 
 
 Purpose: rule out relation discovery without uncertainty handling, blanket inspection, first-missing/random/risk-first heuristics, and unsafe automation under unverifiable relation chains.
 
+## 4.6 Pre-Linguistic Operational Structure Generation
+
+The G-line tests whether a compact rule-search generator can induce operational structure (actionability mask, update mask, trace revision rule) from interaction history alone, without being given explicit trace selectors, actionability masks, relation tables, or oracle values. This is the generator route (G-line), distinct from the B-line discriminator route where these structures are hand-provided and tested for usage.
+
+G1 searches 2,304 compact rule candidates over direct/indirect/inspect/risk thresholds and update weights. G1.1 adds pressure hardening: the selected rule must use feedback and compression pressure channels under conditions that require them. G1.2 replaces hand-designed scoring formulas with sparse feature induction from a vocabulary of 7 primitive interaction features, searching for the minimal feature subset that maximizes generator score.
+
+Purpose: test whether minimal operational structure can be generated without hand-designed trace selectors or explicit actionability masks.
+
+### G1 Results
+
+| metric | value |
+| --- | ---: |
+| g1_generator_mean_score | 0.890 |
+| g1_ood_score | 0.868 |
+| g1_ood_gain_over_random | 0.637 |
+| g1_ood_gain_over_hand_designed | 0.273 |
+| g1_oracle_gap | 0.110 |
+| g1_mask_f1 | 0.934 |
+
+Selected rule: all thresholds at minimum (0.45), risk threshold at maximum (0.62), feedback and compression both disabled. Adversarial review confirms no forbidden evaluator/oracle references in the generator source, but notes that the selected rule does not use feedback or compression pressure channels.
+
+### G1.1 Pressure Hardening Results
+
+| metric | value |
+| --- | ---: |
+| g1_1_mean_score | 0.597 |
+| g1_1_ood_pressure_score | 0.779 |
+| feedback_pressure_gain | 0.024 |
+| compression_pressure_gain | 0.063 |
+| g1_1_oracle_gap | 0.302 |
+| g1_1_mask_f1 | 0.533 |
+
+Selected rule: same thresholds as G1 but with feedback and compression both enabled (pressure coverage = 2). Degeneracy audit exposes a critical weakness: on `feedback_required` episodes, the `no_compression` ablation (0.264) outperforms the full generator (0.197); on `compression_required` episodes, the `no_feedback` ablation (0.646) outperforms the full generator (0.633). The pressure channels are not demonstrated to be necessary.
+
+### G1.2 Feature Induction Results
+
+| metric | value |
+| --- | ---: |
+| g1_2_mean_score | 0.813 |
+| g1_2_ood_score | 0.887 |
+| feedback_feature_drop | 0.198 |
+| compression_feature_drop | 0.308 |
+| gain_over_random_feature_program | 0.611 |
+| oracle_gap | 0.085 |
+| mask_f1 | 0.750 |
+
+Selected program (complexity = 5): direct=(feedback_success, threshold 0.45), indirect=(compression_surprise, threshold 0.65), inspect=(compression_surprise, threshold 0.45), risk_threshold=0.62. Uses 2 of 7 available primitive features.
+
+Feature ablation shows clear condition-specific necessity evidence: on `feedback_required` episodes, dropping the `feedback_success` feature causes a 0.530 drop (0.763 → 0.233); on `compression_required` episodes, dropping the `compression_surprise` feature causes a 0.555 drop (0.708 → 0.153). Oracle gap is 0.085. Adversarial review detects evaluator_ground_truth usage during program selection (a training-time oracle leakage). The feature vocabulary (7 hand-named features) and OOD remap (synthetic noise shift) remain hand-scaffolded.
+
+### G1.2-Clean (Oracle-Free Selection) Results
+
+| metric | value |
+| --- | ---: |
+| g1_2_clean_mean_score | 0.740 |
+| g1_2_clean_ood_score | 0.835 |
+| feedback_feature_drop | 0.289 |
+| compression_feature_drop | -0.012 |
+| oracle_gap | 0.159 |
+| mask_f1 | 0.635 |
+
+Training objective uses only observed_reward from interaction_history (no evaluator_ground_truth). Selected program also uses feedback_success and compression_surprise features. Feedback necessity evidence is preserved (drop 0.289), but compression shows near-zero effect (-0.012). The performance drop (0.813 → 0.740) reflects the cost of removing oracle guidance from program selection. This establishes a clean no-oracle baseline for the generator route.
+
+### G1.3 Unsupervised Feature Discovery Results
+
+| metric | value |
+| --- | ---: |
+| g1_3_mean_score | 0.276 |
+| g1_3_ood_score | 0.267 |
+| oracle_gap | 0.622 |
+| mask_f1 | 0.079 |
+
+Features are discovered via k-means clustering (k=5) on 10-dimensional raw interaction vectors, replacing the 7 hand-named features. The resulting cluster features (e.g., `c1: compression_surprise+delay_signal`, `c2: prediction_error+intervention_gain`, `c3: risk_proxy+compression_surprise`) fail to produce actionable programs. The 0.276 score is only marginally above random (0.201) and the mask F1 of 0.079 indicates near-complete failure to recover structural information from passive clustering. This negative result suggests that passive feature discovery from static interaction data is insufficient; active/interaction-based feature construction (where features are shaped by acting and observing consequences) may be required.
+
+### G2 Compositional World Results
+
+| metric | value |
+| --- | ---: |
+| g2_mean_score | 0.457 |
+| g2_ood_score | 0.335 |
+| g2_ood_novel_object_score | 0.506 |
+| g2_ood_topology_shift_score | 0.606 |
+| object_discovery_ari | 0.610 |
+| edge_discovery_f1 | 1.000 |
+| indirect_ablation_drop | 0.000 |
+| oracle_gap | 0.193 |
+| mask_f1 | 0.186 |
+
+G2 scales the generator to a multi-object compositional world with 5 object types (mechanical/thermal/diffusion/advection/collision), cross-object causal edges with propagation delays, and 5 evaluation conditions including `ood_novel_object` and `ood_topology_shift`. Rules are generated via k-means adaptive grouping over 10 interaction dimensions, producing cross-object similarity matrices and actionability masks. The best rule (k=4, similarity_threshold=0.75, priority=lowest_risk) achieves g2_mean_score=0.457, with object_discovery_ari=0.610 and edge_discovery_f1=1.000. However, indirect_ablation_drop=0.000: the `g2_no_indirect` baseline (same rule with `use_indirect=False`) scores identically to `g2_cross_object`. The cross-object indirect pathway is not demonstrated to be necessary. OOD novel object (0.506) and topology shift (0.606) conditions score higher than noise remap (0.335), suggesting the structure is not purely noise-memorized but may rely on statistical shortcuts that generalize across condition types.
+
+### G2.1 Indirect Pathway Pressure Hardening Results
+
+| metric | value |
+| --- | ---: |
+| g2_mean_score | 0.461 |
+| g2_ood_score | 0.335 |
+| g2_ood_novel_object_score | 0.506 |
+| g2_ood_topology_shift_score | 0.628 |
+| indirect_ablation_drop | 0.005 |
+| indirect_kill_drop | 0.005 |
+| oracle_gap | 0.189 |
+| object_discovery_ari | 0.610 |
+
+G2.1 hardens the indirect pathway by two complementary interventions: (1) the rule search space is restricted to only those candidates with `use_indirect=True` (81 rules vs the baseline 162), forcing the generator to use the cross-object indirect channel; (2) a new `g2_kill_indirect` policy nullifies both `similar_groups` and `indirectly_intervenable` in the generated mask, testing whether the indirect pathway carries any structural information beyond the binary flag. The result is decisive: hardening produces nearly identical scores to baseline (0.461 vs 0.457, Δ=0.005), and both `no_indirect` and `kill_indirect` ablations show the same negligible drop (0.005). This replicates the G1.1 degeneracy pattern in the cross-object setting: even when forced to use the indirect channel, the generator derives no measurable benefit from it. The cross-object similarity matrix and indirect intervention logic are present in the generated output but are not causally used. Together with G1.1's finding that feedback/compression channels are similarly unused, this establishes a structural pattern: in the current grid-search architecture operating over hand-decoded interaction features, pressure channels are constructed by the system but bypassed during decision-making.
+
 # 5. Results Summary
 
 | group | positive result | key negative controls | result anchor |
@@ -122,6 +227,8 @@ Purpose: rule out relation discovery without uncertainty handling, blanket inspe
 | Temporal V2/V2.1 | `delayed_relation_chain`, `learned_delayed_links` | `structural_memory_temporal`, `instant_relation_chain` | delayed-link hardening `1.000`; structural temporal and instant controls `0.000` |
 | R1/R1.1/R1.2 | active/discovery relation agents | random, shortcut, passive, no-explore, hand-supplied candidate dependence | R1 `0.972`; R1.1 `1.000`; R1.2 discovery `1.000` |
 | R2/R2.1/R3 | uncertainty and active inspection agents | discovery-only, missing-always, first-missing, random, risk-first | R2 uncertainty `0.982`; R2.1 relation-specific `0.933`; R3 active inspection `0.933`; baselines `0.000` |
+| G1/G1.1/G1.2/G1.2-Clean/G1.3 | generated operational structure | random, always_abstain, hand_designed; no_feedback, no_compression ablations | G1 `0.890` (OOD `0.868`); G1.1 `0.597` (OOD `0.779`); G1.2 `0.813` (OOD `0.887`, oracle leak); G1.2-Clean `0.740` (OOD `0.835`, no oracle); G1.3 `0.276` (OOD `0.267`, failed discovery) |
+| G2/G2.1 | compositional world generator, indirect pathway hardening | random_group, no_indirect, kill_indirect, oracle | G2 `0.457` (OOD `0.335`, ARI `0.610`, indirect drop `0.000`); G2.1 `0.461` (OOD `0.335`, ARI `0.610`, indirect drop `0.005`, kill drop `0.005`) |
 
 The important neural update is the editability false positive. V1.2 shows `edit_state_swap_success = 1.000`, but `support_shuffle_drop = 0.000`, `support_conditioned_accuracy = 0.500`, and `binding_sensitivity = 0.000`. Edit-signal responsiveness is not enough.
 
@@ -140,6 +247,13 @@ The important neural update is the editability false positive. V1.2 shows `edit_
 | R2 | `uncertainty_discovery_agent` | `discovery_relation_agent` | partial observation success `0.967` | uncertainty/unsafe automation gates | discovery alone is not enough |
 | R2.1 | relation-specific uncertainty | `missing_always_inspect` | high critical recall | precision/cost gates | blanket inspection is not uncertainty handling |
 | R3 | active inspection agent | first/random/risk-first baselines | some inspection success | target/cost/budget gates | simple inspection heuristics are not cost-aware selection |
+| G1 | generated rule from interaction history | `hand_designed` baseline | hand-designed formulas | OOD remap; generator must beat hand-designed | hand-designed rules are not necessary for operational structure |
+| G1.1 | pressure-hardened generator | `no_feedback` / `no_compression` ablations | pressure-enabled rule | degeneracy audit; ablations must lose score | enabled pressures can be false positives when ablations do not degrade |
+| G1.2 | sparse feature-induction program | `no_feedback_feature` / `no_compression_feature` | selected feature combination | feature drop must be condition-specific and large (>0.15) | feature necessity must be demonstrated per condition, not assumed |
+| G1.2-Clean | oracle-free observed-reward selection | same ablations as G1.2 | no evaluator_ground_truth in training | feedback drop 0.289 > 0.15 | oracle-leakage-free program selection is viable but loses performance |
+| G1.3 | k-means feature discovery (5 clusters) | random_discovered, cluster-ablations | passive clustering of raw vectors | no condition passes 0.30 threshold | passive feature discovery cannot replace hand-named features on this toy |
+| G2 | cross-object compositional generator | `g2_random_group`, `g2_no_indirect` | multi-object world with cross edges | indirect_ablation_drop = 0.000; indirect channel is not necessary | cross-object similarity and indirect intervention are unused shortcuts |
+| G2.1 | indirect pathway pressure hardening | `g2_kill_indirect` | forced `use_indirect=True` rule search | indirect_kill_drop = 0.005; nullifying similar_groups has near-zero effect | indirect pathway is constructed but never causally used; degeneracy pattern replicates G1.1 |
 
 # 7. Discussion
 
@@ -148,6 +262,8 @@ The paper is best read as a false-positive analysis.
 Probe readability is insufficient because a relation can be decodable without being behaviorally causal. Prediction is insufficient because success can come from shortcuts, memory, or structural correlation. Review text is insufficient because an explanation can be plausible while disconnected from relation use. Temporal prediction is insufficient because delayed links must be editable and auditable. Discovery is insufficient because a discovered relation may be unverifiable in the current observation. Inspection is insufficient because blanket conservatism fails under cost and budget.
 
 The neural stage adds a final caution: editable behavior is not necessarily relation internalization. `edit_pressure_training` can respond to edit signals and support table-level edits without robust support-conditioned binding or stable causal relation subspaces. The strongest current neural positive result is therefore `counterfactual_training`, not edit pressure.
+
+The G-line adds a generator-route perspective to the predominantly discriminator-route methodology. G1 shows that compact rule search over interaction history can induce operational structure that beats hand-designed baselines on OOD remap, but the selected rule avoids feedback and compression channels entirely, suggesting a shortcut-like solution. G1.1 exposes this as a degeneracy: when forced to use pressure channels, the ablations that drop these channels sometimes outperform the full generator. G1.2 partially resolves this by using sparse feature induction (2 of 7 features) and producing condition-specific necessity evidence (feedback drop -0.530, compression drop -0.555), but the training-time oracle leakage via `evaluator_ground_truth` during program selection must be treated as a known methodological limitation. G1.2-Clean removes the oracle from program selection, using only observed_reward data from interaction_history as the training objective; the resulting generator scores 0.740 (OOD 0.835) with preserved feedback necessity evidence (drop 0.289), demonstrating that oracle-free generator training is viable but incurs a measurable performance cost. G1.3 attempts unsupervised feature discovery via k-means clustering of raw interaction vectors, replacing all 7 hand-named features; the result (0.276, oracle gap 0.622) represents a definitive failure of passive clustering to recover structural information, suggesting that active/interaction-based feature construction may be required. G2 extends the generator to a multi-object compositional world with cross-object causal edges and propagation delays; the generator achieves g2_mean_score 0.457 with object_discovery_ari 0.610, but the indirect_ablation_drop is 0.000—the cross-object indirect pathway is not necessary. G2.1 hardens this pathway by restricting the rule search to indirect-only candidates and adding a kill_indirect ablation that nullifies similar_groups; the result (indirect_kill_drop 0.005) decisively replicates the G1.1 degeneracy pattern in a different structural channel. The cross-object similarity matrix and indirect intervention logic are constructed but never causally used. Taken together, G1.1's feedback/compression degeneracy and G2.1's indirect pathway degeneracy establish a structural pattern: in the discrete grid-search architecture operating over hand-decoded interaction features, any pressure channel can be constructed by the generator and then bypassed during decision-making. The generator route thus demonstrates a systematic limitation: operational structure can be induced from pressure signals (G1, G1.2-Clean) and oracle leakage can be isolated, but the induced structure does not survive degeneracy audit when any single channel is ablated. Passive feature discovery (G1.3) fails entirely.
 
 # 8. Limitations
 
@@ -165,6 +281,13 @@ The neural stage adds a final caution: editable behavior is not necessarily rela
 - No adversarial missingness robustness is claimed beyond tested toy cases.
 - No real engineering safety or deployment claim is made.
 - No claim is made about large language models or general causal discovery.
+- G1.2 uses `evaluator_ground_truth` during program selection; this is a training-time oracle leakage.
+- G1.2-Clean removes oracle leakage but relies on observed_reward proxies which are imperfect correlates of ground-truth labels.
+- G1.3's passive k-means clustering fails to recover actionable feature structure; this negative result is documented but may reflect the simplicity of the clustering method rather than an impossibility.
+- The G-line feature vocabulary in G1/G1.1/G1.2/G1.2-Clean is hand-named; the system does not discover feature concepts from raw data.
+- G2's compositional world uses synthetically generated latent profiles and cross-object edges; the object types and causal structures are hand-designed rather than emergent from continuous dynamics.
+- G2.1's hardening restricts the search space from 162 to 81 rules, which may reduce statistical power for detecting small but real indirect pathway effects; the 0.005 drop should be interpreted as an upper bound on the indirect pathway's contribution, not as a precise estimate.
+- The systematic degeneracy pattern (G1.1 feedback/compression drop < 0.07, G2.1 indirect/kill drop 0.005) is observed in two distinct pressure channels under the same discrete grid-search architecture; generalization to other channels or architectures is not established.
 
 # 9. Future Work
 
@@ -175,6 +298,9 @@ Near-term:
 - Add confidence calibration curves.
 - Connect neural-to-table extraction with active inspection.
 - Test whether counterfactual-trained neural structures remain editable under larger relation graphs.
+- G2.2: test whether generated operational structures transfer to genuinely novel world dynamics (continuous PDE simulation, not synthetic noise remaps or hand-designed latent profiles).
+- G2.3: investigate active/interaction-based feature discovery where features are constructed by testing actions and observing outcomes, not by passive clustering or hand-named vocabularies.
+- Investigigate neural constructive agent that learns pressure-channel representations end-to-end through gradient-based training rather than discrete grid search.
 
 Medium-term:
 
