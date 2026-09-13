@@ -7,6 +7,8 @@ from src.g_line.g1_adversarial_review import build_g1_adversarial_review
 from src.g_line.g1_generator import choose_action, fit_generator
 from src.g_line.g1_runner import run_g1, write_g1_outputs
 from src.g_line.g1_1_runner import run_g1_1, write_g1_1_outputs
+from src.g_line.g1_2_feature_induction import fit_feature_induction
+from src.g_line.g1_2_runner import run_g1_2, write_g1_2_outputs
 
 
 def test_g1_datasets_have_expected_splits():
@@ -66,3 +68,22 @@ def test_g1_1_pressure_hardening_outputs(tmp_path, monkeypatch):
     assert metrics["generated_rule_pressure_coverage"] == 2
     assert metrics["feedback_pressure_gain"] > 0.0
     assert metrics["compression_pressure_gain"] > 0.0
+
+
+def test_g1_2_feature_induction_outputs(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    config = {"g1_2": {"episodes_per_condition": 2, "regions_per_episode": 8, "max_features_per_head": 1}}
+    summary, records, metrics, _ = run_g1_2(config, seed=0)
+    write_g1_2_outputs(summary, records, metrics)
+    assert Path("results/g1_2_feature_induction/summary.csv").exists()
+    assert Path("reports/G1_2_FEATURE_INDUCTION_RESULTS.md").exists()
+    assert records
+    assert metrics["invalid_metric_count_total"] == 0
+
+
+def test_g1_2_selected_program_has_features():
+    artifact = fit_feature_induction({"g1_2": {"episodes_per_condition": 2, "regions_per_episode": 8, "max_features_per_head": 1}}, seed=0)
+    program = artifact["program"]
+    selected = set(program.direct_features + program.indirect_features + program.inspect_features)
+    assert selected
+    assert artifact["search_size"] > 0

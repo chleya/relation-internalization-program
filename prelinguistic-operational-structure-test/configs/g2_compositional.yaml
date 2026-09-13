@@ -1,0 +1,10 @@
+g2:
+  n_objects: 3
+  regions_per_object: 5
+  min_cross_edges: 1
+  max_cross_edges: 2
+  train_episodes: 16
+  test_episodes: 8
+  ood_remap_episodes: 8
+  ood_novel_episodes: 8
+  ood_topology_episodes: 8

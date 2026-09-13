@@ -1,0 +1,9 @@
+{
+  "tt_with_attn": 0.2673279887109291,
+  "tt_no_attn": 0.27666891677173105,
+  "tt_shuf_attn": 0.2727563198157183,
+  "tt_attn_benefit": 0.009340928060801945,
+  "tt_shuf_drop": 0.005428331104789186,
+  "te_benefit_efficiency_pct": 16.132863662870374,
+  "n_context": 3
+}

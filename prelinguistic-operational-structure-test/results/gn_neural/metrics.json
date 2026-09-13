@@ -1,0 +1,9 @@
+{
+  "gn_cross_ablation_drop": 0.025805555555555526,
+  "gn_hidden": 32,
+  "gn_mean_score": 0.23580555555555555,
+  "gn_no_cross_score": 0.21000000000000002,
+  "gn_ood_score": 0.16958333333333336,
+  "gn_params": 6,
+  "train_final_loss": 0.3498367378488183
+}

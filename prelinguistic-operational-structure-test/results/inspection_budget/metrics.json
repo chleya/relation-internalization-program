@@ -1,0 +1,22 @@
+{
+  "ib_total_eval": 199,
+  "ib_choice_rate": 0.47738693467336685,
+  "ib_random_baseline": 0.5,
+  "ib_improvement": -0.022613065326633153,
+  "choice_distribution": [
+    26,
+    29,
+    44,
+    28,
+    38,
+    34
+  ],
+  "causal_importance": [
+    3.0,
+    6.0,
+    4.0,
+    5.0,
+    7.0,
+    3.0
+  ]
+}

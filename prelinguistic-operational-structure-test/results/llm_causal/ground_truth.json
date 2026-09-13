@@ -1,0 +1,38 @@
+{
+  "scoring": {
+    "existence": {
+      "rule": "precision = |predicted_edges ∩ true_edges| / |predicted_edges|; recall = |predicted_edges ∩ true_edges| / |true_edges|",
+      "score_range": [
+        0.0,
+        1.0
+      ]
+    },
+    "ranking": {
+      "rule": "Spearman rank correlation between predicted rank and true coefficient rank",
+      "score_range": [
+        -1.0,
+        1.0
+      ]
+    },
+    "counterfactual": {
+      "rule": "1.0 if answer matches ground truth, 0.0 otherwise",
+      "score_range": [
+        0.0,
+        1.0
+      ]
+    },
+    "edge_diff": {
+      "rule": "1.0 if max/min targets are correct and order matches, 0.5 if partially correct, 0.0 if wrong",
+      "score_range": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  "pass_threshold": {
+    "existence": 0.6,
+    "ranking_spearman": 0.4,
+    "counterfactual": 0.5,
+    "edge_diff": 0.5
+  }
+}

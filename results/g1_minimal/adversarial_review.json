@@ -1,0 +1,40 @@
+{
+  "decision": "submit_ready_as_minimal_generator_branch_with_caveats",
+  "forbidden_reference_count": 0,
+  "g1_mask_f1": 0.9339601135036991,
+  "g1_ood_gain_over_hand_designed": 0.2727167710761461,
+  "g1_ood_gain_over_random": 0.6370917710761461,
+  "g1_ood_score": 0.8677167710761461,
+  "g1_oracle_gap": 0.10978062694037198,
+  "leakage_issue_found": false,
+  "metric_issue_found": false,
+  "ood_generator_score_from_summary": 0.8677167710761461,
+  "oracle_gap_positive": true,
+  "pressure_usage": {
+    "uses_compression": false,
+    "uses_feedback": false,
+    "uses_intervention_gain": true,
+    "uses_prediction_error": true,
+    "uses_risk_proxy": true
+  },
+  "recommended_next_step": "G1.1 pressure-use hardening before broader G2",
+  "remaining_blockers": [
+    "selected rule does not use all intended pressure channels: ['uses_feedback', 'uses_compression']",
+    "feature vocabulary and rule family remain hand-scaffolded",
+    "OOD remap is synthetic and does not prove autonomous structure discovery"
+  ],
+  "selected_rule": {
+    "direct_threshold": 0.45,
+    "indirect_threshold": 0.45,
+    "inspect_threshold": 0.45,
+    "risk_threshold": 0.62,
+    "update_weight": 0.35,
+    "use_compression": false,
+    "use_feedback": false
+  },
+  "weak_pressure_count": 2,
+  "weak_pressures": [
+    "uses_feedback",
+    "uses_compression"
+  ]
+}
